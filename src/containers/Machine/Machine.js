@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Machine.css'
-import Window from '../../components/Window/Window';
+import Window from '../../components/MachineWindow/MachineWindow';
 
 class Machine extends Component {
     render() {
@@ -27,12 +27,9 @@ class Machine extends Component {
             },
         ]
         const listVegetables = vegetables.map(vegetable => {
-            console.log('boe')
-            return <li> <Window/></li>
+            return <li><Window/></li>
         });
-        return  <ul>
-                   {listVegetables}
-                </ul>    
+        return  <ul>{listVegetables}</ul>    
     }
     
 }

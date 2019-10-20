@@ -3,7 +3,6 @@ import './MachineWindow.css'
 
 class MachineWindow extends Component {
     render() {
-
         return  <div className='window'>
                     <h1> Veggie </h1>
                 </div>
@@ -11,8 +10,4 @@ class MachineWindow extends Component {
     
 }
 
-MachineWindow.propTypes = {
-    vegetableName: PropTypes.string.isRequired
-};
-
-export default Window
+export default MachineWindow
