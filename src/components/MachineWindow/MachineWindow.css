@@ -1,4 +1,8 @@
 
 .window {
-    border: 10px solid green;
+    border: 10px solid #4C9358;
+    width: 200px;
+    height: 500px;
+    background-color: #D4F0D8;
+    margin: 5px;
 }

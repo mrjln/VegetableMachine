@@ -1,35 +1,15 @@
 import React, { Component } from 'react'
 import './Machine.css'
-import Window from '../../components/MachineWindow/MachineWindow';
+import MachineWindow from '../../components/MachineWindow/MachineWindow';
+import VegetableList from '../../assets/vegetables'
 
 class Machine extends Component {
     render() {
-        const vegetables = [
-            {
-                id: 1,
-                name: 'artichoke'
-            },
-            {
-                id: 2,
-                name: 'aubergine'
-            },
-            {
-                id: 3,
-                name: 'asparagus'
-            },
-            {
-                id: 4,
-                name: 'alfalfa '
-            },
-            {
-                id: 5,
-                name: 'azuki beans '
-            },
-        ]
+        const vegetables = VegetableList
         const listVegetables = vegetables.map(vegetable => {
-            return <li><Window/></li>
+            return <li><MachineWindow vegetable={vegetable}/></li>
         });
-        return  <ul>{listVegetables}</ul>    
+        return  <div class="machine"><ul class="machine-windows">{listVegetables}</ul> </div>   
     }
     
 }

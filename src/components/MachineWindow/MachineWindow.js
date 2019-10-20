@@ -3,8 +3,10 @@ import './MachineWindow.css'
 
 class MachineWindow extends Component {
     render() {
+        console.log(this.props)
+
         return  <div className='window'>
-                    <h1> Veggie </h1>
+                    <h1> {this.props.vegetable.name} </h1>
                 </div>
     }
     

@@ -1,0 +1,11 @@
+.machine {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.machine-windows {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
