@@ -1,43 +1,33 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import "./MachineWindow.css";
 
 class MachineWindow extends Component {
+    SLOTS_PER_REEL = 12;
+    REEL_RADIUS = 150;
 
-SLOTS_PER_REEL = 12;
-// radius = Math.round( ( panelWidth / 2) / Math.tan( Math.PI / SLOTS_PER_REEL ) ); 
-// current settings give a value of 149, rounded to 150
-REEL_RADIUS = 150;
+    createSlots = () => {
+        console.log("createSlots");
+        let slots = []
+        for (let i = 0; i < this.SLOTS_PER_REEL; i++) {
+            let slot = this.getSlot(i);
+            slots.push(slot);
+        }
+        return slots
+    };
 
-// createSlots (ring) {
-// 	var slotAngle = 360 / SLOTS_PER_REEL;
-//
-// 	var seed = getSeed();
-//
-// 	for (var i = 0; i < SLOTS_PER_REEL; i ++) {
-// 		var slot = document.createElement('div');
-//
-// 		slot.className = 'slot';
-//
-// 		// compute and assign the transform for this slot
-// 		var transform = 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + REEL_RADIUS + 'px)';
-//
-// 		slot.style.transform = transform;
-//
-// 		// setup the number to show inside the slots
-// 		// the position is randomized to
-//
-// 		var content = $(slot).append('<p>' + ((seed + i)%12)+ '</p>');
-//
-// 		// add the poster to the row
-// 		ring.append(slot);
-// 	}
-// }
-//
-// getSeed() {
-// 	// generate random number smaller than 13 then floor it to settle between 0 and 12 inclusive
-// 	return Math.floor(Math.random()*(SLOTS_PER_REEL));
-// }
-//
+    getSlot = (i) => {
+        let seed = this.getSeed();
+        let slotAngle = 360 / this.SLOTS_PER_REEL;
+        let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + this.REEL_RADIUS + 'px)'};
+        let content = ((seed + i) % 12);
+        return <div style={transFormStyle} className={"slot"}>{content}</div>;
+    };
+
+    getSeed = () => {
+        return Math.floor(Math.random() * (this.SLOTS_PER_REEL));
+    };
+
+
 // spin(timer) {
 // 	//var txt = 'seeds: ';
 // 	for(var i = 1; i < 6; i ++) {
@@ -65,13 +55,6 @@ REEL_RADIUS = 150;
 // }
 //
 // componentDidMount() {
-// 	// initiate slots
-//  	createSlots($('#ring1'));
-//  	createSlots($('#ring2'));
-//  	createSlots($('#ring3'));
-//  	createSlots($('#ring4'));
-//  	createSlots($('#ring5'));
-//
 //  	// hook start button
 //  	$('.go').on('click',function(){
 //  		var timer = 2;
@@ -108,21 +91,12 @@ REEL_RADIUS = 150;
 //  	})
 //  });
 
-  render() {
-    console.log("props Machine window", this.props);
-    return (
-      <div className="window">
-        <h1> {this.props.vegetable.name} </h1>
-        <div id="stage" class="perspective-on">
-          <div id="rotate">
-            {/*<div id="ring1" class="ring"></div>*/}
-          </div>
-          <div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+    render() {
+        const slots = this.createSlots();
+        const ring = <div id="ring1" className="ring">{slots}</div>;
+        console.log("props Machine window", this.props);
+        return (<div>{ring}</div>);
+    }
 }
 
 export default MachineWindow;
