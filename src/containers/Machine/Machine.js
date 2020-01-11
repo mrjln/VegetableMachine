@@ -20,9 +20,6 @@ class Machine extends Component {
             );
         });
 
-        const spin = () => {
-            console.log("spinning")
-        }
 
         return (
             <div class="machine">
@@ -34,7 +31,7 @@ class Machine extends Component {
                     </div>
                 </ul>
                 <div>
-                    <button class="go" onClick={spin}>Start spinning</button>
+                    {/*<button class="go" onClick={spin}>Start spinning</button>*/}
                 </div>
             </div>
         );

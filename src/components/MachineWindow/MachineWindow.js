@@ -5,9 +5,14 @@ class MachineWindow extends Component {
     SLOTS_PER_REEL = 12;
     REEL_RADIUS = 150;
 
+    constructor(props) {
+        super(props);
+        this.state = {spinning: false, seed: this.getSeed()}
+    }
+
     createSlots = () => {
         console.log("createSlots");
-        let slots = []
+        let slots = [];
         for (let i = 0; i < this.SLOTS_PER_REEL; i++) {
             let slot = this.getSlot(i);
             slots.push(slot);
@@ -19,12 +24,37 @@ class MachineWindow extends Component {
         let seed = this.getSeed();
         let slotAngle = 360 / this.SLOTS_PER_REEL;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + this.REEL_RADIUS + 'px)'};
+        let spinningAnimation = {animation: 'back-spin 1s, spin-' + seed + ' ' + (2 + 3 * 0.5) + 's'};
+        let styles = this.state.spinning ? {...transFormStyle, ...spinningAnimation} : transFormStyle;
         let content = ((seed + i) % 12);
-        return <div style={transFormStyle} className={"slot"}>{content}</div>;
+        return <div style={styles} className={"slot"}>{content}</div>;
     };
 
     getSeed = () => {
         return Math.floor(Math.random() * (this.SLOTS_PER_REEL));
+    };
+
+    spin = (ring) => {
+        this.setState({
+            spinning: true,
+            seed: this.getSeed()
+        });
+        // let timer = 2;
+        for (var i = 1; i < 6; i++) {
+        //     let seed = this.getSeed();
+        //     let styles = this.getAnimation(seed, timer);
+        //     ring.class = 'ring spin-' + seed;
+        //     ring.style = styles;
+        //     // $('#ring' + i)
+        //     //     .css('animation', 'back-spin 1s, spin-' + seed + ' ' + (timer + i * 0.5) + 's')
+        //     //     .attr('class', 'ring spin-' + seed);
+        }
+    };
+
+    getAnimation = (seed, timer) => {
+        return {
+            // animation: 'back-spin 1s, spin-' + seed + ' ' + (timer + i * 0.5) + 's'
+        }
     };
 
 
@@ -95,8 +125,13 @@ class MachineWindow extends Component {
         const slots = this.createSlots();
         const ring = <div id="ring1" className="ring">{slots}</div>;
         console.log("props Machine window", this.props);
-        return (<div>{ring}</div>);
-    }
+        return (
+            <React.Fragment>
+                <div>{ring}</div>
+                <button onClick={() => this.spin(ring)}>click</button>
+            </React.Fragment>
+        )
+    };
 }
 
 export default MachineWindow;
