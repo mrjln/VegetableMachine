@@ -12,10 +12,10 @@ class Machine extends Component {
 
     render() {
         const vegetables = VegetableList;
-        const listVegetables = vegetables.map(vegetable => {
+        const listVegetables = vegetables.map((vegetable, index) => {
             return (
                 <li>
-                    <MachineWindow vegetable={vegetable}/>
+                    <MachineWindow ringNumber={index} vegetable={vegetable}/>
                 </li>
             );
         });
