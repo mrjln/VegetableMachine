@@ -6,33 +6,47 @@ import VegetableList from "../../assets/vegetables";
 class Machine extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            spinning: false,
+            durationSpin: 2
+        }
+
         // https://codepen.io/werter25/pen/MxRJJV
     }
+
+    spin = () => {
+        const milisec = this.state.durationSpin * 1000;
+        this.setState({spinning: true});
+        setTimeout(this.stopSpinning, milisec);
+    };
+
+    stopSpinning = () => {
+        this.setState({spinning: false})
+    };
 
 
     render() {
         const vegetables = VegetableList;
         const listVegetables = vegetables.map((vegetable, index) => {
-            return (
-                <li>
-                    <MachineWindow ringNumber={index} vegetable={vegetable}/>
-                </li>
+            return (<MachineWindow
+                    spinning={this.state.spinning}
+                    durationSpin={this.state.durationSpin}
+                    ringNumber={index}
+                    vegetable={vegetable}/>
             );
         });
 
 
         return (
             <div class="machine">
-                <ul class="machine-windows">
-                    <div id="stage" className="perspective-on">
-                        <div id="rotate">
+                <div class="machine-windows">
+                    <div id="stage">
+                        <div id="rotate" className="perspective-on">
                             {listVegetables}
                         </div>
                     </div>
-                </ul>
-                <div>
-                    {/*<button class="go" onClick={spin}>Start spinning</button>*/}
                 </div>
+                <button className="button-spin" onClick={this.spin}>Spin</button>
             </div>
         );
     }

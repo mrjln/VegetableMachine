@@ -7,12 +7,12 @@ class MachineWindow extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {spinning: false, seed: this.getSeed()}
+        this.state = {
+            seed: this.getSeed(),
+        }
     }
 
-    spin = () => {
-        this.setState({spinning: true})
-    }
+
 
     createSlots = () => {
         let slots = [];
@@ -36,10 +36,11 @@ class MachineWindow extends Component {
 
 
     createRing = (ringNumber) => {
-        let timer = 2;
         const slots = this.createSlots();
-        const classRing = this.state.spinning ? "ring spin-" + this.state.seed : "ring";
-        const spinningAnimation = this.state.spinning ? {animation: 'back-spin 1s, spin-' + this.state.seed + ' ' + (timer + ringNumber * 0.5) + 's'} : {};
+        const classRing = this.props.spinning ? "ring spin-" + this.state.seed : "ring";
+        const spinningAnimation = this.props.spinning
+            ? {animation: 'back-spin 1s, spin-' + this.state.seed + ' ' + (this.props.durationSpin + ringNumber * 0.5) + 's'}
+            : {};
         return <div id={"ring" + ringNumber} style={spinningAnimation} className={classRing}>{slots}</div>;
     };
 
@@ -49,8 +50,7 @@ class MachineWindow extends Component {
         const ring = this.createRing(this.props.ringNumber);
         return (
             <React.Fragment>
-                <div>{ring}</div>
-                <button onClick={() => this.spin(ring)}>click</button>
+                {ring}
             </React.Fragment>
         )
     };
