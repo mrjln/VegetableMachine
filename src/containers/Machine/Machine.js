@@ -8,38 +8,43 @@ class Machine extends Component {
         super(props);
         this.state = {
             spinning: false,
-            durationSpin: 2
+            durationSpinInSeconds: 2
         }
 
         // https://codepen.io/werter25/pen/MxRJJV
     }
+    SLOTS_PER_REEL = 12;
 
     spin = () => {
-        const milisec = this.state.durationSpin * 1000;
+        this.forceUpdate();
+        const milisec = this.state.durationSpinInSeconds * 1000;
         this.setState({spinning: true});
         setTimeout(this.stopSpinning, milisec);
     };
 
     stopSpinning = () => {
-        this.setState({spinning: false})
+        // this.setState({spinning: false})
     };
 
+    getSeed = () => {
+        return Math.floor(Math.random() * (this.SLOTS_PER_REEL));
+    };
 
     render() {
-        const vegetables = VegetableList;
-        const listVegetables = vegetables.map((vegetable, index) => {
+        const listVegetables = [1,2,3].map((ringnumber) => {
             return (<MachineWindow
                     spinning={this.state.spinning}
-                    durationSpin={this.state.durationSpin}
-                    ringNumber={index}
-                    vegetable={vegetable}/>
+                    durationSpin={this.state.durationSpinInSeconds}
+                    ringNumber={ringnumber}
+                    randomVegList={VegetableList}
+                    seed={this.getSeed()}/>
             );
         });
 
 
         return (
-            <div class="machine">
-                <div class="machine-windows">
+            <div className="machine">
+                <div className="machine-windows">
                     <div id="stage">
                         <div id="rotate" className="perspective-on">
                             {listVegetables}
