@@ -54,6 +54,15 @@ perspective: 0;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.vegetable-name {
+    font-size: 13px;
+    color: black;
 }
 
 .backface-on {

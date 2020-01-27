@@ -1,57 +1,51 @@
-import React, {Component} from "react";
+import React from "react";
 import "./MachineWindow.css";
-import VegetableList from "../../assets/vegetables";
 
-class MachineWindow extends Component {
-    SLOTS_PER_REEL = 12;
-    REEL_RADIUS = 150;
+function MachineWindow(props) {
+    const SLOTS_PER_REEL = 12;
+    const REEL_RADIUS = 150;
 
-    constructor(props) {
-        super(props);
-        // props {
-        //     spinning: boolean;
-        //     durationSpin: number;
-        //     ringNumber: number;
-        //     randomVegList: Vegetable[];
-        //     seed: number
-        // }
-    }
+    // props {
+    //     spinning: boolean;
+    //     durationSpin: number;
+    //     ringNumber: number;
+    //     randomVegList: Vegetable[];
+    //     seed: number
+    // }
 
-    createSlots = () => {
+
+   const createSlots = () => {
         let slots = [];
-        for (let i = 0; i < this.SLOTS_PER_REEL; i++) {
-            const veggies = this.props.randomVegList
-            let slot = this.getSlot(i, veggies[i].name);
+        for (let i = 0; i < SLOTS_PER_REEL; i++) {
+            let slot = getSlot(i, props.randomVegList[i].name);
             slots.push(slot);
         }
         return slots
     };
 
-    getSlot = (i, veggies) => {
-        let slotAngle = 360 / this.SLOTS_PER_REEL;
-        let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + this.REEL_RADIUS + 'px)'};
-        let content = veggies
-        return <div style={transFormStyle} className="slot">{content}</div>;
+    const getSlot = (i, veggieName) => {
+        let slotAngle = 360 / SLOTS_PER_REEL;
+        let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + REEL_RADIUS + 'px)'};
+        return <div style={transFormStyle} className="slot"><span class="vegetable-name">{veggieName}</span></div>;
     };
 
-    createRing = (ringNumber) => {
-        const slots = this.createSlots();
-        const classRing = this.props.spinning ? "ring spin-" + this.props.seed : "ring";
-        const spinningAnimation = this.props.spinning
-            ? {animation: 'back-spin 1s, spin-' + this.props.seed + ' ' + (this.props.durationSpin + ringNumber * 0.5) + 's'}
+    const createRing = (ringNumber) => {
+        const slots = createSlots();
+        const classRing = props.spinning ? "ring spin-" + props.seed : "ring";
+        const spinningAnimation = props.spinning
+            ? {animation: 'back-spin 1s, spin-' + props.seed + ' ' + (props.durationSpin + ringNumber * 0.5) + 's'}
             : {};
         return <div id={"ring" + ringNumber} style={spinningAnimation} className={classRing}>{slots}</div>;
     };
 
+    const ring = createRing(props.ringNumber);
 
-    render() {
-        const ring = this.createRing(this.props.ringNumber);
-        return (
-            <React.Fragment>
-                {ring}
-            </React.Fragment>
-        )
-    };
+    return (
+        <React.Fragment>
+            {ring}
+        </React.Fragment>
+    )
+
 }
 
 export default MachineWindow;
