@@ -21,11 +21,11 @@ const Vegetables: Vegetable[] = [
     },
     {
         id: 5,
-        name: 'champignon'
+        name: 'mushroom'
     },
     {
         id: 6,
-        name: 'sla'
+        name: 'lettuce'
     },
     {
         id: 7,
@@ -33,23 +33,23 @@ const Vegetables: Vegetable[] = [
     },
     {
         id: 8,
-        name: 'prei'
+        name: 'leek'
     },
     {
         id: 9,
-        name: 'rucola'
+        name: 'brussels-sprouts'
     },
     {
         id: 10,
-        name: 'pompoen'
+        name: 'pumpkin'
     },
     {
         id: 11,
-        name: 'ui'
+        name: 'onion'
     },
     {
         id: 12,
-        name: 'zoete paprika'
+        name: 'sweat-potato'
     }
 
 ];
