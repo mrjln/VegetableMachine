@@ -1,5 +1,6 @@
 import React from "react";
 import "./MachineWindow.css";
+import Icon from "../Icon/Icon";
 
 function MachineWindow(props) {
     const SLOTS_PER_REEL = 12;
@@ -26,7 +27,7 @@ function MachineWindow(props) {
     const getSlot = (i, veggieName) => {
         let slotAngle = 360 / SLOTS_PER_REEL;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + REEL_RADIUS + 'px)'};
-        return <div style={transFormStyle} className="slot"><span class="vegetable-name">{veggieName}</span></div>;
+        return <div style={transFormStyle} className="slot"><span class="vegetable-name">{veggieName  } <Icon/></span></div>;
     };
 
     const createRing = (ringNumber) => {

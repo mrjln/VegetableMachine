@@ -9,7 +9,8 @@ class Machine extends Component {
         this.state = {
             spinning: false,
             durationSpinInSeconds: 2,
-            perspective: true
+            perspective: true,
+            currentSeeds: [1,2,3]
         }
 
         // https://codepen.io/werter25/pen/MxRJJV
@@ -18,6 +19,7 @@ class Machine extends Component {
 
     spin = () => {
         this.setState({spinning: true});
+        this.getMachineWindowSeeds([...this.state.currentSeeds]);
     };
 
 
@@ -29,14 +31,24 @@ class Machine extends Component {
         this.setState((prevState) => ({perspective: !prevState.perspective}));
     };
 
+    getMachineWindowSeeds = (currentSeeds) => {
+        let newSeeds = [];
+        while(newSeeds.length < 3) {
+            const newSeed = this.getSeed();
+            if(currentSeeds.indexOf(newSeed) === -1) newSeeds.push(newSeed)
+        }
+       this.setState({currentSeeds: newSeeds})
+    };
+
     render() {
-        const listVegetables = [1,2,3].map((ringNumber) => {
+        const { currentSeeds } = this.state;
+        const listVegetables = currentSeeds.map((seed, index) => {
             return (<MachineWindow
                     spinning={this.state.spinning}
                     durationSpin={this.state.durationSpinInSeconds}
-                    ringNumber={ringNumber}
+                    ringNumber={index + 1}
                     randomVegList={VegetableList}
-                    seed={this.getSeed()}/>
+                    seed={seed}/>
             );
         });
 
@@ -52,8 +64,8 @@ class Machine extends Component {
                         </div>
                     </div>
                 </div>
-                <button className="button-spin" onClick={this.spin}>Spin</button>
-                <button className="perspective" onClick={this.togglePerspective}>Toggle perspective</button>
+                <button className="button button-spin" onClick={this.spin}>Spin</button>
+                <button className="button perspective" onClick={this.togglePerspective}>Toggle perspective</button>
 
 
             </div>

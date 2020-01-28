@@ -41,7 +41,7 @@ const Vegetables: Vegetable[] = [
     },
     {
         id: 10,
-        name: 'je moeder'
+        name: 'pompoen'
     },
     {
         id: 11,
