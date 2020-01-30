@@ -49,7 +49,7 @@ const Vegetables: Vegetable[] = [
     },
     {
         id: 12,
-        name: 'sweat-potato'
+        name: 'sweetPotato'
     }
 
 ];

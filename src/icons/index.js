@@ -7,8 +7,10 @@ import { ReactComponent as BrusselsSprouts } from './brussels-sprouts.svg';
 import { ReactComponent as Leek } from './leek.svg';
 import { ReactComponent as Lettuce } from './lettuce.svg';
 import { ReactComponent as Mushroom } from './mushroom.svg';
+import { ReactComponent as Onion } from './onion.svg';
 import { ReactComponent as Paprika } from './paprika.svg';
 import { ReactComponent as Pumpkin } from './pumpkin.svg';
+import { ReactComponent as SweetPotato } from './sweet-potato.svg';
 
 
 const VegetableIcons = {
@@ -21,7 +23,9 @@ const VegetableIcons = {
     lettuce: <Lettuce/>,
     mushroom: <Mushroom/>,
     paprika: <Paprika/>,
-    pumpkin: <Pumpkin/>
+    pumpkin: <Pumpkin/>,
+    onion: <Onion/>,
+    sweetPotato: <SweetPotato/>
 };
 
 export default VegetableIcons;
