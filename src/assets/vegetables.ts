@@ -37,7 +37,7 @@ const Vegetables: Vegetable[] = [
     },
     {
         id: 9,
-        name: 'brussels-sprouts'
+        name: 'brusselsSprouts'
     },
     {
         id: 10,

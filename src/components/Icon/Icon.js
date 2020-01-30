@@ -1,9 +1,11 @@
 import React from "react";
 import "./Icon.css";
-import { ReactComponent as Asparagus } from '../../icons/asparagus.svg';
+import VegetableIcons from "../../icons/index"
 
 function Icon(props) {
-    return <div  className="vegetable-icon"> <Asparagus/></div>
+    console.log(VegetableIcons[props.vegetableName]);
+   const vegetableicon = VegetableIcons[props.vegetableName];
+    return <div  className="vegetable-icon">{vegetableicon}</div>
 
 }
 
