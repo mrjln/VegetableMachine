@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import "./Machine.css";
+import "./Machine.scss";
 import MachineWindow from "../../components/MachineWindow/MachineWindow";
 import VegetableList from "../../assets/vegetables";
 

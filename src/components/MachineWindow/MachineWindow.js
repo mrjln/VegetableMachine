@@ -1,5 +1,5 @@
 import React from "react";
-import "./MachineWindow.css";
+import "./MachineWindow.scss";
 import Icon from "../Icon/Icon";
 
 function MachineWindow(props) {
