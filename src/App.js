@@ -1,14 +1,15 @@
 import React from 'react';
-import Machine from './containers/Machine/Machine'
-import Footer from './containers/Footer/Footer'
+import Machine from './components/Machine/Machine'
+import Layout from './containers/Layout/Layout'
 
 
 
 function App() {
   return (
-    <div >
-      <Machine/>
-        <Footer/>
+    <div>
+        <Layout>
+          <Machine/>
+        </Layout>
     </div>
   );
 }

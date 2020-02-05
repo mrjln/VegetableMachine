@@ -1,7 +1,5 @@
 import React from 'react';
-
 import {Component} from "react";
-import Machine from "../Machine/Machine";
 
 class Footer extends Component {
     render() {
