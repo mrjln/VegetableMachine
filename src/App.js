@@ -7,7 +7,7 @@ import Layout from './containers/Layout/Layout'
 function App() {
   return (
     <div>
-        <Layout>
+        <Layout headerTitle={"Vegetable Machine"}>
           <Machine/>
         </Layout>
     </div>
