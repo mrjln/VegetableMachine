@@ -7,13 +7,16 @@ import {
 class Navigation extends Component {
     render() {
         const navLinks = this.props.navLinks.map(navLink => {
-            return <li><Link to={navLink.link}>{navLink.name}</Link></li>
+            return <li className="navigation__item">
+                <Link to={navLink.link}>
+                    <button className="button navigation__button"> {navLink.name}</button>
+                </Link>
+            </li>
         });
 
         return <div>
-            <ul>
+            <ul className="navigation">
                 {navLinks}
-
             </ul>
 
         </div>

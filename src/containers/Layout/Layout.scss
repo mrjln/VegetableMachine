@@ -1,0 +1,27 @@
+@import '../../styles/constants';
+
+.header {
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  &__title {
+    color: $color-text;
+  }
+}
+
+.navigation {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  &__item {
+    display: inline;
+    list-style: none;
+  }
+}
+
+hr {
+  width: 65%;
+  border: 1px solid $color-text;
+}

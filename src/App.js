@@ -1,6 +1,7 @@
 import React from 'react';
 import Machine from './components/Machine/Machine'
 import Layout from './containers/Layout/Layout'
+import './styles/common.scss'
 
 import {
     BrowserRouter as Router,

@@ -1,3 +1,4 @@
+@import "../../styles/constants";
 
 .window {
     border: 10px solid #4C9358;
@@ -10,9 +11,9 @@
 #stage {
     margin: 0 auto;
     width: 600px;
-    padding: 0 0 40px;
-    border: 1px solid green;
+    padding: 0 0 40px 40px;
 }
+
 
 .perspective-on {
 -webkit-perspective: 1000px;
@@ -35,7 +36,7 @@ perspective: 0;
 }
 
 .ring {
-    margin: 0 20px;
+    margin: 0 5px;
     height: 80px;
     width: 90px;
     float: left;
@@ -98,7 +99,9 @@ label {
     transform: rotateY(45deg);
 }
 
-/*=====*/
+
+
+/*==Spinning the rings ===*/
 .spin-0 {
     transform: rotateX(-3719deg);
 }
