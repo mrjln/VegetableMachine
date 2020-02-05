@@ -8,4 +8,8 @@
   border: 0;
   font: inherit;
   border-radius: 5px;
+  margin: 5px;
+  &--large {
+    min-width: 80%;
+  }
 }

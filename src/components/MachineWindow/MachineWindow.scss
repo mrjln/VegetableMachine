@@ -10,10 +10,9 @@
 
 #stage {
     margin: 0 auto;
-    width: 600px;
-    padding: 0 0 40px 40px;
+    width: 80%;
+    padding: 0 0 40px 15%;
 }
-
 
 .perspective-on {
 -webkit-perspective: 1000px;
@@ -28,7 +27,7 @@ perspective: 0;
 
 #rotate {
     margin: 0 auto 0;
-    width: 450px;
+    min-width: 300px;
     height: 220px;
     padding-top: 200px;
     /* Ensure that we're in 3D space */
@@ -36,7 +35,6 @@ perspective: 0;
 }
 
 .ring {
-    margin: 0 5px;
     height: 80px;
     width: 90px;
     float: left;

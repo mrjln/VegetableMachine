@@ -32,7 +32,7 @@ function App() {
                     </Route>
                     <Route path="/about">
                         <Layout routerLinks={routerLinks} headerTitle={"About thaaaat"}>
-                            <h1> About bladiebla</h1>
+                            <p> tralalalalalalalal </p>
                         </Layout>
                     </Route>
                 </Switch>

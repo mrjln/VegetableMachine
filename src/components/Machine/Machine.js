@@ -10,11 +10,12 @@ class Machine extends Component {
             spinning: false,
             durationSpinInSeconds: 2,
             perspective: true,
-            currentSeeds: [1,2,3]
+            currentSeeds: [1, 2, 3]
         }
 
         // https://codepen.io/werter25/pen/MxRJJV
     }
+
     SLOTS_PER_REEL = 12;
 
     spin = () => {
@@ -33,15 +34,15 @@ class Machine extends Component {
 
     getMachineWindowSeeds = (currentSeeds) => {
         let newSeeds = [];
-        while(newSeeds.length < 3) {
+        while (newSeeds.length < 3) {
             const newSeed = this.getSeed();
-            if(currentSeeds.indexOf(newSeed) === -1) newSeeds.push(newSeed)
+            if (currentSeeds.indexOf(newSeed) === -1) newSeeds.push(newSeed)
         }
-       this.setState({currentSeeds: newSeeds})
+        this.setState({currentSeeds: newSeeds})
     };
 
     render() {
-        const { currentSeeds } = this.state;
+        const {currentSeeds} = this.state;
         const listVegetables = currentSeeds.map((seed, index) => {
             return (<MachineWindow
                     spinning={this.state.spinning}
@@ -57,17 +58,17 @@ class Machine extends Component {
 
         return (
             <div className="machine">
-                <div className="machine-windows">
+                <div className="machine__windows">
                     <div id="stage">
                         <div id="rotate" className={perspective}>
                             {listVegetables}
                         </div>
                     </div>
                 </div>
-                <button className="button button-spin" onClick={this.spin}>Spin</button>
-                <button className="button perspective" onClick={this.togglePerspective}>Toggle perspective</button>
-
-
+                <div className="machine__buttons">
+                    <button className="button button--large" onClick={this.spin}>Spin</button>
+                    <button className="button button--large" onClick={this.togglePerspective}>Toggle Perspective</button>
+                </div>
             </div>
         );
     }
