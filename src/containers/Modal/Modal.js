@@ -16,6 +16,9 @@ const Modal = (props) => {
                 And if you check out my LinkedIn profile and recommendations therein I hope you will appreciate that if indeed you could be interested in a new position (either now or in the future) then it may be mutually beneficial for us to have a discussion. They are looking for a number of front-end developers at mid-level, senior-level and Lead level to be members of new teams that are being created to work on business critical projects.
 
                 I hope you are well. I came across you profile and I really liked it. I was wondering if you could be looking at new opportunities? I have a contract near Amsterdam </p></div>
+            <div className="modal__cta">
+            <button className="button button--large button--modal">Actie in de Modal</button>
+            </div>
         </div>
     </React.Fragment>
 };
