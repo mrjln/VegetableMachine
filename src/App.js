@@ -1,5 +1,6 @@
 import React from 'react';
 import Machine from './components/Machine/Machine'
+import Modal from './containers/Modal/Modal'
 import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 
@@ -27,6 +28,7 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Layout routerLinks={routerLinks} headerTitle={"Vegetable Machine"}>
+                            <Modal><h1>Hai</h1> </Modal>
                             <Machine/>
                         </Layout>
                     </Route>
