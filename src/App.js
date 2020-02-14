@@ -28,7 +28,6 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Layout routerLinks={routerLinks} headerTitle={"Vegetable Machine"}>
-                            <Modal><h1>Hai</h1> </Modal>
                             <Machine/>
                         </Layout>
                     </Route>

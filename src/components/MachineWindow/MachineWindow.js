@@ -26,9 +26,8 @@ function MachineWindow(props) {
 
     const getSlot = (i, veggieName) => {
         let slotAngle = 360 / SLOTS_PER_REEL;
-        // let shadowStyle = slotAngle > 60 ? {background}
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + REEL_RADIUS + 'px)'};
-        return <div style={transFormStyle} className="slot"><Icon vegetableName={veggieName} /></div>;
+        return <div style={transFormStyle} className={"slot " + i }><Icon vegetableName={veggieName} /></div>;
     };
 
     const createRing = (ringNumber) => {
