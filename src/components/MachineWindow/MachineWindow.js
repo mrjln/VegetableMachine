@@ -3,30 +3,40 @@ import "./MachineWindow.scss";
 import Icon from "../Icon/Icon";
 
 function MachineWindow(props) {
-    const SLOTS_PER_REEL = 12;
-    const REEL_RADIUS = 148;
-
     // props {
     //     spinning: boolean;
     //     durationSpin: number;
     //     ringNumber: number;
     //     randomVegList: Vegetable[];
-    //     seed: number
+    //     seed: number;
+    //     slotsPerReel: number;
     // }
+
+    const calcReelRadius = (amountOfSlots) => {
+      const heightSlot = 80;
+      const circumference = heightSlot * amountOfSlots;
+      const diameter = circumference / Math.PI;
+      const radius = Math.round(diameter / 2);
+      return radius;
+    };
 
 
    const createSlots = () => {
         let slots = [];
-        for (let i = 0; i < SLOTS_PER_REEL; i++) {
+        let i = 0;
+        console.log(props.slotsPerReel)
+        while (i < props.slotsPerReel) {
             let slot = getSlot(i, props.randomVegList[i].name);
             slots.push(slot);
+            i++;
         }
         return slots
     };
 
     const getSlot = (i, veggieName) => {
-        let slotAngle = 360 / SLOTS_PER_REEL;
-        let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + REEL_RADIUS + 'px)'};
+        let slotAngle = 360 / props.slotsPerReel;
+        let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + calcReelRadius(props.slotsPerReel)
+            + 'px)'};
         return <div style={transFormStyle} className={"slot " + i }>{i} <Icon vegetableName={veggieName} /></div>;
     };
 
