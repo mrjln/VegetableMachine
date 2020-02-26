@@ -1,286 +1,309 @@
 @import "../../styles/constants";
 
 .window {
-    border: 10px solid #4C9358;
-    width: 200px;
-    height: 500px;
-    background-color: #D4F0D8;
-    margin: 5px;
+  border: 10px solid #4C9358;
+  width: 200px;
+  height: 500px;
+  background-color: #D4F0D8;
+  margin: 5px;
 }
 
 #stage {
-    margin: 0 auto;
-    width: 80%;
-    padding: 0 0 40px 15%;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0 0 40px 15%;
 }
 
 .perspective-on {
--webkit-perspective: 1000px;
--moz-perspective: 1000px;
-perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  perspective: 1000px;
 }
+
 .perspective-off {
--webkit-perspective: 0;
--moz-perspective: 0;
-perspective: 0;
+  -webkit-perspective: 0;
+  -moz-perspective: 0;
+  perspective: 0;
 }
 
 #rotate {
-    margin: 0 auto 0;
-    min-width: 300px;
-    height: 220px;
-    padding-top: 200px;
-    /* Ensure that we're in 3D space */
-    transform-style: preserve-3d;
+  margin: 0 auto 0;
+  min-width: 300px;
+  height: 220px;
+  padding-top: 200px;
+  transform-style: preserve-3d;
 }
 
 .ring {
-    height: 80px;
-    width: 90px;
-    float: left;
-    transform-style: preserve-3d;
+  height: 80px;
+  width: 90px;
+  float: left;
+  transform-style: preserve-3d;
 }
 
 .slot {
-    position: absolute;
-    width: 90px;
-    height: 80px;
-    box-sizing: border-box;
-    opacity: 0.9;
-    color: rgba(0, 0, 0, 0.9);
-    background: #fff;
-    border: solid 2px #000;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  position: absolute;
+  width: 90px;
+  height: 80px;
+  box-sizing: border-box;
+  opacity: 0.9;
+  color: rgba(0, 0, 0, 0.9);
+  background: #fff;
+  border: solid 2px #000;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .vegetable-name {
-    font-size: 13px;
-    color: black;
+  font-size: 13px;
+  color: black;
 }
 
 .backface-on {
-    -webkit-backface-visibility: visible;
-    -moz-backface-visibility: visible;
-    backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
+  backface-visibility: visible;
 }
 
 .slot p {
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 80px;
-    margin: 0;
-    text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 80px;
+  margin: 0;
+  text-align: center;
 }
 
 .go {
-    display: block;
-    margin: 0 auto 20px;
-    padding: 10px 30px;
-    font-size: 20px;
-    cursor: pointer;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 10px 30px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 label {
-    cursor: pointer;
-    display: inline-block;
-    width: 45%;
-    text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  width: 45%;
+  text-align: center;
 }
 
 .tilted {
-    transform: rotateY(45deg);
+  transform: rotateY(45deg);
 }
 
-
+$slots_per_reel: 12;
+$degrees_of_one_slot: calc( 360deg / #{$slots_per_reel});
+$ten_rounds_degrees: -3600deg;
+$rotation_spin-0: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 0));
+$rotation_spin-1: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 1));
+$rotation_spin-2: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 2));
+$rotation_spin-3: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 3));
+$rotation_spin-4: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 4));
+$rotation_spin-5: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 5));
+$rotation_spin-6: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 6));
+$rotation_spin-7: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 7));
+$rotation_spin-8: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 8));
+$rotation_spin-9: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 9));
+$rotation_spin-10: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 10));
+$rotation_spin-11: calc(#{$ten_rounds_degrees} - (#{$degrees_of_one_slot} * 11));
 
 /*==Spinning the rings ===*/
 .spin-0 {
-    transform: rotateX(-3719deg);
+  transform: rotateX(#{$rotation_spin-0});
 }
 
 .spin-1 {
-    transform: rotateX(-3749deg);
+  transform: rotateX(#{$rotation_spin-1});
 }
 
 .spin-2 {
-    transform: rotateX(-3779deg);
+  transform: rotateX(#{$rotation_spin-2});
 }
 
 .spin-3 {
-    transform: rotateX(-3809deg);
+  transform: rotateX(#{$rotation_spin-3});
+  //transform: rotateX(-3809deg)
 }
 
 .spin-4 {
-    transform: rotateX(-3839deg);
+  transform: rotateX(#{$rotation_spin-4});
+  //transform: rotateX(-3839deg);
 }
 
 .spin-5 {
-    transform: rotateX(-3869deg);
+  transform: rotateX(#{$rotation_spin-5});
+  //transform: rotateX(-3869deg);
 }
 
 .spin-6 {
-    transform: rotateX(-3899deg);
+  transform: rotateX(#{$rotation_spin-6});
+  //transform: rotateX(-3899deg);
 }
 
 .spin-7 {
-    transform: rotateX(-3929deg);
+  transform: rotateX(#{$rotation_spin-7});
+  //transform: rotateX(-3929deg);
 }
 
 .spin-8 {
-    transform: rotateX(-3959deg);
+  transform: rotateX(#{$rotation_spin-8});
+  //transform: rotateX(-3959deg);
 }
 
 .spin-9 {
-    transform: rotateX(-3989deg);
+  transform: rotateX(#{$rotation_spin-9});
+  //transform: rotateX(-3989deg);
 }
 
 .spin-10 {
-    transform: rotateX(-4019deg);
+  transform: rotateX(#{$rotation_spin-10});
+  //transform: rotateX(-4019deg);
 }
 
 .spin-11 {
-    transform: rotateX(-4049deg);
+  transform: rotateX(#{$rotation_spin-11});
+  //transform: rotateX(-4049deg);
 }
 
 /*=====*/
 @keyframes back-spin {
-    /*0%    { transform: rotateX(0deg); }*/
-    100% {
-        transform: rotateX(30deg);
-    }
+  /*0%    { transform: rotateX(0deg); }*/
+  100% {
+    transform: rotateX(30deg);
+  }
 }
 
 @keyframes tiltin {
-    0% {
-        transform: rotateY(0deg);
-    }
-    50% {
-        transform: rotateY(0deg);
-    }
-    100% {
-        transform: rotateY(45deg);
-    }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(45deg);
+  }
 }
 
 @keyframes tiltout {
-    0% {
-        transform: rotateY(45deg);
-    }
-    100% {
-        transform: rotateY(0deg);
-    }
+  0% {
+    transform: rotateY(45deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
 }
 
 @keyframes spin-0 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3719deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-0);
+  }
 }
 
 @keyframes spin-1 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3749deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-1);
+  }
 }
 
 @keyframes spin-2 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3779deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-2);
+  }
 }
 
 @keyframes spin-3 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3809deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-3);
+  }
 }
 
 @keyframes spin-4 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3839deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-4);
+  }
 }
 
 @keyframes spin-5 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3869deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-5);
+  }
 }
 
 @keyframes spin-6 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3899deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-6);
+  }
 }
 
 @keyframes spin-7 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3929deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-7);
+  }
 }
 
 @keyframes spin-8 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3959deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-8);
+  }
 }
 
 @keyframes spin-9 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-3989deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-9);
+  }
 }
 
 @keyframes spin-10 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-4019deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-10);
+  }
 }
 
 @keyframes spin-11 {
-    0% {
-        transform: rotateX(30deg);
-    }
-    100% {
-        transform: rotateX(-4049deg);
-    }
+  0% {
+    transform: rotateX(30deg);
+  }
+  100% {
+    transform: rotateX($rotation_spin-11);
+  }
 }

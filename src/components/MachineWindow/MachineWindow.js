@@ -4,7 +4,7 @@ import Icon from "../Icon/Icon";
 
 function MachineWindow(props) {
     const SLOTS_PER_REEL = 12;
-    const REEL_RADIUS = 150;
+    const REEL_RADIUS = 148;
 
     // props {
     //     spinning: boolean;
@@ -27,7 +27,7 @@ function MachineWindow(props) {
     const getSlot = (i, veggieName) => {
         let slotAngle = 360 / SLOTS_PER_REEL;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + REEL_RADIUS + 'px)'};
-        return <div style={transFormStyle} className={"slot " + i }><Icon vegetableName={veggieName} /></div>;
+        return <div style={transFormStyle} className={"slot " + i }>{i} <Icon vegetableName={veggieName} /></div>;
     };
 
     const createRing = (ringNumber) => {
