@@ -11,13 +11,12 @@ class Machine extends Component {
             spinning: false,
             durationSpinInSeconds: 2,
             perspective: true,
-            currentSeeds: [1, 2, 3],
-            slotsPerReel: 12
-        }
-
+            currentSeeds: [0, 0, 0],
+            slotsPerReel: 12,
+            winningVegetables: []
+        };
         // https://codepen.io/werter25/pen/MxRJJV
     }
-
 
     spin = () => {
         this.setState({spinning: true});
@@ -56,21 +55,25 @@ class Machine extends Component {
         return this.shuffleArray(vegetableList);
     };
 
+    createMachineWindow = (seed, index) => {
+        const vegetables = this.getRandomVegetableList([...VegetableList]);
+        return (<MachineWindow
+            key={index}
+            spinning={this.state.spinning}
+            durationSpin={this.state.durationSpinInSeconds}
+            ringNumber={index + 1}
+            randomVegList={vegetables}
+            seed={seed}
+            slotsPerReel={this.state.slotsPerReel}
+        />)
+    };
+
 
     render() {
         const {currentSeeds} = this.state;
         const listVegetables = currentSeeds.map((seed, index) => {
-            const vegetables = this.getRandomVegetableList([...VegetableList]);
-            return (<MachineWindow
-                    key={index}
-                    spinning={this.state.spinning}
-                    durationSpin={this.state.durationSpinInSeconds}
-                    ringNumber={index + 1}
-                    randomVegList={vegetables}
-                    seed={seed}
-                    slotsPerReel={this.state.slotsPerReel}
-                />
-            );
+
+            return this.createMachineWindow(seed, index)
         });
 
         const perspective = this.state.perspective ? "perspective-on" : "perspective-off";

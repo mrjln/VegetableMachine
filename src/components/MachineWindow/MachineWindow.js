@@ -43,7 +43,6 @@ function MachineWindow(props) {
     const createRing = (ringNumber) => {
         const slots = createSlots();
         const classRing = props.spinning ? "ring spin-" + props.seed : "ring";
-        console.log("winning vegetable", props.randomVegList[props.seed])
         const spinningAnimation = props.spinning
             ? {animation: 'back-spin 1s, spin-' + props.seed + ' ' + (props.durationSpin + ringNumber * 0.5) + 's'}
             : {};
