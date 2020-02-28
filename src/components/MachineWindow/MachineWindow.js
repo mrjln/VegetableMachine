@@ -12,6 +12,8 @@ function MachineWindow(props) {
     //     slotsPerReel: number;
     // }
 
+    // Seed is the winning slot number;
+
     const calcReelRadius = (amountOfSlots) => {
       const heightSlot = 80;
       const circumference = heightSlot * amountOfSlots;
@@ -20,28 +22,28 @@ function MachineWindow(props) {
       return radius;
     };
 
-
    const createSlots = () => {
         let slots = [];
-        let i = 0;
-        while (i < props.slotsPerReel) {
-            let slot = getSlot(i, props.randomVegList[i].name);
+        let slotNumber = 0;
+        while (slotNumber < props.slotsPerReel) {
+            let slot = getSlot(slotNumber, props.randomVegList[slotNumber]);
             slots.push(slot);
-            i++;
+            slotNumber++;
         }
         return slots
     };
 
-    const getSlot = (i, veggieName) => {
+    const getSlot = (i, vegetable) => {
         let slotAngle = 360 / props.slotsPerReel;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + calcReelRadius(props.slotsPerReel)
             + 'px)'};
-        return <div style={transFormStyle} className={"slot " + i }>{i} <Icon vegetableName={veggieName} /></div>;
+        return <div style={transFormStyle} className={"slot " + i }>{i} <Icon vegetableName={vegetable.name} /></div>;
     };
 
     const createRing = (ringNumber) => {
         const slots = createSlots();
         const classRing = props.spinning ? "ring spin-" + props.seed : "ring";
+        console.log("winning vegetable", props.randomVegList[props.seed])
         const spinningAnimation = props.spinning
             ? {animation: 'back-spin 1s, spin-' + props.seed + ' ' + (props.durationSpin + ringNumber * 0.5) + 's'}
             : {};

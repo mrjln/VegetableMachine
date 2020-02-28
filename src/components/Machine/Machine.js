@@ -60,12 +60,13 @@ class Machine extends Component {
     render() {
         const {currentSeeds} = this.state;
         const listVegetables = currentSeeds.map((seed, index) => {
+            const vegetables = this.getRandomVegetableList([...VegetableList]);
             return (<MachineWindow
                     key={index}
                     spinning={this.state.spinning}
                     durationSpin={this.state.durationSpinInSeconds}
                     ringNumber={index + 1}
-                    randomVegList={this.getRandomVegetableList([...VegetableList])}
+                    randomVegList={vegetables}
                     seed={seed}
                     slotsPerReel={this.state.slotsPerReel}
                 />
