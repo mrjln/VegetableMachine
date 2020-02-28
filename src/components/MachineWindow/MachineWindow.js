@@ -24,7 +24,6 @@ function MachineWindow(props) {
    const createSlots = () => {
         let slots = [];
         let i = 0;
-        console.log(props.slotsPerReel)
         while (i < props.slotsPerReel) {
             let slot = getSlot(i, props.randomVegList[i].name);
             slots.push(slot);
@@ -46,7 +45,7 @@ function MachineWindow(props) {
         const spinningAnimation = props.spinning
             ? {animation: 'back-spin 1s, spin-' + props.seed + ' ' + (props.durationSpin + ringNumber * 0.5) + 's'}
             : {};
-        return <div id={"ring" + ringNumber} style={spinningAnimation} className={classRing}>{slots}</div>;
+        return <div key={ringNumber} id={"ring" + ringNumber} style={spinningAnimation} className={classRing}>{slots}</div>;
     };
 
     const ring = createRing(props.ringNumber);

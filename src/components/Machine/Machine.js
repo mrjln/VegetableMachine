@@ -42,32 +42,30 @@ class Machine extends Component {
         this.setState({currentSeeds: newSeeds})
     };
 
+    shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array
+    }
+
     getRandomVegetableList = (vegetableList) => {
-      //   console.log(vegetableList);
-      //
-      //       let counter = vegetableList.length, temp, index;
-      //
-      //       while (counter > 0) {
-      //           index = Math.floor(Math.random() * counter);
-      //           counter--;
-      //           temp = vegetableList[counter];
-      //           vegetableList[counter] = vegetableList[index];
-      //           vegetableList[index] = temp;
-      //       }
-      //       console.log(vegetableList);
-      // return vegetableList
+        return this.shuffleArray(vegetableList);
     };
 
-    render() {
-        this.getRandomVegetableList(VegetableList);
 
+    render() {
         const {currentSeeds} = this.state;
         const listVegetables = currentSeeds.map((seed, index) => {
             return (<MachineWindow
+                    key={index}
                     spinning={this.state.spinning}
                     durationSpin={this.state.durationSpinInSeconds}
                     ringNumber={index + 1}
-                    randomVegList={VegetableList}
+                    randomVegList={this.getRandomVegetableList([...VegetableList])}
                     seed={seed}
                     slotsPerReel={this.state.slotsPerReel}
                 />
@@ -88,7 +86,8 @@ class Machine extends Component {
                 </div>
                 <div className="machine__buttons">
                     <button className="button button--large" onClick={this.spin}>Spin</button>
-                    <button className="button button--large" onClick={this.togglePerspective}>Toggle Perspective</button>
+                    <button className="button button--large" onClick={this.togglePerspective}>Toggle Perspective
+                    </button>
                 </div>
             </div>
         );
