@@ -1,6 +1,7 @@
 
 
 [ ] # '[x]' ben ik een checkbox?
+ # [checkbox:unchecked]
 
 
 
