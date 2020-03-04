@@ -1,6 +1,6 @@
 
 
-[-] # '[-]' ben ik een checkbox?
+[ ] # '[x]' ben ik een checkbox?
 
 
 
