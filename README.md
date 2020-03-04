@@ -1,8 +1,16 @@
 
-
-[ ] # '[x]' ben ik een checkbox?
- # [checkbox:unchecked]
-
+# Todo List
+[ ] Add item detail pages
+[ ] Add additional information to the items
+[ ] Add modal and interaction
+[ ] Get items from database
+[ ] Make design for desktop
+[x] Add routing
+[x] Add Modal
+[x] Make spinning predictable and calculate the rotation for winner
+[x] Add Sass and styling for mobile phone
+[x] Add icons
+[x] Add CSS animations to create the spinning motion
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
