@@ -8,7 +8,7 @@ function Navigation(props) {
     const navLinks = props.navLinks.map(navLink => {
         return <li className="navigation__item">
             <Link to={navLink.link}>
-                <button className="button navigation__button"> {navLink.name}</button>
+                <button className="button button--primary navigation__button"> {navLink.name}</button>
             </Link>
         </li>
     });

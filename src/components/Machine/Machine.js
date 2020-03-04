@@ -89,8 +89,8 @@ class Machine extends Component {
                     </div>
                 </div>
                 <div className="machine__buttons">
-                    <button className="button button--large" onClick={this.spin}>Spin</button>
-                    <button className="button button--large" onClick={this.togglePerspective}>Toggle Perspective
+                    <button className="button button--primary button--large" onClick={this.spin}>Spin</button>
+                    <button className="button button--secondary button--large" onClick={this.togglePerspective}>Toggle Perspective
                     </button>
                 </div>
             </div>
