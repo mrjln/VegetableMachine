@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Machine from './components/Machine/Machine'
 import Modal from './containers/Modal/Modal'
 import Layout from './containers/Layout/Layout'
@@ -22,6 +22,12 @@ const routerLinks = [
 ];
 
 function App() {
+    const [ winners ] = useState([]);
+
+    const addWinners = () => {
+        console.log("winners")
+    };
+
     return (
         <Router>
             <div>
@@ -29,6 +35,7 @@ function App() {
                     <Route exact path="/">
                         <Layout routerLinks={routerLinks} headerTitle={"Vegetable Machine"}>
                             <Machine/>
+                            <Modal showModal={false} />
                         </Layout>
                     </Route>
                     <Route path="/about">

@@ -7,20 +7,41 @@ class Machine extends Component {
 
     constructor(props) {
         super(props);
+
+        const initSeeds = [0,5,2];
+        const randomItemLists = this.getRandomItemLists(initSeeds);
+        const newWinners = initSeeds.map((seed, index) => randomItemLists[index][seed])
+
         this.state = {
             spinning: false,
             durationSpinInSeconds: 2,
             perspective: true,
-            currentSeeds: [0, 0, 0],
             slotsPerReel: 12,
-            winningVegetables: []
+            windowsInfo: {currentSeeds: initSeeds, randomItemLists: randomItemLists, winners: newWinners}
         };
         // https://codepen.io/werter25/pen/MxRJJV
+        // this.initializeNewMachine()
     }
 
     spin = () => {
         this.setState({spinning: true});
-        this.getMachineWindowSeeds([...this.state.currentSeeds]);
+        this.initializeNewMachine()
+    };
+
+    getRandomItemLists = (seeds) => {
+        return seeds.map(() => {
+            return this.getRandomVegetableList(VegetableList);
+        });
+    };
+
+
+    initializeNewMachine = () => {
+        const newSeeds = this.getMachineWindowSeeds([...this.state.windowsInfo.currentSeeds]);
+        const newRandomItemLists = newSeeds.map(() => {
+            return this.getRandomVegetableList(VegetableList);
+        });
+        const newWinners = newSeeds.map((seed, index) => newRandomItemLists[index][seed])
+        this.setState({windowsInfo: {currentSeeds: newSeeds, randomItemLists: newRandomItemLists, winners: newWinners}})
     };
 
 
@@ -38,7 +59,7 @@ class Machine extends Component {
             const newSeed = this.getSeed();
             if (currentSeeds.indexOf(newSeed) === -1) newSeeds.push(newSeed)
         }
-        this.setState({currentSeeds: newSeeds})
+        return newSeeds;
     };
 
     shuffleArray(array) {
@@ -55,14 +76,13 @@ class Machine extends Component {
         return this.shuffleArray(vegetableList);
     };
 
-    createMachineWindow = (seed, index) => {
-        const vegetables = this.getRandomVegetableList([...VegetableList]);
+    createMachineWindow = (randomItemList, seed, index) => {
         return (<MachineWindow
             key={index}
             spinning={this.state.spinning}
             durationSpin={this.state.durationSpinInSeconds}
             ringNumber={index + 1}
-            randomVegList={vegetables}
+            randomVegList={randomItemList}
             seed={seed}
             slotsPerReel={this.state.slotsPerReel}
         />)
@@ -70,10 +90,8 @@ class Machine extends Component {
 
 
     render() {
-        const {currentSeeds} = this.state;
-        const listVegetables = currentSeeds.map((seed, index) => {
-
-            return this.createMachineWindow(seed, index)
+        const listVegetables = this.state.windowsInfo.currentSeeds.map((seed, index) => {
+            return this.createMachineWindow(this.state.windowsInfo.randomItemLists[index], seed, index)
         });
 
         const perspective = this.state.perspective ? "perspective-on" : "perspective-off";
@@ -90,7 +108,8 @@ class Machine extends Component {
                 </div>
                 <div className="machine__buttons">
                     <button className="button button--primary button--large" onClick={this.spin}>Spin</button>
-                    <button className="button button--secondary button--large" onClick={this.togglePerspective}>Toggle Perspective
+                    <button className="button button--secondary button--large" onClick={this.togglePerspective}>Toggle
+                        Perspective
                     </button>
                 </div>
             </div>
