@@ -3,7 +3,7 @@ import './Modal.scss'
 
 const Modal = (props) => {
     return <React.Fragment>
-        <div className={props.showModal ? "show" : "hide"}>
+        <div className="show">
             <div className="modal-overlay" id="modal-overlay"></div>
             <div className="modal" id="modal">
                 <div className="modal__content">{props.children} <p>Recruitment ipsum first of all I want to apologise

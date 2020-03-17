@@ -35,7 +35,6 @@ function App() {
                     <Route exact path="/">
                         <Layout routerLinks={routerLinks} headerTitle={"Vegetable Machine"}>
                             <Machine/>
-                            <Modal showModal={false} />
                         </Layout>
                     </Route>
                     <Route path="/about">

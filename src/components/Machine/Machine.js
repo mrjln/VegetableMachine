@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Machine.scss";
 import MachineWindow from "../../components/MachineWindow/MachineWindow";
+import Modal from "../../containers/Modal/Modal";
 import VegetableList from "../../assets/vegetables";
 
 class Machine extends Component {
@@ -12,6 +13,7 @@ class Machine extends Component {
 
         this.state = {
             spinning: false,
+            showModal: false,
             durationSpinInSeconds: 2,
             perspective: true,
             slotsPerReel: 12,
@@ -24,6 +26,10 @@ class Machine extends Component {
         this.setState({spinning: true});
         const newMachineState = this.initializeNewMachine(this.state.windowsInfo.currentSeeds);
         this.updateState(newMachineState);
+
+        const showModalAfterSecs = this.state.durationSpinInSeconds + 4 * 1000;
+        setTimeout(() => { this.setState({showModal: true})}, showModalAfterSecs);
+
     };
 
     updateState = (newState) => {
@@ -104,7 +110,9 @@ class Machine extends Component {
                         Perspective
                     </button>
                 </div>
+                {this.state.showModal ? <Modal/> : ""}
             </div>
+
         );
     }
 }
