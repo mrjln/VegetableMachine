@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Machine from './components/Machine/Machine'
-import Modal from './containers/Modal/Modal'
 import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 
@@ -22,11 +21,6 @@ const routerLinks = [
 ];
 
 function App() {
-    const [ winners ] = useState([]);
-
-    const addWinners = () => {
-        console.log("winners")
-    };
 
     return (
         <Router>

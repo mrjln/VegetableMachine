@@ -13,7 +13,7 @@ class Machine extends Component {
 
         this.state = {
             spinning: false,
-            showModal: false,
+            showModal: true,
             durationSpinInSeconds: 2,
             perspective: true,
             slotsPerReel: 12,
@@ -27,9 +27,16 @@ class Machine extends Component {
         const newMachineState = this.initializeNewMachine(this.state.windowsInfo.currentSeeds);
         this.updateState(newMachineState);
 
-        const showModalAfterSecs = this.state.durationSpinInSeconds + 4 * 1000;
-        setTimeout(() => { this.setState({showModal: true})}, showModalAfterSecs);
+    };
 
+    toggleModal = () => {
+        if (this.state.showModal) {
+            const showModalAfterSecs = this.state.durationSpinInSeconds + 5 * 1000;
+            setTimeout(() => {
+                this.setState({showModal: true})
+            }, showModalAfterSecs);
+        }
+        this.setState({showModal: false})
     };
 
     updateState = (newState) => {
@@ -37,7 +44,7 @@ class Machine extends Component {
     };
 
     initializeNewMachine = (currentSeeds) => {
-        const newSeeds = currentSeeds ? this.getMachineWindowSeeds([currentSeeds]) : [1,5,7];
+        const newSeeds = currentSeeds ? this.getMachineWindowSeeds([currentSeeds]) : [1, 5, 7];
         const newRandomItemLists = newSeeds.map(() => {
             return this.getRandomListOfItems(VegetableList);
         });
@@ -92,6 +99,9 @@ class Machine extends Component {
         const listVegetables = this.state.windowsInfo.currentSeeds.map((seed, index) => {
             return this.createMachineWindow(this.state.windowsInfo.randomItemLists[index], seed, index)
         });
+        console.log(this.state.windowsInfo.winners);
+        const winnerListItems = this.state.windowsInfo.winners.map(winner => <li>{winner.name}</li>);
+        console.log("item", winnerListItems)
 
         const perspective = this.state.perspective ? "perspective-on" : "perspective-off";
 
@@ -110,7 +120,9 @@ class Machine extends Component {
                         Perspective
                     </button>
                 </div>
-                {this.state.showModal ? <Modal/> : ""}
+                {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
+                    <ul> {winnerListItems}</ul>
+                </Modal> : ""}
             </div>
 
         );
