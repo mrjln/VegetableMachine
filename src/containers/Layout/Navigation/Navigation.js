@@ -7,7 +7,7 @@ import {
 function Navigation(props) {
     const navLinks = props.navLinks.map(navLink => {
         return <li key={navLink.name} className="navigation__item">
-            <Link to={navLink.link}>
+            <Link to={navLink.path}>
                 <button className="button button--primary navigation__button"> {navLink.name}</button>
             </Link>
         </li>

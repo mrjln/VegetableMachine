@@ -3,6 +3,11 @@ import "./Machine.scss";
 import MachineWindow from "../../components/MachineWindow/MachineWindow";
 import Modal from "../../containers/Modal/Modal";
 import VegetableList from "../../assets/vegetables";
+import Icon from "../Icon/Icon";
+import {
+    Link,
+} from "react-router-dom";
+
 
 class Machine extends Component {
 
@@ -13,7 +18,7 @@ class Machine extends Component {
 
         this.state = {
             spinning: false,
-            showModal: true,
+            showModal: false,
             durationSpinInSeconds: 2,
             perspective: true,
             slotsPerReel: 12,
@@ -26,17 +31,19 @@ class Machine extends Component {
         this.setState({spinning: true});
         const newMachineState = this.initializeNewMachine(this.state.windowsInfo.currentSeeds);
         this.updateState(newMachineState);
+        this.toggleModal()
 
     };
 
     toggleModal = () => {
-        if (this.state.showModal) {
+        if (!this.state.showModal) {
             const showModalAfterSecs = this.state.durationSpinInSeconds + 5 * 1000;
             setTimeout(() => {
                 this.setState({showModal: true})
             }, showModalAfterSecs);
+        } else {
+            this.setState({showModal: false})
         }
-        this.setState({showModal: false})
     };
 
     updateState = (newState) => {
@@ -99,9 +106,13 @@ class Machine extends Component {
         const listVegetables = this.state.windowsInfo.currentSeeds.map((seed, index) => {
             return this.createMachineWindow(this.state.windowsInfo.randomItemLists[index], seed, index)
         });
-        console.log(this.state.windowsInfo.winners);
-        const winnerListItems = this.state.windowsInfo.winners.map(winner => <li>{winner.name}</li>);
-        console.log("item", winnerListItems)
+        const winnerListItems = this.state.windowsInfo.winners.map(winner => (
+            <Link to={'/'+ winner.name}>
+                <li className="list-item machine-winner-list-item">
+                    <Icon machineItemName={winner.name}/>
+                </li>
+            </Link>));
+
 
         const perspective = this.state.perspective ? "perspective-on" : "perspective-off";
 
@@ -121,7 +132,8 @@ class Machine extends Component {
                     </button>
                 </div>
                 {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
-                    <ul> {winnerListItems}</ul>
+                    <h1>The winners: </h1>
+                    <ul className="machine-winner-list"> {winnerListItems}</ul>
                 </Modal> : ""}
             </div>
 

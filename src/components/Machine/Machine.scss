@@ -18,3 +18,22 @@
   }
 }
 
+.machine-winner-list {
+  display: flex;
+  padding: 0;
+  justify-content: space-around;
+  &-item {
+    list-style:none;
+    width: 120px;
+    height: 100px;
+    box-sizing: border-box;
+    opacity: 0.9;
+    color: rgba(0, 0, 0, 0.9);
+    background: #fff;
+    border: solid 2px #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}

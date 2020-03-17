@@ -11,7 +11,7 @@ class Layout extends Component {
         return <div>
             <Header headerTitle={this.props.headerTitle}/>
             <hr/>
-            <Navigation navLinks={this.props.routerLinks}/>
+            <Navigation navLinks={this.props.routerLinks.slice(0,2)}/>
             {this.props.children}
             <Footer/>
         </div>
