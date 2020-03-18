@@ -15,7 +15,7 @@ function MachineWindow({spinning, durationSpin, ringNumber, randomListMachineIte
         let slots = [];
         let slotNumber = 0;
         while (slotNumber < slotsPerReel) {
-            let slot = randomListMachineItems ? getSlot(slotNumber, randomListMachineItems[slotNumber].name) : console.log("items missing", randomListMachineItems);
+            let slot = randomListMachineItems ? getSlot(slotNumber, randomListMachineItems[slotNumber].name.eng) : console.log("items missing", randomListMachineItems);
             slots.push(slot);
             slotNumber++;
         }

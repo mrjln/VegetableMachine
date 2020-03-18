@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Machine from './components/Machine/Machine'
 import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 
 const productLinks = VegetableList.map(item => {
-    return { name: item.name, path: "/" + item.name.toLowerCase(), components:  <h1>Koken met {item.name} en je moeder</h1> }
+    return { name: item.name.eng, path: "/" + item.name.eng.toLowerCase(), components:  <h1>Koken met {item.name.nl} en je moeder</h1> }
 });
 
 const routerLinks = [
@@ -35,7 +35,7 @@ function App() {
             <div>
                 <Switch>
                     {routerLinks.map(routerLink => (
-                        <Route exact path={routerLink.path}>
+                        <Route key={routerLink.name} exact path={routerLink.path}>
                             <Layout routerLinks={routerLinks} headerTitle={"Vegetable Machine"}>
                                 {routerLink.components}
                             </Layout>

@@ -107,9 +107,9 @@ class Machine extends Component {
             return this.createMachineWindow(this.state.windowsInfo.randomItemLists[index], seed, index)
         });
         const winnerListItems = this.state.windowsInfo.winners.map(winner => (
-            <Link to={'/'+ winner.name}>
+            <Link to={'/'+ winner.name.eng}>
                 <li className="list-item machine-winner-list-item">
-                    <Icon machineItemName={winner.name}/>
+                    <Icon machineItemName={winner.name.eng}/>
                 </li>
             </Link>));
 

@@ -1,55 +1,58 @@
 interface Vegetable {
-    id: Number, 
-    name: String
+    id: Number,
+    name: Object
 }
+
 const Vegetables: Vegetable[] = [
     {
         id: 1,
-        name: 'artichoke'
+        name: {eng: 'artichoke', nl: 'artichoke'}
     },
     {
         id: 2,
-        name: 'aubergine'
+        name: {eng: 'aubergine', nl: 'aubergine'}
+
     },
     {
         id: 3,
-        name: 'asparagus'
+        name: {eng: 'asparagus', nl: 'asperge'}
     },
     {
         id: 4,
-        name: 'broccoli'
+        name: {eng: 'broccoli', nl: 'broccoli'}
     },
     {
         id: 5,
-        name: 'mushroom'
+        name: {eng: 'mushroom', nl: 'champignon'}
     },
     {
         id: 6,
-        name: 'lettuce'
+        name: {eng: 'lettuce', nl: 'sla'}
     },
     {
         id: 7,
-        name: 'paprika'
+        name: {eng: 'paprika', nl: 'paprika'}
     },
     {
         id: 8,
-        name: 'leek'
+        name: {eng: 'leek', nl: 'prei'}
     },
     {
         id: 9,
-        name: 'brusselsSprouts'
+        name: {eng: 'brusselsSprouts', nl: 'spruitjes'}
+
     },
     {
         id: 10,
-        name: 'pumpkin'
+        name: {eng: 'pumpkin', nl: 'pompoen'}
     },
     {
         id: 11,
-        name: 'onion'
+        name: {eng: 'onion', nl: 'ui'}
     },
     {
         id: 12,
-        name: 'sweetPotato'
+        name: {eng: 'sweetPotato', nl: 'zoeteAardappel'}
     }
 
 ];
