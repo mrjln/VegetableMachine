@@ -10,7 +10,6 @@
 
 #stage {
   margin: 0 auto;
-  width: 80%;
   padding: 0 0 40px 15%;
 }
 
@@ -44,7 +43,7 @@
 .slot {
   position: absolute;
   width: 90px;
-  // Caution: reel radius is calculated based on this slot height.
+  // Caution for height property: reel radius is calculated based on this slot height.
   height: 80px;
   box-sizing: border-box;
   opacity: 0.9;

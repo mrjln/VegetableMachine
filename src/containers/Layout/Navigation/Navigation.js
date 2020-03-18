@@ -6,16 +6,17 @@ import {
 
 function Navigation(props) {
     const navLinks = props.navLinks.map(navLink => {
-        return <li key={navLink.name} className="navigation__item">
+        return <li key={navLink.name} className="navigation-list__item">
             <Link to={navLink.path}>
                 <button className="button button--primary navigation__button"> {navLink.name}</button>
             </Link>
         </li>
     });
-    return <div>
-        <ul className="navigation">
+    return <div className="navigation">
+        <ul className="navigation-list">
             {navLinks}
         </ul>
+        <hr/>
 
     </div>
 }

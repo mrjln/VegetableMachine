@@ -1,6 +1,19 @@
 @import '../../styles/constants';
 
+.layout-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  grid-template-rows: 100px 100px 1fr 200px;
+  grid-template-areas:
+          ". header . "
+          ". navigation. "
+          ". main . "
+          ". footer .";
+}
+
 .header {
+  grid-area: header;
   border-radius: 5px;
   padding: 5px;
   display: flex;
@@ -11,6 +24,10 @@
 }
 
 .navigation {
+  grid-area: navigation;
+}
+
+.navigation-list {
   padding: 0;
   margin: 20px;
   display: flex;
@@ -22,6 +39,17 @@
 }
 
 hr {
+  grid-area: ruler;
   width: 65%;
   border: 1px solid $color-text;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  display: flex;
+}
+
+.footer {
+  grid-area: footer;
 }

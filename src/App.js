@@ -3,6 +3,7 @@ import Machine from './components/Machine/Machine'
 import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 import VegetableList from "./assets/vegetables";
+import MachineItemDetailPage from './components/MachineItemDetailPage/MachineItemDetailPage'
 
 
 import {
@@ -12,7 +13,7 @@ import {
 } from "react-router-dom";
 
 const productLinks = VegetableList.map(item => {
-    return { name: item.name.eng, path: "/" + item.name.eng.toLowerCase(), components:  <h1>Koken met {item.name.nl} en je moeder</h1> }
+    return { name: item.name.eng, path: "/" + item.name.eng.toLowerCase(), components: <MachineItemDetailPage machineItem={item}/>   }
 });
 
 const routerLinks = [

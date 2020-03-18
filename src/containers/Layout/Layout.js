@@ -8,11 +8,10 @@ import './Layout.scss'
 
 class Layout extends Component {
     render() {
-        return <div>
+        return <div className="layout-container">
             <Header headerTitle={this.props.headerTitle}/>
-            <hr/>
             <Navigation navLinks={this.props.routerLinks.slice(0,2)}/>
-            {this.props.children}
+            <div className="main"> {this.props.children} </div>
             <Footer/>
         </div>
     }
