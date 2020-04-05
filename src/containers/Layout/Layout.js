@@ -10,8 +10,8 @@ class Layout extends Component {
     render() {
         return <div className="layout-container">
             <Header headerTitle={this.props.headerTitle}/>
-            <Navigation navLinks={this.props.routerLinks.slice(0,2)}/>
             <div className="main"> {this.props.children} </div>
+            <Navigation navLinks={this.props.routerLinks.slice(0,2)}/>
             <Footer/>
         </div>
     }

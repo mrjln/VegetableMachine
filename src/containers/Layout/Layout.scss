@@ -4,11 +4,11 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 100px 100px 1fr 200px;
+  grid-template-rows: 300px 1fr 100px 200px;
   grid-template-areas:
-          ". header . "
-          ". navigation. "
+          "header header header"
           ". main . "
+          ". navigation . "
           ". footer .";
 }
 
@@ -16,12 +16,16 @@
   grid-area: header;
   border-radius: 5px;
   padding: 5px;
-  display: flex;
-  justify-content: space-around;
+  z-index: 1;
   &__title {
     color: $color-text;
+    z-index: 2;
+    position: absolute;
+    margin: 0 auto;
+    width: 300px;
   }
 }
+
 
 .navigation {
   grid-area: navigation;
