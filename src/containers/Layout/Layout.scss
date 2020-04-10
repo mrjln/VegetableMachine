@@ -4,7 +4,7 @@
   height: 100vh;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
-  grid-template-rows: 300px 1fr 100px 200px;
+  grid-template-rows: 150px 1fr 100px 200px;
   grid-template-areas:
           "header header header"
           ". main . "
@@ -16,13 +16,16 @@
   grid-area: header;
   border-radius: 5px;
   padding: 5px;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  &__wave {
+    width: 100%;
+  }
   &__title {
     color: $color-text;
-    z-index: 2;
     position: absolute;
-    margin: 0 auto;
-    width: 300px;
+    font-size: 24px;
+    margin-top: 24px;
   }
 }
 
