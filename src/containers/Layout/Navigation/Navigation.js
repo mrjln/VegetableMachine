@@ -8,7 +8,7 @@ function Navigation(props) {
     const navLinks = props.navLinks.map(navLink => {
         return <li key={navLink.name} className="navigation-list__item">
             <Link to={navLink.path}>
-                <button className="button button--primary navigation__button"> {navLink.name}</button>
+                <button className="button button--secondary navigation__button"> {navLink.name}</button>
             </Link>
         </li>
     });
@@ -16,8 +16,6 @@ function Navigation(props) {
         <ul className="navigation-list">
             {navLinks}
         </ul>
-        <hr/>
-
     </div>
 }
 

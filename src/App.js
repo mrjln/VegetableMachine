@@ -33,7 +33,6 @@ function App() {
 
     return (
         <Router>
-            <div>
                 <Switch>
                     {routerLinks.map(routerLink => (
                         <Route key={routerLink.name} exact path={routerLink.path}>
@@ -44,7 +43,6 @@ function App() {
                     ))}
 
                 </Switch>
-            </div>
         </Router>
     );
 }

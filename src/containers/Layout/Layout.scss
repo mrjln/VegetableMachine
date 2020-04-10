@@ -1,15 +1,14 @@
 @import '../../styles/constants';
 
 .layout-container {
-  height: 100vh;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 150px 1fr 100px 200px;
   grid-template-areas:
           "header header header"
           ". main . "
-          ". navigation . "
-          ". footer .";
+          ". footer ."
+         ". navigation . ";
 }
 
 .header {
@@ -29,19 +28,25 @@
   }
 }
 
-
 .navigation {
-  grid-area: navigation;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
 }
+
 
 .navigation-list {
   padding: 0;
-  margin: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin: 0;
   &__item {
     display: inline;
     list-style: none;
+    width: 50%;
+  }
+  &__button {
+
   }
 }
 
