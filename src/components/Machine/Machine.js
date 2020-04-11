@@ -109,13 +109,12 @@ class Machine extends Component {
             </Link>));
 
 
-        const perspective = this.state.perspective ? "perspective-on" : "perspective-off";
 
         return (
             <div className="machine">
                 <div className="machine__windows">
                     <div id="stage">
-                        <div id="rotate" className={perspective}>
+                        <div id="rotate" >
                             {listVegetables}
                         </div>
                     </div>
