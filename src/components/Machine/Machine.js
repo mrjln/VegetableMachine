@@ -20,7 +20,6 @@ class Machine extends Component {
             spinning: false,
             showModal: false,
             durationSpinInSeconds: 2,
-            perspective: true,
             slotsPerReel: 12,
             ...initMachineState
         };
@@ -61,10 +60,6 @@ class Machine extends Component {
 
     getSeed = () => {
         return Math.floor(Math.random() * (this.state.slotsPerReel));
-    };
-
-    togglePerspective = () => {
-        this.setState((prevState) => ({perspective: !prevState.perspective}));
     };
 
     getMachineWindowSeeds = (currentSeeds) => {
@@ -127,9 +122,7 @@ class Machine extends Component {
                 </div>
                 <div className="machine__buttons">
                     <button className="button button--primary button--large" onClick={this.spin}>Spin</button>
-                    <button className="button button--secondary button--large" onClick={this.togglePerspective}>Toggle
-                        Perspective
-                    </button>
+
                 </div>
                 {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
                     <h1>The winners: </h1>
