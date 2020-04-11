@@ -1,0 +1,21 @@
+@import "../../styles/constants";
+
+.machinewindow {
+  border: 25px solid $color-text;
+  border-bottom: 85px solid $color-text;
+  height: 260px;
+  background-color: transparent;
+  z-index: 1;
+  width: 285px;
+  &__button {
+    position: relative;
+    bottom: -260px;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    button {
+      width: 200px;
+    }
+  }
+}

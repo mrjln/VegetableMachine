@@ -12,6 +12,7 @@
   &--primary {
     padding: 0;
     background-color: $color-primary;
+    border-radius: 80px;
     &:hover {
       border: 2px solid $color-secondary;
     }

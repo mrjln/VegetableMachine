@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Machine.scss";
 import MachineRing from "../../components/MachineRing/MachineRing";
+import MachineWindow from "../../components/MachineWindow/MachineWindow";
 import Modal from "../../containers/Modal/Modal";
 import VegetableList from "../../assets/vegetables";
 import Icon from "../Icon/Icon";
@@ -112,6 +113,7 @@ class Machine extends Component {
 
         return (
             <div className="machine">
+                <MachineWindow spin={this.spin}>
                 <div className="machine__rings">
                     <div id="stage">
                         <div id="rotate" >
@@ -119,10 +121,8 @@ class Machine extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="machine__buttons">
-                    <button className="button button--primary button--large" onClick={this.spin}>Spin</button>
+                </MachineWindow>
 
-                </div>
                 {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
                     <h1>The winners: </h1>
                     <ul className="machine-winner-list"> {winnerListItems}</ul>

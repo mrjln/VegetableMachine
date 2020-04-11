@@ -1,21 +1,14 @@
 @import "../../styles/constants";
 .machine {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  margin-left: calc(50% - 165px);
   &__rings {
     display: flex;
     flex-direction: row;
     list-style: none;
+    position: absolute;
   }
-  &__buttons {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 20px 0;
-  }
+
 }
 
 .machine-winner-list {
