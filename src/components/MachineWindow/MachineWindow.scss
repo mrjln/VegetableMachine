@@ -18,4 +18,14 @@
       width: 200px;
     }
   }
+  &::before {
+    width: 335px;
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+    border-bottom: 100px solid $color-text;
+  }
 }
