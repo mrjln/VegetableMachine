@@ -7,6 +7,16 @@
   background-color: transparent;
   z-index: 1;
   width: 285px;
+  &__light-bulb {
+    width: 10px;
+    height: 10px;
+    background-color: #FFCE54;
+    position: absolute;
+    top: -10px;
+    border-radius: 100%;
+    box-shadow: 0 0 20px 5px #fff;
+    animation: blinker 1s linear infinite;
+  }
   &__button {
     position: relative;
     bottom: -260px;
@@ -27,5 +37,12 @@
     border-top-left-radius: 150px;
     border-top-right-radius: 150px;
     border-bottom: 100px solid $color-text;
+  }
+}
+
+
+@keyframes blinker {
+  50% {
+    box-shadow: 0 0 20px 10px #f9de8a;
   }
 }

@@ -2,13 +2,13 @@
 .machine {
   display: flex;
   margin-left: calc(50% - 165px);
+  position: relative;
   &__rings {
     display: flex;
     flex-direction: row;
     list-style: none;
     position: absolute;
   }
-
 }
 
 .machine-winner-list {
