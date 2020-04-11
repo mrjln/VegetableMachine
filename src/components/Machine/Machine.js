@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./Machine.scss";
-import MachineWindow from "../../components/MachineWindow/MachineWindow";
+import MachineRing from "../../components/MachineRing/MachineRing";
 import Modal from "../../containers/Modal/Modal";
 import VegetableList from "../../assets/vegetables";
 import Icon from "../Icon/Icon";
@@ -50,7 +50,7 @@ class Machine extends Component {
     };
 
     initializeNewMachine = (currentSeeds) => {
-        const newSeeds = currentSeeds ? this.getMachineWindowSeeds([currentSeeds]) : [1, 5, 7];
+        const newSeeds = currentSeeds ? this.getMachineRingSeeds([currentSeeds]) : [1, 5, 7];
         const newRandomItemLists = newSeeds.map(() => {
             return this.getRandomListOfItems(VegetableList);
         });
@@ -62,7 +62,7 @@ class Machine extends Component {
         return Math.floor(Math.random() * (this.state.slotsPerReel));
     };
 
-    getMachineWindowSeeds = (currentSeeds) => {
+    getMachineRingSeeds = (currentSeeds) => {
         let newSeeds = [];
         while (newSeeds.length < 3) {
             const newSeed = this.getSeed();
@@ -85,8 +85,8 @@ class Machine extends Component {
         return this.shuffleArray(itemList);
     };
 
-    createMachineWindow = (randomListMachineItems, seed, index) => {
-        return (<MachineWindow
+    createMachineRing = (randomListMachineItems, seed, index) => {
+        return (<MachineRing
             key={index}
             spinning={this.state.spinning}
             durationSpin={this.state.durationSpinInSeconds}
@@ -99,7 +99,7 @@ class Machine extends Component {
 
     render() {
         const listVegetables = this.state.windowsInfo.currentSeeds.map((seed, index) => {
-            return this.createMachineWindow(this.state.windowsInfo.randomItemLists[index], seed, index)
+            return this.createMachineRing(this.state.windowsInfo.randomItemLists[index], seed, index)
         });
         const winnerListItems = this.state.windowsInfo.winners.map(winner => (
             <Link to={'/'+ winner.name.eng}>
@@ -112,7 +112,7 @@ class Machine extends Component {
 
         return (
             <div className="machine">
-                <div className="machine__windows">
+                <div className="machine__rings">
                     <div id="stage">
                         <div id="rotate" >
                             {listVegetables}

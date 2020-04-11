@@ -1,8 +1,8 @@
 import React from "react";
-import "./MachineWindow.scss";
+import "./MachineRing.scss";
 import Icon from "../Icon/Icon";
 
-function MachineWindow({spinning, durationSpin, ringNumber, randomListMachineItems, seed, slotsPerReel}) {
+function MachineRing({spinning, durationSpin, ringNumber, randomListMachineItems, seed, slotsPerReel}) {
 
     const calcReelRadius = (amountOfSlots) => {
       const heightSlot = 80;
@@ -48,4 +48,4 @@ function MachineWindow({spinning, durationSpin, ringNumber, randomListMachineIte
 
 }
 
-export default MachineWindow;
+export default MachineRing;
