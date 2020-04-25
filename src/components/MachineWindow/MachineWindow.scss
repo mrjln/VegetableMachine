@@ -1,6 +1,6 @@
 @import "../../styles/constants";
 
-.machinewindow {
+.machine-window {
   border: 25px solid $color-text;
   border-bottom: 85px solid $color-text;
   height: 260px;
@@ -29,20 +29,73 @@
     }
   }
   &::before {
-    width: 335px;
-    content: "";
-    position: absolute;
-    top: -100px;
-    left: 0;
-    border-top-left-radius: 150px;
-    border-top-right-radius: 150px;
-    border-bottom: 100px solid $color-text;
+    //width: 335px;
+    //content: "";
+    //position: absolute;
+    //top: -100px;
+    //left: 0;
+    //border-top-left-radius: 150px;
+    //border-top-right-radius: 150px;
+    //border-bottom: 100px solid $color-text;
+  }
+}
+
+text {
+  fill: #FF9800;
+}
+
+.blinker-0{
+  animation: blinker-1 1s linear infinite;
+}
+
+.blinker-1{
+  animation: blinker-1 1s linear infinite;
+}
+.blinker-2{
+  animation: blinker-2 1s linear infinite;
+}
+.blinker-3{
+  animation: blinker-3 1s linear infinite;
+}
+.blinker-4{
+  animation: blinker-4 1s linear infinite;
+}
+.blinker-5{
+  animation: blinker-5 1s linear infinite;
+}
+
+@keyframes blinker-0 {
+  0% {
+    box-shadow: 0 0 20px 10px #f9de8a;
   }
 }
 
 
-@keyframes blinker {
+@keyframes blinker-1 {
+  10% {
+    box-shadow: 0 0 20px 10px #f9de8a;
+  }
+}
+@keyframes blinker-2 {
+   30% {
+     box-shadow: 0 0 20px 10px #f9de8a;
+   }
+ }
+
+@keyframes blinker-3 {
   50% {
+    box-shadow: 0 0 20px 10px #f9de8a;
+  }
+}
+
+@keyframes blinker-4 {
+  70% {
+    box-shadow: 0 0 20px 10px #f9de8a;
+  }
+}
+
+@keyframes blinker-5 {
+  90% {
     box-shadow: 0 0 20px 10px #f9de8a;
   }
 }
