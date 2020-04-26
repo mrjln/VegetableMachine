@@ -12,7 +12,6 @@ function MachineWindow(props) {
         const length = properties.getTotalLength(); // 690.7935791015625
         for (let i = 0; i < amountOfLights; i++) {
             const point = properties.getPointAtLength(i * 1/21 * length);
-            console.log(point);
             const circle = <circle className={"machine-window__light-bulb blinker-1"} cx={point.x} cy={point.y} r="5"></circle>
             machineLights.push(circle)
         }

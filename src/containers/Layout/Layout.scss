@@ -1,6 +1,7 @@
 @import '../../styles/constants';
 
 .layout-container {
+  height: 100vh;
   display: grid;
   grid-template-columns: 20px 1fr 20px;
   grid-template-rows: 165px 1fr 100px;
@@ -63,4 +64,9 @@ hr {
 
 .footer {
   grid-area: footer;
+  margin: 30px;
+
+  p {
+    font-size: 12px;
+  }
 }

@@ -1,5 +1,13 @@
 @import "./constants";
 
+h1, h2, p {
+  color: $color-text;
+}
+
+html, body, #root, .App {
+  height: 100%;
+}
+
 .button {
   text-decoration: none;
   height: 40px;
@@ -13,9 +21,7 @@
     padding: 0;
     background-color: $color-primary;
     border-radius: 80px;
-    &:hover {
-      border: 2px solid $color-secondary;
-    }
+
   }
   &--secondary {
     color: $color-text;
