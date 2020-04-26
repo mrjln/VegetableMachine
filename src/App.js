@@ -19,11 +19,13 @@ const productLinks = VegetableList.map(item => {
 const routerLinks = [
     {
         name: "Home",
+        pageTitle: "Vegetable Machine",
         path: "/",
         components: <Machine />
     },
     {
         name: "About",
+        pageTitle: "Vegetable Machine",
         path: "/about",
         components: <h1> "blablabla" </h1>
     },
@@ -36,7 +38,7 @@ function App() {
                 <Switch>
                     {routerLinks.map(routerLink => (
                         <Route key={routerLink.name} exact path={routerLink.path}>
-                            <Layout routerLinks={routerLinks} headerTitle={"Vegetable Machine"}>
+                            <Layout routerLinks={routerLinks} headerTitle={routerLink.pageTitle}>
                                 {routerLink.components}
                             </Layout>
                         </Route>

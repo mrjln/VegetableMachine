@@ -1,0 +1,9 @@
+.machine-item-detail {
+  position: relative;
+  &__icon svg {
+    width: 150px;
+    height: 150px;
+    margin-top: -75px;
+  }
+
+}
