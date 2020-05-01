@@ -1,9 +1,23 @@
+@import "../../styles/constants";
+
 .machine-item-detail {
   position: relative;
   &__icon svg {
     width: 150px;
     height: 150px;
     margin-top: -75px;
+    vertical-align: middle;
   }
 
+}
+
+.button--leave-site {
+  color: $color-text-active;
+  text-align: left;
+  span {
+    padding-right: 10px;
+  }
+  :hover {
+    border-bottom: 1px solid $color-text-active;
+  }
 }

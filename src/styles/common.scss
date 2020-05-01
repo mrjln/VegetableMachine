@@ -1,6 +1,6 @@
 @import "./constants";
 
-h1, h2, p {
+h1, h2 {
   color: $color-text;
 }
 
@@ -28,10 +28,6 @@ html, body, #root, .App {
     border-top: 1px solid $color-text;
     background-color: white;
 
-    &:hover {
-      color: $color-text-active;
-      border-top: 4px solid $color-text-active;
-    }
   }
   &--large {
     min-width: 200px;

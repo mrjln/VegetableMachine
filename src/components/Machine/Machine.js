@@ -112,6 +112,7 @@ class Machine extends Component {
 
 
         return (
+            <React.Fragment>
             <div className="machine">
                 <MachineWindow spin={this.spin}>
                 <div className="machine__rings">
@@ -128,7 +129,10 @@ class Machine extends Component {
                     <ul className="machine-winner-list"> {winnerListItems}</ul>
                     <h2> Kies een groente voor meer informatie & recepten </h2>
                 </Modal> : ""}
+
             </div>
+
+            </React.Fragment>
 
         );
     }

@@ -4,6 +4,7 @@ import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 import VegetableList from "./assets/vegetables";
 import MachineItemDetailPage from './components/MachineItemDetailPage/MachineItemDetailPage'
+import Footer from './containers/Layout/Footer/Footer';
 
 
 import {
@@ -27,7 +28,7 @@ const routerLinks = [
         name: "About",
         pageTitle: "Vegetable Machine",
         path: "/about",
-        components: <h1> "blablabla" </h1>
+        components:  <Footer/>
     },
     ...productLinks
 ];
