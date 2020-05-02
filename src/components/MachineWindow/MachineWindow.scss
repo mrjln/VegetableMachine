@@ -6,7 +6,7 @@
   height: 260px;
   background-color: transparent;
   z-index: 1;
-  width: 285px;
+  min-width: 285px;
   &__light-bulb {
     width: 10px;
     height: 10px;

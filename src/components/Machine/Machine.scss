@@ -1,9 +1,8 @@
 @import "../../styles/constants";
 .machine {
   display: flex;
-  margin-left: calc(50% - 165px);
+  margin: 100px calc(50% - 165px) 0 calc(50% - 165px);
   position: relative;
-  margin-top: 100px;
   &__rings {
     display: flex;
     flex-direction: row;

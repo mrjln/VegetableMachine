@@ -109,8 +109,6 @@ class Machine extends Component {
                 </li>
             </Link>));
 
-
-
         return (
             <React.Fragment>
             <div className="machine">
@@ -125,13 +123,11 @@ class Machine extends Component {
                 </MachineWindow>
 
                 {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
-                    <h1> The winners: </h1>
+                    <h1> Kies je groente: </h1>
                     <ul className="machine-winner-list"> {winnerListItems}</ul>
                     <h2> Kies een groente voor meer informatie & recepten </h2>
                 </Modal> : ""}
-
             </div>
-
             </React.Fragment>
 
         );
