@@ -2,7 +2,7 @@ import React from "react";
 import "./MachineRing.scss";
 import Icon from "../Icon/Icon";
 
-function MachineRing({spinning, durationSpin, ringNumber, randomListMachineItems, seed, slotsPerReel}) {
+function MachineRing({spinning, durationSpin, ringNumber, machineItemsList, seed, slotsPerReel}) {
 
     const calcReelRadius = (amountOfSlots) => {
       const heightSlot = 80;
@@ -15,7 +15,7 @@ function MachineRing({spinning, durationSpin, ringNumber, randomListMachineItems
         let slots = [];
         let slotNumber = 0;
         while (slotNumber < slotsPerReel) {
-            let slot = randomListMachineItems ? getSlot(slotNumber, randomListMachineItems[slotNumber].name.eng) : console.log("items missing", randomListMachineItems);
+            let slot = machineItemsList ? getSlot(slotNumber, machineItemsList[slotNumber].name.eng) : console.log("items missing", machineItemsList);
             slots.push(slot);
             slotNumber++;
         }

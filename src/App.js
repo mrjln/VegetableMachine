@@ -1,5 +1,5 @@
 import React from 'react';
-import Machine from './components/Machine/Machine'
+import MachineContainer from './components/MachineContainer/MachineContainer'
 import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 import VegetableList from "./assets/vegetables";
@@ -22,7 +22,7 @@ const routerLinks = [
         name: "Home",
         pageTitle: "Vegetable Machine",
         path: "/",
-        components: <Machine />
+        components: <MachineContainer />
     },
     {
         name: "About",
