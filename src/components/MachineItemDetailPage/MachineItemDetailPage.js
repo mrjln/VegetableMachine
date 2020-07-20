@@ -17,7 +17,7 @@ function MachineItemDetailPage({machineItem}) {
             semiotics la croix leggings chillwave fanny pack prism.</p>
 
         <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
-            <button target="_blank" className="button button--leave-site">
+            <button target="_blank" className="button button--primary button--leave-site">
                 <span>
                     Zoek een recept met {machineItem.name.nl}
                 </span>

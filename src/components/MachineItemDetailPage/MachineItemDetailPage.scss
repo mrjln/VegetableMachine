@@ -8,16 +8,18 @@
     margin-top: -75px;
     vertical-align: middle;
   }
-
 }
 
 .button--leave-site {
-  color: $color-text-active;
+  color: $color-text;
   text-align: left;
   span {
-    padding-right: 10px;
+    padding: 0 20px;
   }
   :hover {
-    border-bottom: 1px solid $color-text-active;
+    color: $color-text-active;
+  }
+  svg {
+    vertical-align: middle;
   }
 }
