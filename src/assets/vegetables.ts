@@ -1,6 +1,6 @@
 interface Vegetable {
-    id: Number,
-    name: Object
+    id: number,
+    name: {eng: string, nl: string}
 }
 
 const Vegetables: Vegetable[] = [
