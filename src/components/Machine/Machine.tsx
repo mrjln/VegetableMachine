@@ -8,10 +8,20 @@ import {
     Link,
 } from "react-router-dom";
 
+interface MachineState {
+    spinning: boolean,
+    showModal: boolean,
+    durationSpinInSeconds: number,
+    slotsPerReel: number,
+    shuffledItems: Object[],
+    currentSeeds: number[],
+    winners: number[],
+}
+
 
 class Machine extends Component {
 
-    constructor(props) {
+    constructor(props: any) {
         super(props);
         const initMachineState = this.initializeNewMachine();
 
@@ -28,7 +38,7 @@ class Machine extends Component {
 
     spin = () => {
         this.setState({spinning: true});
-        const newMachineState = this.initializeNewMachine(this.state.currentSeeds);
+        const newMachineState = this.initializeNewMachine(...this.state.currentSeeds);
         this.updateState(newMachineState);
         this.toggleModal()
     };
@@ -44,12 +54,12 @@ class Machine extends Component {
         }
     };
 
-    updateState = (newState) => {
+    updateState = (newState: {}) => {
         this.setState({...newState});
     };
 
-    initializeNewMachine = (currentSeeds) => {
-        const newSeeds = currentSeeds ? this.getMachineRingSeeds([currentSeeds]) : [1, 5, 7];
+    initializeNewMachine = (currentSeeds?: number[]) => {
+        const newSeeds = currentSeeds ? this.getMachineRingSeeds(currentSeeds) :  [1, 5, 7];
         const newWinners = newSeeds.map((seed, index) => this.props.shuffledItems[index][seed]);
         return {currentSeeds: newSeeds, winners: newWinners}
     };
@@ -58,7 +68,7 @@ class Machine extends Component {
         return Math.floor(Math.random() * (this.state.slotsPerReel));
     };
 
-    getMachineRingSeeds = (currentSeeds) => {
+    getMachineRingSeeds = (currentSeeds: number[]): number[] => {
         let newSeeds = [];
         while (newSeeds.length < 3) {
             const newSeed = this.getSeed();
