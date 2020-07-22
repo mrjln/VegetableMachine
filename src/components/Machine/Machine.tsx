@@ -18,7 +18,6 @@ interface MachineState {
     showModal: boolean,
     durationSpinInSeconds: number,
     slotsPerReel: number,
-    shuffledItems: Array<MachineItem[]>,
     currentSeeds: number[],
     winners: MachineItem[],
 }
@@ -26,7 +25,6 @@ interface MachineState {
 interface MachineProps {
     shuffledItems: Array<MachineItem[]>
 }
-
 
 class Machine extends Component<MachineProps, MachineState> {
 
@@ -39,7 +37,6 @@ class Machine extends Component<MachineProps, MachineState> {
             showModal: false,
             durationSpinInSeconds: 2,
             slotsPerReel: 12,
-            shuffledItems: props.shuffledItems,
             ...initMachineState
         };
         // https://codepen.io/werter25/pen/MxRJJV
@@ -69,7 +66,7 @@ class Machine extends Component<MachineProps, MachineState> {
 
     initializeNewMachine = (currentSeeds?: number[]) => {
         const newSeeds = currentSeeds ? this.getMachineRingSeeds(currentSeeds) :  [1, 5, 7];
-        const newWinners = newSeeds.map((seed:number, i: any): MachineItem[] => this.props.shuffledItems[i][seed]);
+        const newWinners = newSeeds.map((seed, i): MachineItem => this.props.shuffledItems[i][seed]);
         return {currentSeeds: newSeeds, winners: newWinners}
     };
 
@@ -101,7 +98,7 @@ class Machine extends Component<MachineProps, MachineState> {
 
     render() {
         const machineRings = this.state.currentSeeds.map((seed: number, i:any): ReactElement => {
-            return this.createMachineRing(this.state.shuffledItems[i], seed, i)
+            return this.createMachineRing(this.props.shuffledItems[i], seed, i)
         });
         const winnerListItems = this.state.winners.map((winner: MachineItem) => (
             <Link to={'/'+ winner.name.eng}>
