@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import "./Machine.scss";
 import MachineRing from "../../components/MachineRing/MachineRing";
 import MachineWindow from "../../components/MachineWindow/MachineWindow";
@@ -7,33 +7,45 @@ import Icon from "../Icon/Icon";
 import {
     Link,
 } from "react-router-dom";
+import MachineItem from "../../utils/types/types"
 
+interface MachineState {
+    spinning: boolean,
+    showModal: boolean,
+    durationSpinInSeconds: number,
+    slotsPerReel: number,
+    currentSeeds: number[],
+    winners: MachineItem[],
+}
 
-class Machine extends Component {
+interface MachineProps {
+    shuffledItems: Array<MachineItem[]>
+}
 
-    constructor(props) {
+class Machine extends Component<MachineProps, MachineState> {
+
+    constructor(props: any) {
         super(props);
-        const initMachineState = this.initializeNewMachine();
+        const initMachineState = this.initNewMachineSpin();
 
         this.state = {
             spinning: false,
             showModal: false,
             durationSpinInSeconds: 2,
             slotsPerReel: 12,
-            shuffledItems: props.shuffledItems,
             ...initMachineState
         };
         // https://codepen.io/werter25/pen/MxRJJV
     }
 
-    spin = () => {
+    spin = (): void => {
         this.setState({spinning: true});
-        const newMachineState = this.initializeNewMachine(this.state.currentSeeds);
-        this.updateState(newMachineState);
+        const newMachineState = this.initNewMachineSpin(this.state.currentSeeds);
+        this.setState({...newMachineState});
         this.toggleModal()
     };
 
-    toggleModal = () => {
+    toggleModal = (): void => {
         if (!this.state.showModal) {
             const showModalAfterSecs = this.state.durationSpinInSeconds + 4 * 1000;
             setTimeout(() => {
@@ -44,13 +56,9 @@ class Machine extends Component {
         }
     };
 
-    updateState = (newState) => {
-        this.setState({...newState});
-    };
-
-    initializeNewMachine = (currentSeeds) => {
-        const newSeeds = currentSeeds ? this.getMachineRingSeeds([currentSeeds]) : [1, 5, 7];
-        const newWinners = newSeeds.map((seed, index) => this.props.shuffledItems[index][seed]);
+    initNewMachineSpin = (currentSeeds?: number[]) => {
+        const newSeeds = currentSeeds ? this.getMachineRingSeeds(currentSeeds) :  [5, 5, 5];
+        const newWinners = newSeeds.map((seed, i): MachineItem => this.props.shuffledItems[i][seed]);
         return {currentSeeds: newSeeds, winners: newWinners}
     };
 
@@ -58,7 +66,7 @@ class Machine extends Component {
         return Math.floor(Math.random() * (this.state.slotsPerReel));
     };
 
-    getMachineRingSeeds = (currentSeeds) => {
+    getMachineRingSeeds = (currentSeeds: number[]): number[] => {
         let newSeeds = [];
         while (newSeeds.length < 3) {
             const newSeed = this.getSeed();
@@ -67,29 +75,36 @@ class Machine extends Component {
         return newSeeds;
     };
 
-
-    createMachineRing = (machineItemsList, seed, index) => {
+    createMachineRing = (machineItemsList: MachineItem[], seed: number, index: number) => {
         return (<MachineRing
             key={index}
             spinning={this.state.spinning}
             durationSpin={this.state.durationSpinInSeconds}
             ringNumber={index + 1}
-            machineItemsList={machineItemsList}
+            machineItems={machineItemsList}
             seed={seed}
             slotsPerReel={this.state.slotsPerReel}
         />)
     };
 
     render() {
-        const machineRings = this.state.currentSeeds.map((seed, index) => {
-            return this.createMachineRing(this.state.shuffledItems[index], seed, index)
+
+        const machineRings = this.state.currentSeeds.map((seed: number, i:any): ReactElement => {
+            return this.createMachineRing(this.props.shuffledItems[i], seed, i)
         });
-        const winnerListItems = this.state.winners.map(winner => (
-            <Link to={'/'+ winner.name.eng}>
+        // const winnerListItems = this.state.winners.map((winner: MachineItem) => (
+        //     <Link to={'/'+ winner.name.eng}>
+        //         <li className="list-item machine-winner-list-item">
+        //             <Icon machineItemName={winner.name.eng}/>
+        //         </li>
+        //     </Link>));
+
+        const winner = this.state.winners[0];
+        const soloWinner = (<Link to={'/'+ winner.name.eng}>
                 <li className="list-item machine-winner-list-item">
                     <Icon machineItemName={winner.name.eng}/>
                 </li>
-            </Link>));
+            </Link>);
 
         return (
             <React.Fragment>
@@ -105,9 +120,10 @@ class Machine extends Component {
                 </MachineWindow>
 
                 {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
-                    <h1> Kies je groente: </h1>
-                    <ul className="machine-winner-list"> {winnerListItems}</ul>
-                    <h2> Kies een groente voor meer informatie & recepten </h2>
+                    <h1> {winner.name.eng} </h1>
+                    <ul className="machine-winner-list"> {soloWinner}</ul>
+                    <button className="button button--secondary"> Give me the specs </button>
+                    <button className="button button--secondary"> Bring me to recipes </button>
                 </Modal> : ""}
             </div>
             </React.Fragment>
