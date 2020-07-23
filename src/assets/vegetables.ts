@@ -1,12 +1,25 @@
 interface Vegetable {
     id: number,
-    name: {eng: string, nl: string}
+    name: {eng: string, nl: string},
 }
+
+// interface Specification {
+//     title: string,
+//     description: string
+//     icon: any
+// }
+//
+// interface Vegetable {
+//     id: number,
+//     name: {eng: string, nl: string},
+//     description: string,
+//     specs: Specification[]
+// }
 
 const Vegetables: Vegetable[] = [
     {
         id: 1,
-        name: {eng: 'artichoke', nl: 'artichoke'}
+        name: {eng: 'artichoke', nl: 'artichoke'},
     },
     {
         id: 2,

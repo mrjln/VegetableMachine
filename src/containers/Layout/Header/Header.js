@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as HeaderWave } from './header-wave.svg';
+//import { ReactComponent as HeaderWave } from './header-wave.svg';
 import { ReactComponent as HeaderElipse } from './header-elipse.svg';
 
 function Header(props) {
@@ -15,7 +15,7 @@ function Header(props) {
                     </div>
                     <div className="header__title">
                         <h1> {props.headerTitle} </h1>
-                        <p> Wat eten we vandaag? </p>
+                        <p> Get to know new veggies as the centre of your meal</p>
                     </div>
                 </React.Fragment>
                 :
