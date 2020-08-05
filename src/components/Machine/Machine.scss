@@ -40,4 +40,21 @@
     display: flex;
     justify-content: space-between;
   }
+  &__link {
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    button {
+      width: 250px;
+      span {
+        padding: 0 20px;
+      }
+      :hover {
+        color: $color-text-active;
+      }
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
 }

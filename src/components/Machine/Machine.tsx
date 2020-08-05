@@ -92,12 +92,6 @@ class Machine extends Component<MachineProps, MachineState> {
         const machineRings = this.state.currentSeeds.map((seed: number, i: any): ReactElement => {
             return this.createMachineRing(this.props.shuffledItems[i], seed, i)
         });
-        // const winnerListItems = this.state.winners.map((winner: MachineItem) => (
-        //     <Link to={'/'+ winner.name.eng}>
-        //         <li className="list-item machine-winner-list-item">
-        //             <Icon machineItemName={winner.name.eng}/>
-        //         </li>
-        //     </Link>));
 
         const winner = this.state.winners[0];
         const soloWinner = (
@@ -119,7 +113,7 @@ class Machine extends Component<MachineProps, MachineState> {
                         </div>
                     </MachineWindow>
 
-                    {this.state.showModal ? <Modal cta={"Spin Again"} clickCTA={this.toggleModal}>
+                    {this.state.showModal ? <Modal cta={"Spin again"} clickCTA={this.toggleModal}>
                         <h1 className="machine-winner__heading"> {this.capitalize(winner.name.eng)} </h1>
                         <ul className="machine-winner"> {soloWinner}</ul>
                         <div className="machine-winner__specs-list">
@@ -132,9 +126,9 @@ class Machine extends Component<MachineProps, MachineState> {
                                 <li> Recovery of muscles</li>
                             </ul>
                         </div>
-                        <Link to={'/' + winner.name.eng}>
-                            <button className="button button--secondary"> Give me more specs
-
+                        <Link className="machine-winner__link" to={'/' + winner.name.eng}>
+                            <button className="button button--primary machine-winner__button">
+                                <span> Give me more specs </span>
                                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M19.7071 8.70711C20.0976 8.31658 20.0976 7.68342 19.7071 7.29289L13.3431 0.928932C12.9526 0.538408 12.3195 0.538408 11.9289 0.928932C11.5384 1.31946 11.5384 1.95262 11.9289 2.34315L17.5858 8L11.9289 13.6569C11.5384 14.0474 11.5384 14.6805 11.9289 15.0711C12.3195 15.4616 12.9526 15.4616 13.3431 15.0711L19.7071 8.70711ZM0 9H19V7H0V9Z"

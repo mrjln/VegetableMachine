@@ -8,8 +8,7 @@ class MachineContainer extends Component {
 
 
     getRandomListOfItems = (itemList) => {
-        return [...itemList]
-        // return (shuffleArray([...itemList]));
+        return (shuffleArray([...itemList]));
     };
 
     getArrayAfterPolonaise = (initialList, amountOfSteps) => {
