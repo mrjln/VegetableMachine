@@ -68,7 +68,7 @@ class Machine extends Component<MachineProps, MachineState> {
 
     getMachineRingSeeds = (currentSeeds: number[]): number[] => {
         const newSeed = this.getSeed();
-        const bla = currentSeeds.map((seed, i) => {
+        return currentSeeds.map((seed, i) => {
             const multiplier = this.state.slotsPerReel / 3;
             const nextSeed = newSeed + i * multiplier;
             if(nextSeed > (this.state.slotsPerReel - 1)){
@@ -76,8 +76,6 @@ class Machine extends Component<MachineProps, MachineState> {
             }
             return nextSeed;
         });
-        console.log(bla);
-        return bla;
     };
 
     createMachineRing = (machineItemsList: MachineItem[], seed: number, index: number) => {
