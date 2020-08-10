@@ -13,8 +13,7 @@ class Layout extends Component {
                 <Header headerTitle={this.props.headerTitle}/>
                 <div className="main"> {this.props.children} </div>
             </div>
-                <Navigation navLinks={this.props.routerLinks.slice(0, 2)}/>
-
+                {/*<Navigation navLinks={this.props.routerLinks.slice(0, 2)}/>*/}
             </React.Fragment>
         )
     }

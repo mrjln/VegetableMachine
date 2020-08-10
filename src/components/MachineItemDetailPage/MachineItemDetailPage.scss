@@ -1,6 +1,7 @@
 @import "../../styles/constants";
 
 .machine-item-detail {
+  width: 100vw;
   position: relative;
   &__icon svg {
     width: 150px;

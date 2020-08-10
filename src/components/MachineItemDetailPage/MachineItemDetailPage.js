@@ -37,7 +37,6 @@ function MachineItemDetailPage({machineItem}) {
                             fill="#7C9073"/>
                     </svg>
                 </button>
-
             </a>
         </div>
     </div>
