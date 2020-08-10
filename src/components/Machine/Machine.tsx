@@ -14,8 +14,9 @@ interface MachineState {
     showModal: boolean,
     durationSpinInSeconds: number,
     slotsPerReel: number,
+    amountOfReels: number,
     currentSeeds: number[],
-    winners: MachineItem[],
+    winner: MachineItem,
 }
 
 interface MachineProps {
@@ -33,6 +34,7 @@ class Machine extends Component<MachineProps, MachineState> {
             showModal: false,
             durationSpinInSeconds: 2,
             slotsPerReel: 12,
+            amountOfReels: 3,
             ...initMachineState
         };
         // https://codepen.io/werter25/pen/MxRJJV
@@ -58,8 +60,8 @@ class Machine extends Component<MachineProps, MachineState> {
 
     initNewMachineSpin = (currentSeeds?: number[]) => {
         const newSeeds = currentSeeds ? this.getMachineRingSeeds(currentSeeds) : [5, 5, 5];
-        const newWinners = newSeeds.map((seed, i): MachineItem => this.props.shuffledItems[i][seed]);
-        return {currentSeeds: newSeeds, winners: newWinners}
+        const newWinner = this.props.shuffledItems[0][newSeeds[0]];
+        return {currentSeeds: newSeeds, winner: newWinner}
     };
 
     getSeed = () => {
@@ -69,7 +71,7 @@ class Machine extends Component<MachineProps, MachineState> {
     getMachineRingSeeds = (currentSeeds: number[]): number[] => {
         const newSeed = this.getSeed();
         return currentSeeds.map((seed, i) => {
-            const multiplier = this.state.slotsPerReel / 3;
+            const multiplier = this.state.slotsPerReel / this.state.amountOfReels;
             const nextSeed = newSeed + i * multiplier;
             if(nextSeed > (this.state.slotsPerReel - 1)){
                 return nextSeed - (this.state.slotsPerReel)
@@ -95,12 +97,11 @@ class Machine extends Component<MachineProps, MachineState> {
     };
 
     render() {
-
         const machineRings = this.state.currentSeeds.map((seed: number, i: any): ReactElement => {
             return this.createMachineRing(this.props.shuffledItems[i], seed, i)
         });
 
-        const winner = this.state.winners[0];
+        const winner = this.state.winner;
         const soloWinner = (
             <li className="list-item machine-winner__icon">
                 <Icon machineItemName={winner.name.eng}/>
