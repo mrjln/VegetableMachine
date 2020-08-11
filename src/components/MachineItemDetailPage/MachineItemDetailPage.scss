@@ -10,13 +10,40 @@
     vertical-align: middle;
   }
   &__image img {
-    max-width: 100vw;
+    max-width: 95%;
+  }
+  &__description {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 95%;
+  }
+  &__specs {
+    margin: 20px 0;
+  }
+  &__specs-list {
+    color: $color-primary;
+    padding: 0;
+    li {
+      width: 50%;
+      list-style:none;
+      background-color: #fff6d6;
+      margin: 5px 0;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      padding: 25px;
+
+      h3 {
+        margin-top: 0;
+      }
+    }
   }
 }
 
 .button--leave-site {
   color: $color-text;
   text-align: left;
+  width: 95%;
   span {
     padding: 0 20px;
   }

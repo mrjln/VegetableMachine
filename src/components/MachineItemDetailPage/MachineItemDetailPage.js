@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../Icon/Icon";
 import "./MachineItemDetailPage.scss";
 import ItemImage from '../../assets/images/asparagus.jpg'
+import NNLogo from '../../assets/images/NN_LOGO.jpg'
 
 
 function MachineItemDetailPage({machineItem}) {
@@ -24,6 +25,12 @@ function MachineItemDetailPage({machineItem}) {
         </div>
         <div className="machine-item-detail__image">
             <img src={ItemImage}/>
+        </div>
+        <div className="machine-item-detail__specs">
+            <ul className="machine-item-detail__specs-list">
+                <li> <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/> <div> <h3> Awesome Feature 1 </h3> <span> Good for your bla bla and bla </span> <span>source: <a href="/"> lees meer over Awesome feature 1 </a> </span> </div></li>
+                <li> <img width='50px' height='50px'  alt={'NN logo'} src={NNLogo}/> <div> <h3> Awesome Feature 2 </h3> <span> Good for your bla bla and bla </span> <span>source: <a href="/"> lees meer over Awesome feature 1 </a> </span> </div></li>
+            </ul>
         </div>
         <div className="machine-item-detail__cta">
             <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>

@@ -2,26 +2,28 @@
 
 .layout-container {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: grid;
-  grid-template-columns: 10px 1fr 10px;
+  grid-template-columns: 10px 100% 10px ;
   grid-template-rows: 165px 1fr;
-  grid-template-areas: "header header header" ". main . "
+  grid-template-areas: "header header header" ". main ."
 }
 
 .header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
-  background-image: url("./Header/header-wave.svg");
   background-repeat: repeat-x;
   padding: 0 30px;
   &__wave {
+    min-width: 100%;
+    background-image: url("./Header/header-wave.svg");
 
 
   }
-  &__wave, &__elipse {
-    width: 100%;
+  &__elipse {
+    min-width: 100%;
+    background-image: url("./Header/header-elipse.svg");
   }
   &__title {
     color: $color-text;
@@ -82,7 +84,6 @@ hr {
 
 .credits {
   margin-left: 10px;
-
 }
 
 //.footer {

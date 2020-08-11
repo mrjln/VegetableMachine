@@ -6,9 +6,10 @@ import {
 
 function Header(props) {
     return <React.Fragment>
-        <div className="header">
-            {props.headerTitle ?
-                <React.Fragment>
+        {props.headerTitle ?
+            <React.Fragment>
+                <div className={"header header__wave"}>
+
                     {/*<div className="header__wave" >*/}
                     {/*</div>*/}
                     <div className="header__title">
@@ -22,13 +23,13 @@ function Header(props) {
                             <h2 className=""> About </h2>
                         </Link>
                     </div>
-                </React.Fragment>
-                :
-                <div className="header__elipse">
-                    <HeaderElipse/>
                 </div>
-            }
-        </div>
+            </React.Fragment> :
+            <div className={"header"}>
+                <HeaderElipse/>
+            </div>
+
+        }
     </React.Fragment>
 }
 

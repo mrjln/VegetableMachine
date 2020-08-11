@@ -15,11 +15,11 @@ html, body, #root, .App {
   width: 100%;
   border: 0;
   font: inherit;
-  color: $color-text;
+  color: $color-primary;
 
   &--primary {
     padding: 0;
-    background-color: $color-primary;
+    background-color: $color-secondary;
     border-radius: 80px;
   }
   &--secondary{
