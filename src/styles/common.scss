@@ -21,9 +21,14 @@ html, body, #root, .App {
     padding: 0;
     background-color: $color-primary;
     border-radius: 80px;
-
   }
-  &--secondary {
+  &--secondary{
+    padding: 0;
+    background-color: $color-secondary;
+    border-radius: 80px;
+    color: $color-primary;
+  }
+  &--navigation {
     color: $color-text;
     border-top: 1px solid $color-text;
     background-color: white;
