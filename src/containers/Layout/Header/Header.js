@@ -25,7 +25,7 @@ function Header(props) {
                     </div>
                 </div>
             </React.Fragment> :
-            <div className={"header"}>
+            <div className={"header header__elipse"}>
                 <HeaderElipse/>
             </div>
 

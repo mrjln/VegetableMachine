@@ -8,6 +8,8 @@ import {
     Link,
 } from "react-router-dom";
 import MachineItem from "../../utils/types/types"
+import {capitalize} from "../../utils/capitalize";
+
 
 interface MachineState {
     spinning: boolean,
@@ -91,10 +93,6 @@ class Machine extends Component<MachineProps, MachineState> {
             slotsPerReel={this.state.slotsPerReel}
         />)
     };
-    capitalize = (string: string):string => {
-        if (typeof string !== 'string') return '';
-        return string.charAt(0).toUpperCase() + string.slice(1)
-    };
 
     render() {
         const machineRings = this.state.currentSeeds.map((seed: number, i: any): ReactElement => {
@@ -122,7 +120,7 @@ class Machine extends Component<MachineProps, MachineState> {
                     </MachineWindow>
 
                     {this.state.showModal ? <Modal cta={"Spin again"} clickCTA={this.toggleModal}>
-                        <h1 className="machine-winner__heading"> {this.capitalize(winner.name.eng)} </h1>
+                        <h1 className="machine-winner__heading"> {capitalize(winner.name.eng)} </h1>
                         <ul className="machine-winner"> {soloWinner}</ul>
                         <div className="machine-winner__specs-list">
                             <ul>

@@ -3,6 +3,7 @@ import Icon from "../Icon/Icon";
 import "./MachineItemDetailPage.scss";
 import ItemImage from '../../assets/images/asparagus.jpg'
 import NNLogo from '../../assets/images/NN_LOGO.jpg'
+import {capitalize} from "../../utils/capitalize";
 
 
 function MachineItemDetailPage({machineItem}) {
@@ -14,7 +15,7 @@ function MachineItemDetailPage({machineItem}) {
             </span>
         </div>
         <div className="machine-item-detail__description">
-            <h1> {machineItem.name.nl} </h1>
+            <h1> {capitalize(machineItem.name.nl)} </h1>
             <p>I'm baby vegan pitchfork blue bottle, cardigan copper mug drinking
                 vinegar af pork belly intelligentsia tumblr chicharrones polaroid air plant pok pok. Direct trade man
                 braid
@@ -24,12 +25,31 @@ function MachineItemDetailPage({machineItem}) {
                 semiotics la croix leggings chillwave fanny pack prism.</p>
         </div>
         <div className="machine-item-detail__image">
-            <img src={ItemImage}/>
+            <img alt="asparagus" src={ItemImage}/>
         </div>
         <div className="machine-item-detail__specs">
             <ul className="machine-item-detail__specs-list">
-                <li> <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/> <div> <h3> Awesome Feature 1 </h3> <span> Good for your bla bla and bla </span> <span>source: <a href="/"> lees meer over Awesome feature 1 </a> </span> </div></li>
-                <li> <img width='50px' height='50px'  alt={'NN logo'} src={NNLogo}/> <div> <h3> Awesome Feature 2 </h3> <span> Good for your bla bla and bla </span> <span>source: <a href="/"> lees meer over Awesome feature 1 </a> </span> </div></li>
+                <li>
+                    <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
+                    <div>
+                        <h3> Awesome Feature 1 </h3>
+                        <p> Good for your bla bla and bla. Works for your blaat and also schaap with bladiebla </p>
+                        <span> source: <a
+                            href="/"> lees meer over Awesome feature 1 </a>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
+                    <div>
+                        <h3> Awesome Feature 2 </h3>
+                        <p> Good for your bla bla and bla. Works for your blaat and also schaap with bladiebla </p>
+                        <span> source: <a
+                            href="/"> lees meer over Awesome feature 1 </a>
+                        </span>
+                    </div>
+                </li>
+
             </ul>
         </div>
         <div className="machine-item-detail__cta">

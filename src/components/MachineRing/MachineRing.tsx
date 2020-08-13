@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from "react";
+import React, { ReactNode} from "react";
 import "./MachineRing.scss";
 import Icon from "../Icon/Icon";
 import MachineItem from "../../utils/types/types"

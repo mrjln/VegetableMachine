@@ -4,7 +4,10 @@
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 10px 100% 10px ;
+  grid-template-columns:
+           minmax(1em, 1fr)
+          minmax(0, 40em)
+          minmax(1em, 1fr);
   grid-template-rows: 165px 1fr;
   grid-template-areas: "header header header" ". main ."
 }
@@ -14,18 +17,15 @@
   display: flex;
   justify-content: space-between;
   background-repeat: repeat-x;
-  padding: 0 30px;
   &__wave {
-    min-width: 100%;
+    min-width: 80%;
     background-image: url("./Header/header-wave.svg");
-
-
   }
   &__elipse {
     min-width: 100%;
-    background-image: url("./Header/header-elipse.svg");
   }
   &__title {
+    padding: 0 30px;
     color: $color-text;
     a {
       text-decoration: none;
@@ -41,36 +41,12 @@
     }
   }
   &__nav {
+    padding: 0 30px;
     font-size: 12px;
     display: flex;
     justify-content: center;
   }
 }
-
-//.navigation {
-//  position: -webkit-sticky;
-//  position: sticky;
-//  bottom: 0;
-//  z-index: 5;
-//  &__button {
-//    &:hover {
-//      color: $color-text-active;
-//      border-top: 4px solid $color-text-active;
-//    }
-//  }
-//}
-//
-//.navigation-list {
-//  padding: 0;
-//  display: flex;
-//  justify-content: space-evenly;
-//  margin: 0;
-//  &__item {
-//    display: inline;
-//    list-style: none;
-//    width: 50%;
-//  }
-//}
 
 hr {
   grid-area: ruler;
@@ -86,11 +62,3 @@ hr {
   margin-left: 10px;
 }
 
-//.footer {
-//  grid-area: footer;
-//  margin: 30px;
-//
-//  p {
-//    font-size: 12px;
-//  }
-//}
