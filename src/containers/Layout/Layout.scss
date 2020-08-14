@@ -1,15 +1,12 @@
 @import '../../styles/constants';
 
 .layout-container {
-  height: 100vh;
+  height: fit-content;
   width: 100vw;
   display: grid;
-  grid-template-columns:
-           minmax(1em, 1fr)
-          minmax(0, 40em)
-          minmax(1em, 1fr);
-  grid-template-rows: 165px 1fr;
-  grid-template-areas: "header header header" ". main ."
+  grid-template-columns: minmax(1em, 1fr) minmax(0, 40em) minmax(1em, 1fr);
+  grid-template-rows: 155px minmax(500px, 1fr) 200px;
+  grid-template-areas: "header header header" ". main ." "footer footer footer"
 }
 
 .header {
@@ -60,5 +57,15 @@ hr {
 
 .credits {
   margin-left: 10px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: $color-tertiary;
+  color: $color-primary;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 

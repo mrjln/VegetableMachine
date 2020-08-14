@@ -20,13 +20,11 @@ const productLinks = VegetableList.map(item => {
 const routerLinks = [
     {
         name: "Home",
-        pageTitle: "Vegetable Machine",
         path: "/",
         components: <MachineContainer />
     },
     {
         name: "About",
-        pageTitle: "Vegetable Machine",
         path: "/about",
         components:  <Footer/>
     },
