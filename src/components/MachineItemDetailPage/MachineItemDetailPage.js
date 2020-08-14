@@ -4,6 +4,7 @@ import "./MachineItemDetailPage.scss";
 import ItemImage from '../../assets/images/asparagus.jpg'
 import NNLogo from '../../assets/images/NN_LOGO.jpg'
 import {capitalize} from "../../utils/capitalize";
+import NutritionTable from '../NutritionTable/NutritionTable.tsx'
 
 
 function MachineItemDetailPage({machineItem}) {
@@ -16,13 +17,7 @@ function MachineItemDetailPage({machineItem}) {
         </div>
         <div className="machine-item-detail__description">
             <h1> {capitalize(machineItem.name.nl)} </h1>
-            <p>I'm baby vegan pitchfork blue bottle, cardigan copper mug drinking
-                vinegar af pork belly intelligentsia tumblr chicharrones polaroid air plant pok pok. Direct trade man
-                braid
-                aesthetic, lomo meggings copper mug fam actually post-ironic wayfarers. Biodiesel lumbersexual trust
-                fund
-                plaid. Edison bulb pitchfork hot chicken skateboard, godard chicharrones mumblecore hella direct trade
-                semiotics la croix leggings chillwave fanny pack prism.</p>
+            <p>Asparagus is good for you! Do you want to taco bout it? Try asparagus on a taco.</p>
         </div>
         <div className="machine-item-detail__image">
             <img alt="asparagus" src={ItemImage}/>
@@ -32,7 +27,7 @@ function MachineItemDetailPage({machineItem}) {
                 <li>
                     <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
                     <div>
-                        <h3> Awesome Feature 1 </h3>
+                        <h3> Vitamin C </h3>
                         <p> Good for your bla bla and bla. Works for your blaat and also schaap with bladiebla </p>
                         <span> source: <a
                             href="/"> lees meer over Awesome feature 1 </a>
@@ -42,7 +37,7 @@ function MachineItemDetailPage({machineItem}) {
                 <li>
                     <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
                     <div>
-                        <h3> Awesome Feature 2 </h3>
+                        <h3> Iron </h3>
                         <p> Good for your bla bla and bla. Works for your blaat and also schaap with bladiebla </p>
                         <span> source: <a
                             href="/"> lees meer over Awesome feature 1 </a>
@@ -52,6 +47,7 @@ function MachineItemDetailPage({machineItem}) {
 
             </ul>
         </div>
+        <NutritionTable/>
         <div className="machine-item-detail__cta">
             <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
                 <button target="_blank" className="button button--primary button--leave-site">
