@@ -1,69 +1,138 @@
 import React from "react";
-import './NutritionTable.scss'
+import './NutritionTable.scss';
 
-interface NutritionValues {
-    kcal: number,
-    kJ: number,
-    water: number,
-    protein: number,
-    carbonhydrates: number,
-    sugars: number,
-    fat: number,
-    saturated: number,
-    cholesterol: number,
-    fibers: number,
-    vitaminA: number,
-    vitaminB1: number,
-    vitaminB2: number,
-    vitaminB3: number,
-    vitaminB4: number,
-    vitaminB5: number,
-    vitaminB6: number,
-    vitaminB11: number,
-    vitaminB12: number,
-    vitaminC: number,
-    vitaminD: number,
-    vitaminE: number,
-    vitaminK: number,
-    natrium: number,
-    phosphor: number,
-    iron: number,
-    magnesium: number,
-    copper: number,
-    zinc: number
+interface NutritionValue {
+    name: string;
+    value: number;
+    units?: string;
 }
 
-const ADH: NutritionValues = {
-    kcal: 2000,
-    kJ: 12,
-    water: 4,
-    protein: 5,
-    carbonhydrates: 7,
-    sugars: 5,
-    fat: 7,
-    saturated: 7,
-    cholesterol: 7,
-    fibers: 7,
-    vitaminA: 5,
-    vitaminB1: 7,
-    vitaminB2: 8,
-    vitaminB3: 6,
-    vitaminB4: 5,
-    vitaminB5: 4,
-    vitaminB6: 2,
-    vitaminB11: 4,
-    vitaminB12: 2,
-    vitaminC: 6,
-    vitaminD: 4,
-    vitaminE: 3,
-    vitaminK: 2,
-    natrium: 3,
-    phosphor: 5,
-    iron: 9,
-    magnesium: 4,
-    copper: 3,
-    zinc: 2
-};
+const NutritionValues: NutritionValue[] = [
+    {
+        name: 'kcal',
+        value: 2000,
+    },
+    {
+        name: 'kJ',
+        value: 10000,
+    },
+    {
+        name: 'water',
+        value: 100,
+        units: 'gr/day'
+    },
+    {
+        name: 'protein',
+        value: 100,
+    },
+    {
+        name: 'carbonhydrates',
+        value: 100,
+    },
+    {
+        name: 'sugars',
+        value: 100,
+    },
+    {
+        name: 'fat',
+        value: 100,
+    },
+    {
+        name: 'saturated',
+        value: 100,
+    },
+    {
+        name: 'cholesterol',
+        value: 100,
+    },
+    {
+        name: 'fibers',
+        value: 100,
+    },
+    {
+        name: 'Vitamin A',
+        value: 800,
+        units: 'µg/day '
+    },
+    {
+        name: 'Vitamin B1',
+        value: 1.1,
+        units: 'mg/day'
+    },
+    {
+        name: 'Vitamin B2',
+        value: 	1.5,
+        units: 'mg/day'
+
+    },
+    {
+        name: 'Vitamin B3',
+        value: 17,
+        units: 'mg/day'
+
+    },
+    {
+        name: 'Vitamin B4',
+        value: 100,
+    },
+    {
+        name: 'Vitamin B5',
+        value: 100,
+    },
+    {
+        name: 'Vitamin B6',
+        value: 100,
+    },
+    {
+        name: 'Vitamin B11',
+        value: 100,
+    },
+    {
+        name: 'Vitamin B12',
+        value: 100,
+    },
+    {
+        name: 'Vitamin C',
+        value: 100,
+    },
+    {
+        name: 'Vitamin D',
+        value: 100,
+    },
+    {
+        name: 'Vitamin E',
+        value: 100,
+    },
+    {
+        name: 'Vitamin K',
+        value: 100,
+    },
+    {
+        name: 'Natrium',
+        value: 100,
+    },
+    {
+        name: 'Phosphor',
+        value: 100,
+    },
+    {
+        name: 'Iron',
+        value: 100,
+    },
+    {
+        name: 'Magnesium',
+        value: 100,
+    },
+    {
+        name: 'Copper',
+        value: 100,
+    },
+    {
+        name: 'Zinc',
+        value: 100,
+    }
+];
+
 
 function NutritionTable() {
     return <table>
@@ -75,16 +144,17 @@ function NutritionTable() {
         </tr>
         </thead>
         <tbody>
-        {Object.keys(ADH).map((key) => {
+        {NutritionValues.map((value) => {
             return <React.Fragment>
                 <tr>
                     <td>
-                        {key}
+                        {value.name}
                     </td>
                     <td>
 
                     </td>
                     <td>
+                        {value.value}
                     </td>
 
                 </tr>
