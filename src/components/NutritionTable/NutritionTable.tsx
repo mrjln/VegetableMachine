@@ -6,8 +6,9 @@ interface NutritionValue {
     value: number;
     units?: string;
 }
+// Based on a male 19-30
 
-const NutritionValues: NutritionValue[] = [
+const NutritionValuesRDI: NutritionValue[] = [
     {
         name: 'kcal',
         value: 2000,
@@ -61,75 +62,88 @@ const NutritionValues: NutritionValue[] = [
     },
     {
         name: 'Vitamin B2',
-        value: 	1.5,
+        value: 	1.2,
         units: 'mg/day'
 
     },
     {
         name: 'Vitamin B3',
-        value: 17,
+        value: 16,
+        units: 'mg/day'
+
+    },
+    // {
+    //     name: 'Vitamin B4',
+    //     value: 100,
+    // },
+    {
+        name: 'Vitamin B5',
+        value: 5,
         units: 'mg/day'
 
     },
     {
-        name: 'Vitamin B4',
-        value: 100,
-    },
-    {
-        name: 'Vitamin B5',
-        value: 100,
-    },
-    {
         name: 'Vitamin B6',
-        value: 100,
+        value: 1.7,
+        units: 'mg/day'
     },
-    {
-        name: 'Vitamin B11',
-        value: 100,
-    },
+    // {
+    //     name: 'Vitamin B11',
+    //     value: 100,
+    // },
     {
         name: 'Vitamin B12',
-        value: 100,
+        value: 	2.4,
+        units: 'µg/day '
     },
     {
         name: 'Vitamin C',
-        value: 100,
+        value: 60,
+        units: 'mg/day'
     },
     {
         name: 'Vitamin D',
-        value: 100,
+        value: 20,
+        units: 'µg/day '
     },
     {
         name: 'Vitamin E',
-        value: 100,
+        value: 15,
+        units: 'mg/day'
     },
     {
         name: 'Vitamin K',
-        value: 100,
+        value: 120,
+        units: 'µg/day '
     },
     {
         name: 'Natrium',
         value: 100,
     },
     {
-        name: 'Phosphor',
-        value: 100,
+        name: 'Phosphorus',
+        value: 700,
+        units: 'mg/day'
     },
     {
         name: 'Iron',
-        value: 100,
+        value: 18,
+        units: 'mg/day'
     },
     {
         name: 'Magnesium',
-        value: 100,
+        value: 400,
+        units: 'mg/day'
     },
     {
         name: 'Copper',
-        value: 100,
+        value: 900,
+        units: 'µg/day '
     },
     {
         name: 'Zinc',
-        value: 100,
+        value: 11,
+        units: 'mg/day'
     }
 ];
 
@@ -144,7 +158,7 @@ function NutritionTable() {
         </tr>
         </thead>
         <tbody>
-        {NutritionValues.map((value) => {
+        {NutritionValuesRDI.map((value) => {
             return <React.Fragment>
                 <tr>
                     <td>
@@ -154,7 +168,7 @@ function NutritionTable() {
 
                     </td>
                     <td>
-                        {value.value}
+                        {value.value} <span>{value.units} </span>
                     </td>
 
                 </tr>

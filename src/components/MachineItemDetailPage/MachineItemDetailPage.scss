@@ -1,7 +1,7 @@
 @import "../../styles/constants";
 
 .machine-item-detail {
-  width: 100vw;
+  width: 100%;
   position: relative;
   &__icon svg {
     width: 150px;
@@ -10,12 +10,12 @@
     vertical-align: middle;
   }
   &__image img {
-    max-width: 95%;
+    max-width: 100%;
   }
   &__description {
     text-overflow: ellipsis;
     overflow: hidden;
-    width: 95%;
+    width: 100%;
   }
   &__specs {
     margin: 20px 0;
@@ -24,19 +24,16 @@
     color: $color-primary;
     padding: 0;
     li {
-      width: 80%;
+      width: 100%;
       list-style: none;
       background-color: #fff6d6;
       margin: 5px 0;
       border-radius: 15px;
       display: flex;
       align-items: center;
-      padding: 15px;
+      padding-bottom: 20px;
       img {
-        padding-right: 20px;
-      }
-      h3 {
-        margin-top: 0;
+        padding: 0 20px;
       }
       span {
         font-size: 10px;
@@ -48,8 +45,7 @@
 .button--leave-site {
   color: $color-text;
   text-align: left;
-  width: 95%;
-  margin: 25px 0;
+  margin: 25px;
   span {
     padding: 0 20px;
   }
@@ -59,4 +55,12 @@
   svg {
     vertical-align: middle;
   }
+}
+
+#sticky-cta {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: $color-primary;
+  right: -15px;
 }

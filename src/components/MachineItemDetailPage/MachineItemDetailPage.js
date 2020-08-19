@@ -48,7 +48,7 @@ function MachineItemDetailPage({machineItem}) {
             </ul>
         </div>
         <NutritionTable/>
-        <div className="machine-item-detail__cta">
+        <div className="machine-item-detail__cta" id="sticky-cta">
             <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
                 <button target="_blank" className="button button--primary button--leave-site">
                 <span>
