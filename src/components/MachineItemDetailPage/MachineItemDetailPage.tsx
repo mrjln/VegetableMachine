@@ -13,8 +13,8 @@ interface MachineItemDetailProps {
 
 class MachineItemDetailPage extends Component<MachineItemDetailProps> {
 
-     isBottom = (el:HTMLElement) => {
-        return el.getBoundingClientRect().top <= (window.innerHeight) ;
+    isBottom = (el: HTMLElement) => {
+        return el.getBoundingClientRect().top <= (window.innerHeight);
     };
 
     componentDidMount() {
@@ -25,19 +25,17 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
         document.removeEventListener('scroll', this.trackScrolling);
     }
 
-    trackScrolling = (event: any) => {
+    trackScrolling = () => {
         const wrappedElement = document.getElementById('footer');
-
-        if(wrappedElement) {
-            console.log(wrappedElement.getBoundingClientRect().top);
-            console.log(window.innerHeight);
-            if (this.isBottom(wrappedElement)) {
-                console.log('footer reached');
-                const button = document.getElementById('sticky-cta');
-                if (button) button.style.background = 'red';
-                document.removeEventListener('scroll', this.trackScrolling);
-            }
+        const cta = document.getElementById('cta');
+        if (wrappedElement && Math.round(wrappedElement.getBoundingClientRect().top) <= (window.innerHeight)) {
+            console.log('footer visible ', Math.round(wrappedElement.getBoundingClientRect().top), window.innerHeight);
+            if (cta) cta.classList.add('machine-item-detail__on-the-spot-cta');
+        } else {
+            if (cta) cta.classList.remove('machine-item-detail__on-the-spot-cta');
+            console.log('footer NOT visible');
         }
+
     };
 
     render() {
@@ -83,7 +81,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 </ul>
             </div>
             <NutritionTable/>
-            <div className="machine-item-detail__cta" id="sticky-cta">
+            <div className="machine-item-detail__sticky-cta" id='cta' >
                 <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
                     <button className="button button--primary button--leave-site">
                 <span>

@@ -40,6 +40,22 @@
       }
     }
   }
+  &__sticky-cta {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    background-color: $color-primary;
+    right: -15px;
+    display: flex;
+    a {
+      width: 80%;
+    }
+  }
+  &__on-the-spot-cta {
+    position: relative;
+    right:0;
+    width: 100%;
+  }
 }
 
 .button--leave-site {
@@ -57,10 +73,10 @@
   }
 }
 
-#sticky-cta {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  background-color: $color-primary;
-  right: -15px;
-}
+//#sticky-cta {
+//  position: fixed;
+//  bottom: 0;
+//  width: 100vw;
+//  background-color: $color-primary;
+//  right: -15px;
+//}
