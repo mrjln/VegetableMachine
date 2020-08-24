@@ -1,7 +1,7 @@
 interface Specification {
     title: string,
     description: string
-    icon: any
+    icon?: any
 }
 
 export default interface MachineItem {

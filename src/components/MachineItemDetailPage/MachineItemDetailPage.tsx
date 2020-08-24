@@ -43,39 +43,30 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </div>
             <div className="machine-item-detail__description">
                 <h1> {capitalize(machineItem.name.eng)} </h1>
-                <p>Asparagus is good for you! Do you want to taco bout it? Try asparagus on a taco.</p>
+                <p>{machineItem.description}</p>
             </div>
             {machineItem ?
-            <div className="machine-item-detail__image">
-                <img alt="asparagus" src={require(`../../assets/images/${machineItem.slug}.jpg`)}/>
-            </div>: ""}
+                <div className="machine-item-detail__image">
+                    <img alt="asparagus" src={require(`../../assets/images/${machineItem.slug}.jpg`)}/>
+                </div> : ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
-                    <li>
-                        <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
-                        <div>
-                            <h3> Vitamin C </h3>
-                            <p> Good for your bla bla and bla. Works for your blaat and also schaap with bladiebla </p>
-                            <span> source: <a
-                                href="/"> lees meer over Awesome feature 1 </a>
-                        </span>
-                        </div>
-                    </li>
-                    <li>
-                        <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
-                        <div>
-                            <h3> Iron </h3>
-                            <p> Good for your bla bla and bla. Works for your blaat and also schaap with bladiebla </p>
-                            <span> source: <a
-                                href="/"> lees meer over Awesome feature 1 </a>
-                        </span>
-                        </div>
-                    </li>
-
+                    {machineItem.specs.map((item) => {
+                        return <li>
+                            <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
+                            <div>
+                                <h3> {item.title} </h3>
+                                <p>{item.description} </p>
+                                <span> source: <a href="/"> lees meer over Awesome feature 1 </a>
+                                </span>
+                            </div>
+                        </li>
+                    })
+                    }
                 </ul>
             </div>
             <NutritionTable/>
-            <div className="machine-item-detail__sticky-cta" id='cta' >
+            <div className="machine-item-detail__sticky-cta" id='cta'>
                 <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
                     <button className="button button--primary button--leave-site">
                 <span>
