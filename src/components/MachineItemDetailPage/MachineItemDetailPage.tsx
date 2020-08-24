@@ -1,7 +1,6 @@
 import React, {Component, ReactElement} from "react";
 import Icon from "../Icon/Icon";
 import "./MachineItemDetailPage.scss";
-import ItemImage from '../../assets/images/asparagus.jpg'
 import NNLogo from '../../assets/images/NN_LOGO.jpg'
 import {capitalize} from "../../utils/capitalize";
 import NutritionTable from '../NutritionTable/NutritionTable'
@@ -12,10 +11,6 @@ interface MachineItemDetailProps {
 }
 
 class MachineItemDetailPage extends Component<MachineItemDetailProps> {
-
-    isBottom = (el: HTMLElement) => {
-        return el.getBoundingClientRect().top <= (window.innerHeight);
-    };
 
     componentDidMount() {
         document.addEventListener('scroll', this.trackScrolling);
@@ -29,11 +24,9 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
         const wrappedElement = document.getElementById('footer');
         const cta = document.getElementById('cta');
         if (wrappedElement && Math.round(wrappedElement.getBoundingClientRect().top) <= (window.innerHeight)) {
-            console.log('footer visible ', Math.round(wrappedElement.getBoundingClientRect().top), window.innerHeight);
             if (cta) cta.classList.add('machine-item-detail__on-the-spot-cta');
         } else {
             if (cta) cta.classList.remove('machine-item-detail__on-the-spot-cta');
-            console.log('footer NOT visible');
         }
 
     };
@@ -49,12 +42,13 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </span>
             </div>
             <div className="machine-item-detail__description">
-                <h1> {capitalize(machineItem.name.nl)} </h1>
+                <h1> {capitalize(machineItem.name.eng)} </h1>
                 <p>Asparagus is good for you! Do you want to taco bout it? Try asparagus on a taco.</p>
             </div>
+            {machineItem ?
             <div className="machine-item-detail__image">
-                <img alt="asparagus" src={ItemImage}/>
-            </div>
+                <img alt="asparagus" src={require(`../../assets/images/${machineItem.slug}.jpg`)}/>
+            </div>: ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
                     <li>
