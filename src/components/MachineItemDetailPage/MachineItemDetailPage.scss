@@ -53,7 +53,6 @@
   }
   &__on-the-spot-cta {
     position: relative;
-    right:0;
     width: 100%;
   }
 }
@@ -72,11 +71,3 @@
     vertical-align: middle;
   }
 }
-
-//#sticky-cta {
-//  position: fixed;
-//  bottom: 0;
-//  width: 100vw;
-//  background-color: $color-primary;
-//  right: -15px;
-//}

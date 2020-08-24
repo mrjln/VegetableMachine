@@ -53,16 +53,13 @@ const Vegetables: MachineItem[] = [
         id: 3,
         slug: 'asparagus',
         name: {eng: 'asparagus', nl: 'asperge'},
-        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
-        '\n' +
-        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
-        '\n' +
-        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
-        '\n' +
-        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        description: 'Asparagus, officially known as Asparagus officinalis. This awesome nutrient richt veggie comes in different colours: green, white and even purple. It’s low in calories an very rich in vitamins, minerals and anti-oxidants. ',
         specs: [{
-            title: 'Hangover reducer',
-            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Digestive Health',
+            description: 'Very fiber rich! Promotes regularity and digestive health.',
         }]
     },
     {
