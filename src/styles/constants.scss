@@ -1,12 +1,20 @@
-$color-primary: #D0F0C0;
-$color-secondary: #2c9e4b;
-$color-tertiary: #E5E5E5;
-$color-text: #3E4739;
+$color-primary: #00401c;
+$color-secondary: #fddb66;
+$color-tertiary: #fff6d6;
+$color-text: #00401c;
 $color-text-active: #7C9073;
 
 $desktop-min-width: 1024px;
 $tablet-min-width: 480px;
 
-@mixin button {
 
-}
+//donker groen: #00401c
+//Geel/goud: #fddb66
+//Crème: #fff6d6
+
+//$color-primary: #D0F0C0; // lightgreen
+//$color-secondary: #2c9e4b; // brightgreen
+//$color-tertiary: #E5E5E5; // white/creme
+//$color-text: #3E4739 // gray (also machine color)
+// #3E4739 // outer machine color
+// #FFCE54 //  inner machine circle

@@ -1,4 +1,4 @@
-import React, {ReactElement, ReactNode} from "react";
+import React, { ReactNode} from "react";
 import "./MachineRing.scss";
 import Icon from "../Icon/Icon";
 import MachineItem from "../../utils/types/types"
@@ -38,7 +38,7 @@ function MachineRing({spinning, durationSpin, ringNumber, machineItems, seed, sl
         let slotAngle = 360 / slotsPerReel;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + calcReelRadius(slotsPerReel)
             + 'px)'};
-        return <div key={"slot " + i} style={transFormStyle} className={"slot " + i }>{i} <Icon machineItemName={itemName} /></div>;
+        return <div key={"slot " + i} style={transFormStyle} className={"slot " + i }> <Icon machineItemName={itemName} /></div>;
     };
 
     const createRing = (ringNumber:number): ReactNode => {

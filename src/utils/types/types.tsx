@@ -1,10 +1,13 @@
-export default interface MachineItem {
-    id: number,
-    name: {eng: string, nl: string}
+interface Specification {
+    title: string,
+    description: string
+    icon?: any
 }
 
-export default interface ModalInputs {
+export default interface MachineItem {
     id: number,
-    text: String,
-    cta: String
+    slug: string,
+    name: {eng: string, nl: string},
+    description: string,
+    specs: Specification[]
 }

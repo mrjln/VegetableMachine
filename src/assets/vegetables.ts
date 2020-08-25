@@ -1,7 +1,5 @@
-interface Vegetable {
-    id: number,
-    name: {eng: string, nl: string},
-}
+import MachineItem from "../utils/types/types"
+
 
 // interface Specification {
 //     title: string,
@@ -16,56 +14,198 @@ interface Vegetable {
 //     specs: Specification[]
 // }
 
-const Vegetables: Vegetable[] = [
+const Vegetables: MachineItem[] = [
     {
         id: 1,
+        slug: 'artichoke',
         name: {eng: 'artichoke', nl: 'artichoke'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
+
     },
     {
         id: 2,
-        name: {eng: 'aubergine', nl: 'aubergine'}
+        slug: 'aubergine',
+        name: {eng: 'aubergine', nl: 'aubergine'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
 
     },
     {
         id: 3,
-        name: {eng: 'asparagus', nl: 'asperge'}
+        slug: 'asparagus',
+        name: {eng: 'asparagus', nl: 'asperge'},
+        description: 'Asparagus, officially known as Asparagus officinalis. This awesome nutrient richt veggie comes in different colours: green, white and even purple. It’s low in calories an very rich in vitamins, minerals and anti-oxidants. ',
+        specs: [{
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Digestive Health',
+            description: 'Very fiber rich! Promotes regularity and digestive health.',
+        }]
     },
     {
         id: 4,
-        name: {eng: 'broccoli', nl: 'broccoli'}
+        slug: 'broccoli',
+        name: {eng: 'broccoli', nl: 'broccoli'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 5,
-        name: {eng: 'mushroom', nl: 'champignon'}
+        slug: 'mushroom',
+        name: {eng: 'mushroom', nl: 'champignon'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 6,
-        name: {eng: 'lettuce', nl: 'sla'}
+        slug: 'lettuce',
+        name: {eng: 'lettuce', nl: 'sla'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 7,
-        name: {eng: 'paprika', nl: 'paprika'}
+        slug: 'paprika',
+        name: {eng: 'paprika', nl: 'paprika'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 8,
-        name: {eng: 'leek', nl: 'prei'}
+        slug: 'leek',
+        name: {eng: 'leek', nl: 'prei'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 9,
-        name: {eng: 'brusselsSprouts', nl: 'spruitjes'}
+        slug: 'brussels-sprouts',
+        name: {eng: 'brusselsSprouts', nl: 'spruitjes'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
 
     },
     {
         id: 10,
-        name: {eng: 'pumpkin', nl: 'pompoen'}
+        slug: 'pumpkin',
+        name: {eng: 'pumpkin', nl: 'pompoen'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 11,
-        name: {eng: 'onion', nl: 'ui'}
+        slug: 'onion',
+        name: {eng: 'onion', nl: 'ui'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     },
     {
         id: 12,
-        name: {eng: 'sweetPotato', nl: 'zoeteAardappel'}
+        slug: 'sweet-potato',
+        name: {eng: 'sweetPotato', nl: 'zoeteAardappel'},
+        description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
+        '\n' +
+        'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
+        '\n' +
+        'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
+        '\n' +
+        'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
+        specs: [{
+            title: 'Hangover reducer',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }]
     }
 
 ];
