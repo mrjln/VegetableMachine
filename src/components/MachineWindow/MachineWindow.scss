@@ -5,18 +5,19 @@
   border-bottom: 85px solid $color-text;
   height: 260px;
   background-color: transparent;
-  z-index: 1;
   min-width: 285px;
-  &__light-bulb {
-    width: 10px;
-    height: 10px;
-    background-color: #FFCE54;
-    position: absolute;
-    top: -10px;
-    border-radius: 100%;
-    box-shadow: 0 0 20px 5px #fff;
-    animation: blinker 1s linear infinite;
-  }
+  position: absolute;
+  z-index: 1;
+  //&__light-bulb {
+  //  width: 10px;
+  //  height: 10px;
+  //  background-color: #FFCE54;
+  //  position: absolute;
+  //  top: -10px;
+  //  border-radius: 100%;
+  //  box-shadow: 0 0 20px 5px #fff;
+  //  //animation: blinker 1s linear infinite;
+  //}
   &__button {
     position: relative;
     bottom: -260px;
@@ -32,76 +33,159 @@
     content: url("./elipse.svg");
     width: 335px;
     position: absolute;
-    top: -127px;
-    left: 0;
-    //border-top-left-radius: 150px;
-    //border-top-right-radius: 150px;
-    //border-bottom: 100px solid $color-text;
+    top: -152px;
+    left: -25px;
   }
 }
 
 #inner-elipse {
   position: absolute;
-  top: -115px;
-  left: 25px;
+  top: -135px;
+  left: 0;
 }
 
-text {
-  fill: #FF9800;
+.blinker-0 {
+  animation: blinker-0 1s linear infinite;
 }
 
-.blinker-0{
+.blinker-1 {
   animation: blinker-1 1s linear infinite;
 }
 
-.blinker-1{
-  animation: blinker-1 1s linear infinite;
-}
-.blinker-2{
+.blinker-2 {
   animation: blinker-2 1s linear infinite;
 }
-.blinker-3{
+
+.blinker-3 {
   animation: blinker-3 1s linear infinite;
 }
-.blinker-4{
+
+.blinker-4 {
   animation: blinker-4 1s linear infinite;
 }
-.blinker-5{
+
+.blinker-5 {
   animation: blinker-5 1s linear infinite;
+}
+
+.blinker-6 {
+  animation: blinker-6 1s linear infinite;
+}
+
+.blinker-7 {
+  animation: blinker-7 1s linear infinite;
+}
+
+.blinker-8 {
+  animation: blinker-8 1s linear infinite;
+}
+
+.blinker-9 {
+  animation: blinker-9 1s linear infinite;
+}
+.blinker-10 {
+  animation: blinker-10 1s linear infinite;
+}
+.blinker-11 {
+  animation: blinker-11 1s linear infinite;
+}
+.blinker-12 {
+  animation: blinker-12 1s linear infinite;
+}
+.blinker-13 {
+  animation: blinker-13 1s linear infinite;
+}
+
+.blinker-14 {
+  animation: blinker-13 1s linear infinite;
 }
 
 @keyframes blinker-0 {
   0% {
-    box-shadow: 0 0 20px 10px #f9de8a;
+    opacity: 30%;
   }
 }
-
 
 @keyframes blinker-1 {
   10% {
-    box-shadow: 0 0 20px 10px #f9de8a;
+    opacity: 30%;
   }
 }
+
 @keyframes blinker-2 {
-   30% {
-     box-shadow: 0 0 20px 10px #f9de8a;
-   }
- }
+  20% {
+    opacity: 30%;
+  }
+}
 
 @keyframes blinker-3 {
-  50% {
-    box-shadow: 0 0 20px 10px #f9de8a;
+  30% {
+    opacity: 30%;
   }
 }
 
 @keyframes blinker-4 {
-  70% {
-    box-shadow: 0 0 20px 10px #f9de8a;
+  40% {
+    opacity: 30%;
   }
 }
 
 @keyframes blinker-5 {
+  30% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-6 {
+  60% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-7 {
+  70% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-8 {
+  80% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-9 {
   90% {
-    box-shadow: 0 0 20px 10px #f9de8a;
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-10 {
+  0% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-11 {
+  10% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-12 {
+  20% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-13 {
+  30% {
+    opacity: 30%;
+  }
+}
+
+@keyframes blinker-14 {
+  40% {
+    opacity: 30%;
   }
 }
