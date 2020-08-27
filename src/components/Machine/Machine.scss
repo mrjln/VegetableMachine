@@ -38,13 +38,33 @@
   &__specs-list {
     display: flex;
     justify-content: space-between;
+    ul {
+      width: 100%;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      li {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 5px;
+        color: $color-primary;
+        span {
+          padding-left: 10px;
+        }
+      }
+    }
   }
   &__link {
     display: flex;
     justify-content: flex-end;
     text-decoration: none;
+
     button {
       width: 250px;
+      background-color: $color-primary;
+      color: $color-secondary;
       span {
         padding: 0 20px;
       }

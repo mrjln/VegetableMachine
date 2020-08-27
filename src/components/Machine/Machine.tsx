@@ -101,9 +101,9 @@ class Machine extends Component<MachineProps, MachineState> {
 
         const winner = this.state.winner;
         const soloWinner = (
-            <li className="list-item machine-winner__icon">
-                <Icon machineItemName={winner.name.eng}/>
-            </li>
+            <div className="list-item machine-winner__icon">
+                <Icon itemName={winner.name.eng}/>
+            </div>
         );
 
         return (
@@ -121,15 +121,10 @@ class Machine extends Component<MachineProps, MachineState> {
 
                     {this.state.showModal ? <Modal cta={"Spin again"} clickCTA={this.toggleModal}>
                         <h1 className="machine-winner__heading"> {capitalize(winner.name.eng)} </h1>
-                        <ul className="machine-winner"> {soloWinner}</ul>
+                        <div className="machine-winner"> {soloWinner}</div>
                         <div className="machine-winner__specs-list">
                             <ul>
-                                <li> Vitamin C</li>
-                                <li> Vitamin B1 and B2</li>
-                            </ul>
-                            <ul>
-                                <li> Lots of iron</li>
-                                <li> Recovery of muscles</li>
+                                {winner.specs.map(spec => <li> <Icon itemName='muscularArmOutline'/> <span> {spec.title}</span></li> )}
                             </ul>
                         </div>
                         <Link className="machine-winner__link" to={'/' + winner.name.eng}>

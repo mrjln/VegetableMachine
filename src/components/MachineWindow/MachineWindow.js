@@ -33,7 +33,6 @@ function MachineWindow(props) {
         return machineLights;
     };
 
-
     return <React.Fragment>
         <div className="machine-window">
             <svg id="inner-elipse" width="290" height="120" viewBox="-3 0 310 101" fill="#FFCE54"
@@ -47,7 +46,6 @@ function MachineWindow(props) {
             </div>
         </div>
         {props.children}
-
     </React.Fragment>
 }
 
