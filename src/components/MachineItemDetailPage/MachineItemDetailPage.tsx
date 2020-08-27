@@ -38,7 +38,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
         return <div className="machine-item-detail">
             <div>
             <span className="machine-item-detail__icon" id='machine-item-icon'>
-                <Icon machineItemName={machineItem.name.eng}/>
+                <Icon itemName={machineItem.name.eng}/>
             </span>
             </div>
             <div className="machine-item-detail__description">
@@ -47,13 +47,13 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </div>
             {machineItem ?
                 <div className="machine-item-detail__image">
-                    <img alt="asparagus" src={require(`../../assets/images/${machineItem.slug}.jpg`)}/>
+                    <img alt={machineItem.name.eng} src={require(`../../assets/images/${machineItem.slug}.jpg`)}/>
                 </div> : ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
                     {machineItem.specs.map((item) => {
                         return <li>
-                            <img width='50px' height='50px' alt={'NN logo'} src={NNLogo}/>
+                            <Icon itemName='muscularArmOutline'/>
                             <div>
                                 <h3> {item.title} </h3>
                                 <p>{item.description} </p>

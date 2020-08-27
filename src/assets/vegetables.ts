@@ -29,7 +29,11 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        }]
+        },
+            {
+                title: 'Lowers Blood Pressure',
+                description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+            }]
 
     },
     {
@@ -46,6 +50,9 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        }, {
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
 
     },
@@ -60,6 +67,9 @@ const Vegetables: MachineItem[] = [
         }, {
             title: 'Digestive Health',
             description: 'Very fiber rich! Promotes regularity and digestive health.',
+        }, {
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
     },
     {
@@ -76,7 +86,11 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        }]
+        },
+            {
+                title: 'Lowers Blood Pressure',
+                description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+            }]
     },
     {
         id: 5,
@@ -92,6 +106,9 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        },{
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
     },
     {
@@ -108,6 +125,9 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        },{
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
     },
     {
@@ -124,6 +144,9 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        },{
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
     },
     {
@@ -140,6 +163,9 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        },{
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
     },
     {
@@ -156,6 +182,9 @@ const Vegetables: MachineItem[] = [
         specs: [{
             title: 'Hangover reducer',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
+        },{
+            title: 'Lowers Blood Pressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
         }]
 
     },
