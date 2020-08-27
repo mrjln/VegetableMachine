@@ -12,19 +12,22 @@ function MachineWindow(props) {
         const length = properties.getTotalLength();
         for (let i = 0; i < amountOfLights; i++) {
             const point = properties.getPointAtLength(i / amountOfLights * length);
-            const circle = <circle key={i}
-                                   className={`machine-window__light-bulb blinker-${i}`}
-                                   cx={point.x}
-                                   cy={point.y}
-                                   r="5">
-                                <animate
-                                    attributeType="XML"
-                                    attributeName="fill"
-                                    values="#f9de8a;#FFCE54;#f9de8a;#f9de8a"
-                                    dur="0.8s"
-                                    repeatCount="indefinite"
-                                />
-                             </circle>
+            const circle =
+                <circle key={i}
+                        className={`blinker-${i}`}
+                        cx={point.x}
+                        cy={point.y}
+                        r="5"
+                >
+                    <animate
+                        attributeType="XML"
+                        attributeName="fill"
+                        values="FFCE54;#FFCE54;#f9de8a;#f9de8a"
+                        dur="0.8s"
+                        repeatCount="indefinite"
+                    />
+
+                </circle>;
             machineLights.push(circle)
         }
         return machineLights;
