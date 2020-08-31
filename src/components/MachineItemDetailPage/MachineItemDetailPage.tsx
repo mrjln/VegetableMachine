@@ -1,7 +1,6 @@
-import React, {Component, ReactElement} from "react";
+import React, {Component} from "react";
 import Icon from "../Icon/Icon";
 import "./MachineItemDetailPage.scss";
-import NNLogo from '../../assets/images/NN_LOGO.jpg'
 import {capitalize} from "../../utils/capitalize";
 import NutritionTable from '../NutritionTable/NutritionTable'
 import MachineItem from "../../utils/types/types"
@@ -45,7 +44,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </span>
             </div>
             <div className="machine-item-detail__description">
-                <h1> {capitalize(machineItem.name.eng)} </h1>
+                <h1> {capitalize(machineItem.name.nl)} </h1>
                 <p>{machineItem.description}</p>
             </div>
             {machineItem ?
@@ -70,10 +69,10 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </div>
             <NutritionTable/>
             <div className="machine-item-detail__cta machine-item-detail__cta--sticky" id='sticky-button'>
-                <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
+                <a href={`https://www.dehippevegetarier.nl/category/recepten/${machineItem.name.nl}/?s=`} >
                     <button className="button button--primary button--leave-site">
                 <span>
-                    Find a recipe with {machineItem.name.nl}
+                    Zoek recept met {machineItem.name.nl}
                 </span>
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -84,10 +83,10 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 </a>
             </div>
             <div className="machine-item-detail__cta machine-item-detail__cta--on-the-spot" id='cta'>
-                <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
+                <a href={`https://www.dehippevegetarier.nl/category/recepten/${machineItem.name.nl}/?s=`} >
                     <button className="button button--primary button--leave-site">
                 <span>
-                    Find a recipe with {machineItem.name.nl}
+                    Zoek een recept met {machineItem.name.nl}
                 </span>
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path

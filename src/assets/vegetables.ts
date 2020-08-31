@@ -59,7 +59,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 3,
         slug: 'asparagus',
-        name: {eng: 'asparagus', nl: 'asperge'},
+        name: {eng: 'asparagus', nl: 'asperges'},
         description: 'Asparagus, officially known as Asparagus officinalis. This awesome nutrient richt veggie comes in different colours: green, white and even purple. It’s low in calories an very rich in vitamins, minerals and anti-oxidants. ',
         specs: [{
             title: 'Lowers Blood Pressure',

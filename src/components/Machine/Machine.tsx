@@ -127,7 +127,7 @@ class Machine extends Component<MachineProps, MachineState> {
                                 {winner.specs.slice(0,2).map(spec => <li><Icon itemName='muscularArmOutline'/> <span>{spec.title}</span></li> )}
                             </ul>
                         </div>
-                        <Link className="machine-winner__link" to={'/' + winner.name.eng}>
+                        <Link className="machine-winner__link" to={'/' + winner.slug}>
                             <button className="button button--primary machine-winner__button">
                                 <span> Give me more specs </span>
                                 <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">

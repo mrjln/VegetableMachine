@@ -4,8 +4,6 @@ import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 import VegetableList from "./assets/vegetables";
 import MachineItemDetailPage from './components/MachineItemDetailPage/MachineItemDetailPage'
-import Footer from './containers/Layout/Footer/Footer';
-
 
 import {
     BrowserRouter as Router,
