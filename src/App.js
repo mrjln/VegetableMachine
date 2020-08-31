@@ -14,7 +14,7 @@ import {
 } from "react-router-dom";
 
 const productLinks = VegetableList.map(item => {
-    return { name: item.name.eng, path: "/" + item.name.eng.toLowerCase(), components: <MachineItemDetailPage machineItem={item}/>   }
+    return { name: item.name.eng, path: "/" + item.slug, components: <MachineItemDetailPage machineItem={item}/>   }
 });
 
 const routerLinks = [
@@ -26,7 +26,6 @@ const routerLinks = [
     {
         name: "About",
         path: "/about",
-        components:  <Footer/>
     },
     ...productLinks
 ];
