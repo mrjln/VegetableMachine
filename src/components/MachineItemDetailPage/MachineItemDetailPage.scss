@@ -1,9 +1,5 @@
 @import "../../styles/constants";
 
-.layout-container {
-  grid-template-rows: 155px minmax(500px, 1fr) 100px 200px;
-  grid-template-areas: "header header header" ". main ." "cta cta cta" "footer footer footer"
-}
 
 .machine-item-detail {
   width: 100%;
@@ -61,9 +57,8 @@
 
     }
     &--on-the-spot {
+      background-color: transparent;
       position: relative;
-      right: 16px;
-      width: 100vw;
     }
   }
 }
@@ -72,6 +67,7 @@
   color: $color-text;
   text-align: left;
   margin: 25px;
+  width: 250px;
   span {
     padding: 0 20px;
   }
