@@ -73,7 +73,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
                     <button className="button button--primary button--leave-site">
                 <span>
-                    Zoek een recept met {machineItem.name.nl}
+                    Find a recipe with {machineItem.name.nl}
                 </span>
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -87,7 +87,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 <a href={"https://www.ah.nl/allerhande/recepten-zoeken?Ntt=" + machineItem.name.nl}>
                     <button className="button button--primary button--leave-site">
                 <span>
-                    Zoek een recept met {machineItem.name.nl}
+                    Find a recipe with {machineItem.name.nl}
                 </span>
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
