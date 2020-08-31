@@ -1,5 +1,10 @@
 @import "../../styles/constants";
 
+.layout-container {
+  grid-template-rows: 155px minmax(500px, 1fr) 100px 200px;
+  grid-template-areas: "header header header" ". main ." "cta cta cta" "footer footer footer"
+}
+
 .machine-item-detail {
   width: 100%;
   position: relative;
@@ -44,6 +49,7 @@
     background-color: $color-primary;
     right: 0;
     display: flex;
+    justify-content: center;
     a {
       width: 80%;
     }

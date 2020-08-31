@@ -31,14 +31,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
     trackScrolling = () => {
         const cta = document.getElementById('cta');
         const sticky = document.getElementById('sticky-button');
-        if (cta)console.log(window.innerHeight - 200, Math.round(cta.getBoundingClientRect().top ));
-
-        if (cta && this.isScrolledIntoView(cta)) {
-            if (sticky) sticky.style.display = 'none';
-        } else {
-            if (sticky) sticky.style.display = 'flex';
-        }
-
+        if(sticky)(cta && this.isScrolledIntoView(cta)) ?  sticky.style.display = 'none' : sticky.style.display = 'flex';
     };
 
     render() {

@@ -34,14 +34,14 @@ function MachineWindow(props) {
     };
 
     return <React.Fragment>
-        <div className="machine-window">
+        <div className="machine__window">
             <svg id="inner-elipse" width="290" height="120" viewBox="-3 0 310 101" fill="#FFCE54"
                  xmlns="http://www.w3.org/2000/svg">
                 <path id="curve" d="M298 101C297.325 53.126 233.796 0 149 0C64.2043 0 0.742637 53.126 0 101H298Z"
                       fill="#0f331f"/>
                 {getMachineLights()}
             </svg>
-            <div className="machine-window__button">
+            <div className="machine__window__button">
                 <button className="button button--primary" onClick={props.spin}>Spin</button>
             </div>
         </div>
