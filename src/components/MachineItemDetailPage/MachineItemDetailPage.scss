@@ -40,20 +40,25 @@
       }
     }
   }
-  &__sticky-cta {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
+  &__cta {
     background-color: $color-primary;
     right: 0;
     display: flex;
     a {
       width: 80%;
     }
-  }
-  &__on-the-spot-cta {
-    position: relative;
-    width: 100%;
+    &--sticky {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      z-index: 1;
+
+    }
+    &--on-the-spot {
+      position: relative;
+      right: 16px;
+      width: 100vw;
+    }
   }
 }
 
