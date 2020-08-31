@@ -124,7 +124,7 @@ class Machine extends Component<MachineProps, MachineState> {
                         <div className="machine-winner"> {soloWinner}</div>
                         <div className="machine-winner__specs-list">
                             <ul>
-                                {winner.specs.map(spec => <li> <Icon itemName='muscularArmOutline'/> <span> {spec.title}</span></li> )}
+                                {winner.specs.slice(0,2).map(spec => <li><Icon itemName='muscularArmOutline'/> <span>{spec.title}</span></li> )}
                             </ul>
                         </div>
                         <Link className="machine-winner__link" to={'/' + winner.name.eng}>
