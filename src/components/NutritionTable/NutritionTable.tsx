@@ -1,5 +1,6 @@
 import React from "react";
 import './NutritionTable.scss';
+import MachineItem from "../../utils/types/types"
 
 interface NutritionValue {
     name: string;
@@ -147,13 +148,18 @@ const NutritionValuesRDI: NutritionValue[] = [
     }
 ];
 
+interface NutritionTableProps {
+    machineItem: MachineItem
+}
 
-function NutritionTable() {
+
+function NutritionTable(props: NutritionTableProps) {
+    const item = props.machineItem;
     return <table>
         <thead>
         <tr>
             <td width="159">Per 100 g / ml</td>
-            <td width="96">Asperges</td>
+            <td width="96">{item.name.eng}</td>
             <td width="53">ADH*</td>
         </tr>
         </thead>

@@ -11,7 +11,6 @@ interface MachineItemDetailProps {
 
 class MachineItemDetailPage extends Component<MachineItemDetailProps> {
 
-
     isScrolledIntoView(el: HTMLElement): boolean {
         const rect = el.getBoundingClientRect();
         const elemTop = rect && rect.top;
@@ -36,7 +35,6 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
     render() {
 
         const machineItem = this.props.machineItem;
-
         return <div className="machine-item-detail">
             <div>
             <span className="machine-item-detail__icon" id='machine-item-icon'>
@@ -67,7 +65,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                     }
                 </ul>
             </div>
-            <NutritionTable/>
+            <NutritionTable machineItem={machineItem}/>
             <div className="machine-item-detail__cta machine-item-detail__cta--sticky" id='sticky-button'>
                 <a href={`https://www.dehippevegetarier.nl/category/recepten/${machineItem.name.nl}/?s=`} >
                     <button className="button button--primary button--leave-site">
