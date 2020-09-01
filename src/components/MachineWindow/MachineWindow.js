@@ -34,6 +34,7 @@ function MachineWindow(props) {
     };
 
     return <React.Fragment>
+        {props.children}
         <div className="machine__window">
             <svg id="inner-elipse" width="290" height="120" viewBox="-3 0 310 101" fill="#FFCE54"
                  xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +46,7 @@ function MachineWindow(props) {
                 <button className="button button--primary" onClick={props.spin}>Spin</button>
             </div>
         </div>
-        {props.children}
+
     </React.Fragment>
 }
 
