@@ -4,6 +4,7 @@ import Layout from './containers/Layout/Layout'
 import './styles/common.scss'
 import VegetableList from "./assets/vegetables";
 import MachineItemDetailPage from './components/MachineItemDetailPage/MachineItemDetailPage'
+import HeroContentBlock from './components/HeroContentBlock/HeroContentBlock'
 
 import {
     BrowserRouter as Router,
@@ -24,6 +25,7 @@ const routerLinks = [
     {
         name: "About",
         path: "/about",
+        components: <HeroContentBlock text={"The Vegetable Machine is designed to promote the amazing qualities of vegetables. It stimulates your curiosity and get to know all the healthy aspects of vegetables as the center of your meal. Vegetables have very versatile health benefits, which are not yet know to everyone. Vegetable Machine offers a fun way to get inspiration for your dinner. Hungry? Out of inspiration? Spin the wheel! "} img={<img src={require('./assets/images/NN_LOGO.jpg')}/>}/>
     },
     ...productLinks
 ];
