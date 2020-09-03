@@ -63,16 +63,21 @@
 }
 
 .button--leave-site {
+  overflow: hidden;
   color: $color-text;
   text-align: left;
-  margin: 25px;
-  span {
-    padding: 0 20px;
-  }
+  margin: 20px;
+  padding:0 20px;
   :hover {
     color: $color-text-active;
   }
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+  }
   svg {
+    display: inline;
+    margin-left: 20px;
     vertical-align: middle;
   }
 }
