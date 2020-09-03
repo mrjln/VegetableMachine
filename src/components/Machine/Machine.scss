@@ -73,8 +73,32 @@
         color: $color-text-active;
       }
       svg {
+        position: relative;
         vertical-align: middle;
       }
     }
   }
+}
+
+#arrow-right-icon {
+  animation: jump-left 1s infinite;
+}
+
+@keyframes jump-left {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 2px;
+  }
+  50% {
+    left: 3px;
+  }
+  70% {
+    left: 2px;
+  }
+  100% {
+    left: 0;
+  }
+
 }
