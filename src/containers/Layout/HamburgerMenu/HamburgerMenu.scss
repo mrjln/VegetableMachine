@@ -1,0 +1,43 @@
+@import "../../../styles/constants";
+
+.hamburger-menu {
+  position: absolute;
+  width: 90%;
+  z-index: 1;
+  padding: 20px;
+  background-color: $color-primary;
+  right: -600px;
+}
+.hamburger-menu-list{
+  padding: 0;
+  &__item {
+    color: $color-secondary;
+    list-style: none;
+    border-bottom: 2px solid $color-secondary;
+  }
+}
+
+.open {
+  animation: slide-in 5s ease-in;
+}
+
+.close {
+  animation: slide-out 5s;
+}
+
+@keyframes slide-in {
+  to {
+  right: 0;
+  }
+}
+
+@keyframes slide-out {
+
+ to {
+    //margin-left: 0%;
+    //width: 300%;
+    right: -400px
+  }
+}
+
+

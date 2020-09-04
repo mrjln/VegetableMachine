@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Link,
 } from "react-router-dom";
+import HamburgerMenu from '../HamburgerMenu/HamburgerMenu'
 
 function Header(props) {
     return   <React.Fragment>
@@ -16,6 +17,7 @@ function Header(props) {
                 <Link to='/about'>
                     <h2 className=""> About </h2>
                 </Link>
+                <HamburgerMenu/>
             </div>
         </div>
     </React.Fragment>
