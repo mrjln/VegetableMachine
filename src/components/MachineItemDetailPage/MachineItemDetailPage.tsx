@@ -38,11 +38,11 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
         return <div className="machine-item-detail">
             <div>
             <span className="machine-item-detail__icon" id='machine-item-icon'>
-                <Icon itemName={machineItem.name.eng}/>
+                <Icon itemName={machineItem.camelCase}/>
             </span>
             </div>
             <div className="machine-item-detail__description">
-                <h1> {capitalize(machineItem.name.nl)} </h1>
+                <h1> {capitalize(machineItem.name.eng)} </h1>
                 <p>{machineItem.description}</p>
             </div>
             {machineItem ?

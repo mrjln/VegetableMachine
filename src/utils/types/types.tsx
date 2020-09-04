@@ -7,6 +7,7 @@ interface Specification {
 export default interface MachineItem {
     id: number,
     slug: string,
+    camelCase: string,
     name: {eng: string, nl: string},
     description: string,
     specs: Specification[]

@@ -18,6 +18,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 1,
         slug: 'artichoke',
+        camelCase: 'artichoke',
         name: {eng: 'artichoke', nl: 'artichoke'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -39,6 +40,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 2,
         slug: 'aubergine',
+        camelCase: 'aubergine',
         name: {eng: 'aubergine', nl: 'aubergine'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -59,6 +61,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 3,
         slug: 'asparagus',
+        camelCase: 'asparagus',
         name: {eng: 'asparagus', nl: 'asperges'},
         description: 'Asparagus, officially known as Asparagus officinalis. This awesome nutrient richt veggie comes in different colours: green, white and even purple. It’s low in calories an very rich in vitamins, minerals and anti-oxidants. ',
         specs: [{
@@ -75,6 +78,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 4,
         slug: 'broccoli',
+        camelCase: 'broccoli',
         name: {eng: 'broccoli', nl: 'broccoli'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -95,6 +99,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 5,
         slug: 'mushroom',
+        camelCase: 'mushroom',
         name: {eng: 'mushroom', nl: 'champignon'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -114,6 +119,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 6,
         slug: 'lettuce',
+        camelCase: 'lettuce',
         name: {eng: 'lettuce', nl: 'sla'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -133,6 +139,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 7,
         slug: 'paprika',
+        camelCase: 'paprika',
         name: {eng: 'paprika', nl: 'paprika'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -152,6 +159,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 8,
         slug: 'leek',
+        camelCase: 'leek',
         name: {eng: 'leek', nl: 'prei'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -171,7 +179,8 @@ const Vegetables: MachineItem[] = [
     {
         id: 9,
         slug: 'brussels-sprouts',
-        name: {eng: 'brusselsSprouts', nl: 'spruitjes'},
+        camelCase: 'brusselsSprouts',
+        name: {eng: 'brussels sprouts', nl: 'spruitjes'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -191,6 +200,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 10,
         slug: 'pumpkin',
+        camelCase: 'pumpkin',
         name: {eng: 'pumpkin', nl: 'pompoen'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -207,6 +217,7 @@ const Vegetables: MachineItem[] = [
     {
         id: 11,
         slug: 'onion',
+        camelCase: 'onion',
         name: {eng: 'onion', nl: 'ui'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
@@ -223,7 +234,8 @@ const Vegetables: MachineItem[] = [
     {
         id: 12,
         slug: 'sweet-potato',
-        name: {eng: 'sweetPotato', nl: 'zoeteAardappel'},
+        camelCase: 'sweetPotato',
+        name: {eng: 'Sweet Potato', nl: 'zoeteAardappel'},
         description: 'Artichoke is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +

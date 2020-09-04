@@ -27,7 +27,7 @@ function MachineRing({spinning, durationSpin, ringNumber, machineItems, seed, sl
         let slots = [];
         let slotNumber = 0;
         while (slotNumber < slotsPerReel) {
-            let slot = machineItems ? getSlot(slotNumber, machineItems[slotNumber].name.eng) : console.log("items missing", machineItems);
+            let slot = machineItems ? getSlot(slotNumber, machineItems[slotNumber].camelCase) : console.log("items missing", machineItems);
             slots.push(slot);
             slotNumber++;
         }
