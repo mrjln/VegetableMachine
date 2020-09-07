@@ -13,6 +13,7 @@ import { ReactComponent as Pumpkin } from './pumpkin.svg';
 import { ReactComponent as SweetPotato } from './sweet-potato.svg';
 import { ReactComponent as MuscularArmOutline } from './muscular-arm-outline.svg';
 import { ReactComponent as HamburgerIcon } from './hamburger-icon.svg';
+import { ReactComponent as CrossIcon } from './cross.svg';
 
 
 const Icons = {
@@ -29,7 +30,8 @@ const Icons = {
     onion: <Onion/>,
     sweetPotato: <SweetPotato/>,
     muscularArmOutline: <MuscularArmOutline/>,
-    hamburgerIcon: <HamburgerIcon/>
+    hamburgerIcon: <HamburgerIcon/>,
+    crossIcon: <CrossIcon/>
 };
 
 export default Icons;
