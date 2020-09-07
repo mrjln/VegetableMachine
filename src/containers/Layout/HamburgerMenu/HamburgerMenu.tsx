@@ -7,6 +7,7 @@ import {
 function HamburgerMenu() {
 
     const toggleMenu = () => {
+        console.log("klik")
         const menu = document.getElementById('hamburger-menu')
         if(menu) menu.classList.toggle('open');
     };
