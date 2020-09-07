@@ -3,29 +3,30 @@ import "./HamburgerMenu.scss";
 import {
     Link,
 } from "react-router-dom";
+import Icon from "../../../components/Icon/Icon";
+
 
 function HamburgerMenu() {
 
     const toggleMenu = () => {
-        console.log("klik")
-        const menu = document.getElementById('hamburger-menu')
+        const menu = document.getElementById('hamburger-menu');
         if(menu) menu.classList.toggle('open');
     };
 
     return <React.Fragment>
-        <div onClick={() => toggleMenu()}>Open</div>
+            <div className="hamburger-icon" onClick={() => toggleMenu()}> <Icon itemName='hamburgerIcon'/></div>
 
         <div className='hamburger-menu' id='hamburger-menu'>
-            <div onClick={() => toggleMenu()}>Close</div>
+            <div className="hamburger-menu__close-icon" onClick={() => toggleMenu()}>Close</div>
             <ul className='hamburger-menu-list'>
                 <Link to='/'>
-                    <li className='hamburger-menu-list__item'><h3>Home </h3></li>
+                    <li className='hamburger-menu-list__item'><h3>Home</h3></li>
                 </Link>
-                <Link to='/'>
-                    <li className='hamburger-menu-list__item'><h3> About</h3></li>
+                <Link to='/about'>
+                    <li className='hamburger-menu-list__item'><h3>About</h3></li>
                 </Link>
-                <Link to='/'>
-                    <li className='hamburger-menu-list__item'><h3> Catalog</h3></li>
+                <Link to='/catalog'>
+                    <li className='hamburger-menu-list__item'><h3>Catalog</h3></li>
                 </Link>
             </ul>
         </div>

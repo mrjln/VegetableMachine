@@ -14,9 +14,6 @@ function Header(props) {
                 </Link>
             </div>
             <div className="header__nav">
-                <Link to='/about'>
-                    <h2 className=""> About </h2>
-                </Link>
                 <HamburgerMenu/>
             </div>
         </div>

@@ -1,13 +1,24 @@
 @import "../../../styles/constants";
 
+.hamburger-icon {
+  margin-top: 0.67em;
+  &:hover {
+    cursor: pointer;
+  }
+}
 .hamburger-menu {
   position: absolute;
   z-index: 2;
   padding: 20px;
   background-color: $color-primary;
-  right: -600px;
-  width: 300px;
-  transition: right 2s ease-in;
+  right: -340px;
+  width: 250px;
+  transition: right 1s ease-in;
+  &__close-icon {
+    color: $color-secondary;
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 .hamburger-menu-list{
   padding: 0;
