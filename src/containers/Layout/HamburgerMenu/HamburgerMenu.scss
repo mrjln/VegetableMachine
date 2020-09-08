@@ -14,7 +14,7 @@
   background-color: $color-primary;
   right: -340px;
   width: 250px;
-  transition: right 0.7s ease-in;
+  transition: right 0.5s ease-in;
   &__overlay {
     z-index: 2;
     background-color: $color-tertiary;
@@ -24,10 +24,8 @@
     position: fixed;
     left: 0;
     top: 0;
-    display: flex;
     transition: opacity 0.7s ease-in;
     visibility: hidden;
-
   }
   &__close-icon {
     color: $color-secondary;
@@ -58,8 +56,8 @@
 }
 
 ._is-active {
-  visibility: visible;
   opacity: 0.4;
+  visibility: visible;
 }
 
 
