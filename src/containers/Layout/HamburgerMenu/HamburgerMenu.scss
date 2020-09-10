@@ -14,7 +14,6 @@
   background-color: $color-primary;
   width: 250px;
   right: -250px;
-  //display: none;
   &._is-open {
     animation: slide-in 0.5s ease-in;
     animation-fill-mode: forwards;
@@ -24,7 +23,7 @@
     animation-fill-mode: forwards;
   }
   &__overlay {
-    z-index: 2;
+    z-index: -1;
     background-color: $color-tertiary;
     opacity: 0;
     width: 100vw;
@@ -32,11 +31,10 @@
     position: fixed;
     left: 0;
     top: 0;
-    transition: opacity 0.7s ease-in;
-    visibility: hidden;
-    ._is-active {
-      opacity: 0.4;
-      visibility: visible;
+    transition: opacity 0.5s ease-in;
+    &._is-active {
+      opacity: 0.6;
+      z-index: 2;
     }
   }
   &__close-icon {
@@ -56,28 +54,42 @@
 
 .hamburger-menu-list {
   padding: 0;
+  a {
+    text-decoration: none;
+  }
   &__item {
     color: $color-secondary;
     list-style: none;
     border-bottom: 2px solid $color-secondary;
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      padding: 1rem 5px;
+      background-image: linear-gradient($color-tertiary, $color-tertiary);
+      background-position: 0% 100%;
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      transition: background-size .5s, color .5s;
+      &:hover {
+        background-size: 100% 100%;
+        color: $color-primary;
+
+      }
+    }
   }
 }
-
 
 @keyframes slide-in {
   100% {
     transform: translateX(-250px);
-    display: block;
   }
 }
 
 @keyframes slide-out {
-  0% {
-    transform: translateX(-250px)
-  }
   100% {
     transform: translateX(250px);
   }
 }
-
 

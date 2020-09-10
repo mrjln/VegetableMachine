@@ -12,9 +12,9 @@ function HamburgerMenu() {
         const menu = document.getElementById('hamburger-menu');
         const overlay = document.getElementById('overlay');
         if (menu && overlay) {
-            menu.classList.toggle('_is-open')
-            menu.classList.toggle('_is-closed')
-            // overlay.classList.toggle('_is-active')
+            menu.classList.toggle('_is-open');
+            menu.classList.toggle('_is-closed');
+            overlay.classList.toggle('_is-active');
         }
     };
 
