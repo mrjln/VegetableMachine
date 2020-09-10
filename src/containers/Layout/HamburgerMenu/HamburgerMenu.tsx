@@ -11,17 +11,18 @@ function HamburgerMenu() {
     const toggleMenu = () => {
         const menu = document.getElementById('hamburger-menu');
         const overlay = document.getElementById('overlay');
-        if(menu && overlay) {
-            menu.classList.toggle('_is-open');
-            overlay.classList.toggle('_is-active')
+        if (menu && overlay) {
+            menu.classList.toggle('_is-open')
+            menu.classList.toggle('_is-closed')
+            // overlay.classList.toggle('_is-active')
         }
     };
 
     return <React.Fragment>
-            <div className="hamburger-icon" onClick={() => toggleMenu()}> <Icon itemName='hamburgerIcon'/></div>
+        <div className="hamburger-icon" onClick={() => toggleMenu()}><Icon itemName='hamburgerIcon'/></div>
 
         <div className='hamburger-menu__overlay' id='overlay'></div>
-        <div className='hamburger-menu' id='hamburger-menu'>
+        <div className='hamburger-menu _is-closed' id='hamburger-menu'>
             <div className="hamburger-menu__close-icon" onClick={() => toggleMenu()}><Icon itemName='crossIcon'/></div>
             <ul className='hamburger-menu-list'>
                 <Link to='/'>

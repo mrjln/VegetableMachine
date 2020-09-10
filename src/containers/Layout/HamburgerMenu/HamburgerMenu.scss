@@ -12,9 +12,17 @@
   z-index: 3;
   padding: 20px;
   background-color: $color-primary;
-  right: -340px;
   width: 250px;
-  transition: right 0.5s ease-in;
+  right: -250px;
+  //display: none;
+  &._is-open {
+    animation: slide-in 0.5s ease-in;
+    animation-fill-mode: forwards;
+  }
+  &._is-closed {
+    animation: slide-out 0.5s ease-in;
+    animation-fill-mode: forwards;
+  }
   &__overlay {
     z-index: 2;
     background-color: $color-tertiary;
@@ -26,6 +34,10 @@
     top: 0;
     transition: opacity 0.7s ease-in;
     visibility: hidden;
+    ._is-active {
+      opacity: 0.4;
+      visibility: visible;
+    }
   }
   &__close-icon {
     color: $color-secondary;
@@ -51,14 +63,21 @@
   }
 }
 
-._is-open {
-  right: 0;
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(-250px);
+    display: block;
+  }
 }
 
-._is-active {
-  opacity: 0.4;
-  visibility: visible;
+@keyframes slide-out {
+  0% {
+    transform: translateX(-250px)
+  }
+  100% {
+    transform: translateX(250px);
+  }
 }
-
 
 
