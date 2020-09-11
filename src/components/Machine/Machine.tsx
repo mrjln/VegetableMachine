@@ -102,7 +102,7 @@ class Machine extends Component<MachineProps, MachineState> {
         const winner = this.state.winner;
         const soloWinner = (
             <div className="list-item machine-winner__icon">
-                <Icon itemName={winner.name.eng}/>
+                <Icon itemName={winner.camelCase}/>
             </div>
         );
 

@@ -1,10 +1,13 @@
 import React from "react";
 import "./Icon.scss";
-import Icons from "../../icons/index"
+import VegetableIcons from "../../icons/vegetables/index"
+import CommonIcons from "../../icons/common/index"
+import FeatureIcons from "../../icons/features/index"
 
 function Icon({itemName}) {
-    const vegetableIcon = Icons[itemName];
-    return <div  className="icon">{vegetableIcon}</div>
+    const icons = {...VegetableIcons, ...CommonIcons, ...FeatureIcons};
+    const selectedIcon = icons[itemName];
+    return <div  className="icon">{selectedIcon}</div>
 }
 
 export default Icon

@@ -11,12 +11,9 @@ import { ReactComponent as Onion } from './onion.svg';
 import { ReactComponent as Paprika } from './paprika.svg';
 import { ReactComponent as Pumpkin } from './pumpkin.svg';
 import { ReactComponent as SweetPotato } from './sweet-potato.svg';
-import { ReactComponent as MuscularArmOutline } from './muscular-arm-outline.svg';
-import { ReactComponent as HamburgerIcon } from './hamburger-icon.svg';
-import { ReactComponent as CrossIcon } from './cross.svg';
 
 
-const Icons = {
+const VegetableIcons = {
     artichoke: <Artichoke/>,
     asparagus: <Asparagus/>,
     aubergine: <Aubergine/>,
@@ -29,9 +26,6 @@ const Icons = {
     pumpkin: <Pumpkin/>,
     onion: <Onion/>,
     sweetPotato: <SweetPotato/>,
-    muscularArmOutline: <MuscularArmOutline/>,
-    hamburgerIcon: <HamburgerIcon/>,
-    crossIcon: <CrossIcon/>
 };
 
-export default Icons;
+export default VegetableIcons;
