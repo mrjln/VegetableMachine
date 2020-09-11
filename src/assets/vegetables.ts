@@ -29,13 +29,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },
-            {
-                title: 'Lowers Blood Pressure',
-                description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-            }]
-
+        }, {
+            title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 2,
@@ -51,11 +55,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
         }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
 
     },
     {
@@ -65,15 +75,18 @@ const Vegetables: MachineItem[] = [
         name: {eng: 'asparagus', nl: 'asperges'},
         description: 'Asparagus, officially known as Asparagus officinalis. This awesome nutrient richt veggie comes in different colours: green, white and even purple. It’s low in calories an very rich in vitamins, minerals and anti-oxidants. ',
         specs: [{
-            title: 'Lowers Blood Pressure',
-            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }, {
-            title: 'Digestive Health',
-            description: 'Very fiber rich! Promotes regularity and digestive health.',
+            title: 'Hangover reducer',
+            icon: 'hangover',
+            description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
         }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 4,
@@ -89,12 +102,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },
-            {
-                title: 'Lowers Blood Pressure',
-                description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-            }]
+        }, {
+            title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 5,
@@ -110,11 +128,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },{
+        }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 6,
@@ -130,11 +154,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },{
+        }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 7,
@@ -150,11 +180,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },{
+        }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 8,
@@ -170,11 +206,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },{
+        }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 9,
@@ -190,11 +232,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        },{
+        }, {
             title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
             description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
-        }]
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
 
     },
     {
@@ -211,8 +259,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        }]
+        }, {
+            title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 11,
@@ -226,10 +283,19 @@ const Vegetables: MachineItem[] = [
         'Some people use artichoke for treating snakebites, preventing gallstones, lowering blood pressure, lowering blood sugar, to increase urine flow, and as a tonic or stimulant.\n' +
         '\n' +
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
-        specs: [{
+        specs:[{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        }]
+        }, {
+            title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     },
     {
         id: 12,
@@ -245,8 +311,17 @@ const Vegetables: MachineItem[] = [
         'In foods, artichoke leaves and extracts are used to flavor beverages. Cynarin and chlorogenic acid, which are chemicals found in artichoke, are sometimes used as sweeteners.',
         specs: [{
             title: 'Hangover reducer',
+            icon: 'hangover',
             description: 'Artichoke has chemicals that can reduce nausea and vomiting, spasms, and intestinal gas',
-        }]
+        }, {
+            title: 'Lowers Blood Pressure',
+            icon: 'bloodPressure',
+            description: 'Great source of Potassium, a mineral which relaxes the walls of blood vessels and excretes excess salt through urine. ',
+        }, {
+            title: 'Building Strength',
+            icon: 'muscularArmOutline',
+            description: 'Lots of protein to strengthen your muscles',
+        },  ]
     }
 
 ];

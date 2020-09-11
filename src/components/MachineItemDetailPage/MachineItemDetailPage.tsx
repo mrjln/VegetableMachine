@@ -53,7 +53,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 <ul className="machine-item-detail__specs-list">
                     {machineItem.specs.map((item) => {
                         return <li>
-                            <Icon itemName='muscularArmOutline'/>
+                            <Icon itemName={item.icon}/>
                             <div>
                                 <h3> {item.title} </h3>
                                 <p>{item.description} </p>
