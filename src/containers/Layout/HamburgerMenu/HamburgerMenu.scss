@@ -15,6 +15,7 @@
   right: -210px;
   margin-left: 0;
   width: 250px;
+  height: 100vh;
   transition: right 0.5s ease;
   &._is-open {
     right: 0;
@@ -83,7 +84,7 @@
 }
 
 @keyframes slide-out {
-  90% {
+  70% {
     transform: translateX(250px);
   }
   100% {
