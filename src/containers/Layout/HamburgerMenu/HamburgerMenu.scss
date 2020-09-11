@@ -12,14 +12,15 @@
   z-index: 3;
   padding: 20px;
   background-color: $color-primary;
+  right: -210px;
+  margin-left: 0;
   width: 250px;
-  right: -250px;
+  transition: right 0.5s ease;
   &._is-open {
-    animation: slide-in 0.5s ease-in;
-    animation-fill-mode: forwards;
+    right: 0;
   }
   &._is-closed {
-    animation: slide-out 0.5s ease-in;
+    animation: slide-out 0.5s ease;
     animation-fill-mode: forwards;
   }
   &__overlay {
@@ -81,15 +82,18 @@
   }
 }
 
-@keyframes slide-in {
-  100% {
-    transform: translateX(-250px);
-  }
-}
-
 @keyframes slide-out {
-  100% {
+  90% {
     transform: translateX(250px);
+  }
+  100% {
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
   }
 }
 

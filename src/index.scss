@@ -6,6 +6,8 @@ body {
   font-family: 'Oxygen', sans-serif;
   min-width:max-content;
   min-height: max-content;
-  overflow-x: hidden;
+}
 
+#root {
+  overflow-x: hidden;
 }
