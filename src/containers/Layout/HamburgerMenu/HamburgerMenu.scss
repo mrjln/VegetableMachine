@@ -8,21 +8,17 @@
 }
 
 .hamburger-menu {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   padding: 20px;
   background-color: $color-primary;
-  right: -210px;
   margin-left: 0;
   width: 250px;
   height: 100vh;
-  transition: right 0.5s ease;
+  transform: translateX(200px);
+  transition: transform 0.5s ease-in;
   &._is-open {
-    right: 0;
-  }
-  &._is-closed {
-    animation: slide-out 0.5s ease;
-    animation-fill-mode: forwards;
+    transform: translateX(-90px);
   }
   &__overlay {
     z-index: -1;
@@ -80,21 +76,6 @@
 
       }
     }
-  }
-}
-
-@keyframes slide-out {
-  70% {
-    transform: translateX(250px);
-  }
-  100% {
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
   }
 }
 
