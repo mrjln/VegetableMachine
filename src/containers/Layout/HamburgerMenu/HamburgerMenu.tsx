@@ -21,7 +21,7 @@ function HamburgerMenu() {
     return <React.Fragment>
         <div className="hamburger-icon" onClick={() => toggleMenu()}><Icon itemName='hamburgerIcon'/></div>
 
-        <div className='hamburger-menu__overlay' id='overlay'></div>
+        <div className='hamburger-menu__overlay' id='overlay' onClick={() => toggleMenu()}></div>
         <div className='hamburger-menu' id='hamburger-menu'>
             <div className="hamburger-menu__close-icon" onClick={() => toggleMenu()}><Icon itemName='crossIcon'/></div>
             <ul className='hamburger-menu-list'>
