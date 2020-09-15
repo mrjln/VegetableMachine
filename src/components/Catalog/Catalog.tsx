@@ -1,5 +1,5 @@
 import './Catalog.scss';
-import React, {ReactHTMLElement} from "react";
+import React from "react";
 import MachineItem from "../../utils/types/types";
 import VegetableList from "../../assets/vegetables";
 import {capitalize} from "../../utils/capitalize";
@@ -9,9 +9,7 @@ import {
 import Icon from "../Icon/Icon";
 
 
-
 function Catalog() {
-
     const getItemList = (list: MachineItem[]) => {
         return list.map((item: MachineItem) => {
             return <Link to={'/' + item.slug}>
@@ -23,7 +21,7 @@ function Catalog() {
         })
     };
 
-    return <ul className="catalog-list">{getItemList(VegetableList)} </ul>
+    return <ul className="catalog-list">{getItemList(VegetableList)}</ul>
 }
 
 export default Catalog

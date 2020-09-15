@@ -3,7 +3,6 @@ import "./MachineRing.scss";
 import Icon from "../Icon/Icon";
 import MachineItem from "../../utils/types/types"
 
-
 interface MachineRingProps {
     spinning: boolean,
     durationSpin: number,
@@ -11,7 +10,6 @@ interface MachineRingProps {
     machineItems: MachineItem[],
     seed: number,
     slotsPerReel: number,
-
 }
 
 function MachineRing({spinning, durationSpin, ringNumber, machineItems, seed, slotsPerReel}: MachineRingProps) {
@@ -34,11 +32,11 @@ function MachineRing({spinning, durationSpin, ringNumber, machineItems, seed, sl
         return slots
     };
 
-    const getSlot = (i:number, itemName:string): ReactNode => {
+    const getSlot = (i:number, iconName:string): ReactNode => {
         let slotAngle = 360 / slotsPerReel;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + calcReelRadius(slotsPerReel)
             + 'px)'};
-        return <div key={"slot " + i} style={transFormStyle} className={"slot " + i }> <Icon itemName={itemName} /></div>;
+        return <div key={"slot " + i} style={transFormStyle} className={"slot " + i }> <Icon itemName={iconName}/></div>;
     };
 
     const createRing = (ringNumber:number): ReactNode => {
@@ -50,14 +48,11 @@ function MachineRing({spinning, durationSpin, ringNumber, machineItems, seed, sl
         return <div key={ringNumber} id={"ring" + ringNumber} style={spinningAnimation} className={classRing}>{slots}</div>;
     };
 
-    const ring = createRing(ringNumber);
-
     return (
         <React.Fragment>
-            {ring}
+            {createRing(ringNumber)}
         </React.Fragment>
     )
-
 }
 
 export default MachineRing;

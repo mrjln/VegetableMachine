@@ -8,7 +8,6 @@ It contributes to steps towards a plant-based life, healthier humans and happy e
 ![picture](https://github.com/mrjln/VegetableMachine/blob/master/src/assets/images/screenshot-veg-machine.png)
 
 
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
