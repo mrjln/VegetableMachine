@@ -8,6 +8,7 @@
   grid-template-rows: 155px minmax(500px, 1fr) 200px;
   grid-template-areas: "header header header" ". main ." "footer footer footer";
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .header {
