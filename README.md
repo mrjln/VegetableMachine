@@ -1,3 +1,11 @@
+## Vegetable Machine
+
+This project application is a fruit machine, like in the casino's, but for vegetables.
+The goal of the application is to make it easier for it's user to make a vegetable-centered meal.
+It provides the user with detailed nutritional information and recipes.
+It contributes to steps towards a plant-based life, healthier humans and happy earth.
+
+![picture](assets/images/screenshot-veg-machine.png)
 
 
 
