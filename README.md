@@ -5,7 +5,7 @@ The goal of the application is to make it easier for it's user to make a vegetab
 It provides the user with detailed nutritional information and recipes.
 It contributes to steps towards a plant-based life, healthier humans and happy earth.
 
-![picture](assets/images/screenshot-veg-machine.png)
+![picture](https://github.com/mrjln/VegetableMachine/blob/master/src/assets/images/screenshot-veg-machine.png)
 
 
 
