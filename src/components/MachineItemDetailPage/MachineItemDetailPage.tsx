@@ -4,6 +4,7 @@ import "./MachineItemDetailPage.scss";
 import {capitalize} from "../../utils/capitalize";
 import NutritionTable from '../NutritionTable/NutritionTable'
 import MachineItem from "../../utils/types/types"
+import { slugifyString } from "../../utils/slugify-string";
 
 interface MachineItemDetailProps {
     machineItem: MachineItem
@@ -47,7 +48,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </div>
             {machineItem ?
                 <div className="machine-item-detail__image">
-                    <img alt={machineItem.name.eng} src={require(`../../assets/images/${machineItem.slug}.jpg`)}/>
+                    <img alt={machineItem.name.eng} src={require(`../../assets/images/${slugifyString(machineItem.name.eng)}.jpg`)}/>
                 </div> : ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
