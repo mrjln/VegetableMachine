@@ -7,7 +7,7 @@ import Icon from "../Icon/Icon";
 import {
     Link,
 } from "react-router-dom";
-import MachineItem from "../../utils/types/types";
+import VMtypes from "../../utils/types/types";
 import {capitalize} from "../../utils/capitalize";
 import {slugifyString} from "../../utils/slugify-string";
 import { camelize } from "../../utils/camelize";
@@ -20,11 +20,11 @@ interface MachineState {
     slotsPerReel: number,
     amountOfReels: number,
     currentSeeds: number[],
-    winner: MachineItem,
+    winner: VMtypes.MachineItemType,
 }
 
 interface MachineProps {
-    shuffledItems: Array<MachineItem[]>
+    shuffledItems: Array<VMtypes.MachineItemType[]>
 }
 
 class Machine extends Component<MachineProps, MachineState> {
@@ -84,7 +84,7 @@ class Machine extends Component<MachineProps, MachineState> {
         });
     };
 
-    createMachineRing = (machineItemsList: MachineItem[], seed: number, index: number) => {
+    createMachineRing = (machineItemsList: VMtypes.MachineItemType[], seed: number, index: number) => {
         return (<MachineRing
             key={index}
             spinning={this.state.spinning}
@@ -104,7 +104,7 @@ class Machine extends Component<MachineProps, MachineState> {
         const winner = this.state.winner;
         const soloWinner = (
             <div className="list-item machine-winner__icon">
-                <Icon itemName={camelize(winner.name_en)}/>
+                <Icon icon={winner.icon}/>
             </div>
         );
 
@@ -126,7 +126,7 @@ class Machine extends Component<MachineProps, MachineState> {
                         <div className="machine-winner"> {soloWinner}</div>
                         <div className="machine-winner__specs-list">
                             <ul>
-                                {winner.vegetable_features.slice(0,2).map(spec => <li><Icon itemName={spec.icon}/> <span>{spec.name}</span></li> )}
+                                {winner.vegetable_features.slice(0,2).map((spec: VMtypes.VegetableFeatureType) => <li><Icon icon={spec.icon}/> <span>{spec.name}</span></li> )}
                             </ul>
                         </div>
                         <Link className="machine-winner__link" to={'/' + slugifyString(winner.name_en)}>

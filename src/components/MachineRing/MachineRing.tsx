@@ -1,13 +1,13 @@
 import React, { ReactNode} from "react";
 import "./MachineRing.scss";
 import Icon from "../Icon/Icon";
-import MachineItem from "../../utils/types/types"
+import VMtypes from "../../utils/types/types"
 
 interface MachineRingProps {
     spinning: boolean,
     durationSpin: number,
     ringNumber: number,
-    machineItems: MachineItem[],
+    machineItems: VMtypes.MachineItemType[],
     seed: number,
     slotsPerReel: number,
 }
@@ -25,18 +25,22 @@ function MachineRing({spinning, durationSpin, ringNumber, machineItems, seed, sl
         let slots = [];
         let slotNumber = 0;
         while (slotNumber < slotsPerReel) {
-            let slot = machineItems ? getSlot(slotNumber, machineItems[slotNumber].camelCase) : console.log("items missing", machineItems);
+            console.log(machineItems[slotNumber].icon.url)
+            let slot = machineItems ? getSlot(slotNumber, machineItems[slotNumber].icon) : console.log("items missing", machineItems);
             slots.push(slot);
             slotNumber++;
         }
         return slots
     };
 
-    const getSlot = (i:number, iconName:string): ReactNode => {
+    const getSlot = (i:number, icon: VMtypes.IconType): ReactNode => {
         let slotAngle = 360 / slotsPerReel;
         let transFormStyle = {transform: 'rotateX(' + (slotAngle * i) + 'deg) translateZ(' + calcReelRadius(slotsPerReel)
             + 'px)'};
-        return <div key={"slot " + i} style={transFormStyle} className={"slot " + i }> <Icon itemName={iconName}/></div>;
+        return <div key={"slot " + i} style={transFormStyle} className={"slot " + i }>
+    
+        <Icon icon={icon}/>
+        </div>;
     };
 
     const createRing = (ringNumber:number): ReactNode => {

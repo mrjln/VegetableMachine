@@ -1,4 +1,4 @@
-import MachineItem from "../utils/types/types"
+import MachineItemType from "../utils/types/types"
 
 
 // interface Specification {
@@ -14,7 +14,7 @@ import MachineItem from "../utils/types/types"
 //     specs: Specification[]
 // }
 
-const Vegetables: MachineItem[] = [
+// const Vegetables: MachineItemType[] = [
     // {
     //     id: 1,
     //     camelCase: 'artichoke',
@@ -324,6 +324,6 @@ const Vegetables: MachineItem[] = [
     //     },  ]
     // }
 
-];
+// ];
 
-export default Vegetables
+// export default Vegetables

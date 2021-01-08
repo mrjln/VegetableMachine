@@ -1,6 +1,6 @@
 import React from "react";
 import './NutritionTable.scss';
-import MachineItem from "../../utils/types/types"
+import VMtypes from "../../utils/types/types"
 
 interface NutritionValue {
     name: string;
@@ -291,7 +291,7 @@ const NutritionValuesDummy: NutritionValue[] = [
 
 
 interface NutritionTableProps {
-    machineItem: MachineItem
+    machineItem: VMtypes.MachineItemType
 }
 
 

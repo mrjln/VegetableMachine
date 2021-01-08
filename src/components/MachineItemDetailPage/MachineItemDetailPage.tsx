@@ -3,12 +3,12 @@ import Icon from "../Icon/Icon";
 import "./MachineItemDetailPage.scss";
 import {capitalize} from "../../utils/capitalize";
 import NutritionTable from '../NutritionTable/NutritionTable'
-import MachineItem from "../../utils/types/types"
+import VMtypes from "../../utils/types/types"
 import { slugifyString } from "../../utils/slugify-string";
 import { camelize } from "../../utils/camelize";
 
 interface MachineItemDetailProps {
-    machineItem: MachineItem
+    machineItem: VMtypes.MachineItemType
 }
 
 class MachineItemDetailPage extends Component<MachineItemDetailProps> {
@@ -40,7 +40,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
         return <div className="machine-item-detail">
             <div>
             <span className="machine-item-detail__icon" id='machine-item-icon'>
-                <Icon itemName={camelize(machineItem.name_en)}/>
+                <Icon icon={machineItem.icon}/>
             </span>
             </div>
             <div className="machine-item-detail__description">
@@ -53,9 +53,9 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 </div> : ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
-                    {machineItem.vegetable_features.map((item) => {
+                    {machineItem.vegetable_features.map((item: VMtypes.VegetableFeatureType) => {
                         return <li key={item.name}>
-                            <Icon itemName={item.icon}/>
+                            <Icon icon ={item.icon}/>
                             <div>
                                 <h3> {item.name} </h3>
                                 <p>{item.description} </p>

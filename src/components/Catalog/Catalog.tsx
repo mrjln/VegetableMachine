@@ -1,7 +1,6 @@
 import './Catalog.scss';
 import React from "react";
-import MachineItem from "../../utils/types/types";
-import VegetableList from "../../assets/vegetables";
+import VMtypes from "../../utils/types/types";
 import {capitalize} from "../../utils/capitalize";
 import {slugifyString} from "../../utils/slugify-string";
 import {camelize} from "../../utils/camelize";
@@ -12,18 +11,20 @@ import Icon from "../Icon/Icon";
 
 
 function Catalog() {
-    const getItemList = (list: MachineItem[]) => {
-        return list.map((item: MachineItem) => {
+    const getItemList = (list: VMtypes.MachineItemType[]) => {
+        return list.map((item: VMtypes.MachineItemType) => {
             return <Link to={'/' + slugifyString(item.name_en)}>
                 <li className="catalog-list__item">
-                    <Icon itemName={camelize(item.name_en)}/>
+                    <Icon icon={item.icon}/>
                     <h3>{capitalize(item.name_en)}</h3>
                 </li>
             </Link>
         })
     };
 
-    return <ul className="catalog-list">{getItemList(VegetableList)}</ul>
+    return <ul className="catalog-list">{
+        // getItemList(VegetableList)
+        }</ul>
 }
 
 export default Catalog
