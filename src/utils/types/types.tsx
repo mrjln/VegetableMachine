@@ -1,14 +1,16 @@
-interface Specification {
-    title: string,
+interface VegetableFeature {
+    name: string,
     description: string
     icon?: any
 }
 
 export default interface MachineItem {
     id: number,
-    slug: string,
     camelCase: string,
-    name: {eng: string, nl: string},
+    name_en: string,
+    name_nl: string,
     description: string,
-    specs: Specification[]
+    icon: any,
+    coverPhoto: any,
+    vegetable_features: VegetableFeature[]
 }

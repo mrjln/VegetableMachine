@@ -1,7 +1,6 @@
 import React from "react";
 import Machine from "../Machine/Machine";
 import { shuffleArray } from "../../utils/shuffle-array";
-import VegetableList from "../../assets/vegetables";
 import { gql, useQuery } from "@apollo/client";
 
 function MachineContainer() {
@@ -9,8 +8,25 @@ function MachineContainer() {
     query Vegetables {
       vegetables {
         id
-        name
+        name_en
+        name_nl
         description
+        icon {
+          url
+          alternativeText
+        }
+        coverPhoto {
+          url
+          alternativeText
+        }
+        vegetable_features {
+          name
+          description
+          icon {
+            url
+            alternativeText
+          }
+        }
       }
     }
   `);
@@ -36,7 +52,7 @@ function MachineContainer() {
   const getShuffledLists = () => {
     const amountOfSlots = 12;
     const amountOfReels = 3;
-    const initialList = getRandomListOfItems(VegetableList);
+    const initialList = getRandomListOfItems(data.vegetables);
     const denominator = amountOfSlots / amountOfReels;
     const list2 = getArrayAfterPolonaise(initialList, denominator);
     const list3 = getArrayAfterPolonaise(initialList, denominator * 2);

@@ -18,8 +18,8 @@ const client = new ApolloClient({
 
 const productLinks = VegetableList.map((item) => {
   return {
-    name: item.name.eng,
-    path: "/" + slugifyString(item.name.eng),
+    name: item.name_en,
+    path: "/" + slugifyString(item.name_en),
     components: <MachineItemDetailPage machineItem={item} />,
   };
 });

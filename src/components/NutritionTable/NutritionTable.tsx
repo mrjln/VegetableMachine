@@ -311,7 +311,7 @@ function NutritionTable(props: NutritionTableProps) {
         <thead>
         <tr>
             <td width="159">Per 100 g / ml</td>
-            <td width="96">{item.name.eng}</td>
+            <td width="96">{item.name_en}</td>
             <td width="53">ADH*</td>
         </tr>
         </thead>
