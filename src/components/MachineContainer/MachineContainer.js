@@ -1,40 +1,8 @@
 import React from "react";
 import Machine from "../Machine/Machine";
 import { shuffleArray } from "../../utils/shuffle-array";
-import { gql, useQuery } from "@apollo/client";
 
-function MachineContainer() {
-  const { loading, error, data } = useQuery(gql`
-    query Vegetables {
-      vegetables {
-        id
-        name_en
-        name_nl
-        description
-        icon {
-          url
-          alternativeText
-        }
-        coverPhoto {
-          url
-          alternativeText
-        }
-        vegetable_features {
-          name
-          description
-          icon {
-            url
-            alternativeText
-          }
-        }
-      }
-    }
-  `);
-
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
-  console.log(data);
-
+function MachineContainer({ machineItems }) {
   const getRandomListOfItems = (itemList) => {
     return shuffleArray([...itemList]);
   };
@@ -52,7 +20,7 @@ function MachineContainer() {
   const getShuffledLists = () => {
     const amountOfSlots = 12;
     const amountOfReels = 3;
-    const initialList = getRandomListOfItems(data.vegetables);
+    const initialList = getRandomListOfItems(machineItems);
     const denominator = amountOfSlots / amountOfReels;
     const list2 = getArrayAfterPolonaise(initialList, denominator);
     const list3 = getArrayAfterPolonaise(initialList, denominator * 2);

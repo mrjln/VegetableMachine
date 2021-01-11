@@ -3,14 +3,16 @@ import React from "react";
 import VMtypes from "../../utils/types/types";
 import {capitalize} from "../../utils/capitalize";
 import {slugifyString} from "../../utils/slugify-string";
-import {camelize} from "../../utils/camelize";
 import {
     Link,
 } from "react-router-dom";
 import Icon from "../Icon/Icon";
 
+type catalogProps = {
+    catalogItems: VMtypes.MachineItemType[]
+}
 
-function Catalog() {
+function Catalog(props:catalogProps) {
     const getItemList = (list: VMtypes.MachineItemType[]) => {
         return list.map((item: VMtypes.MachineItemType) => {
             return <Link to={'/' + slugifyString(item.name_en)}>
@@ -23,7 +25,7 @@ function Catalog() {
     };
 
     return <ul className="catalog-list">{
-        // getItemList(VegetableList)
+        getItemList(props.catalogItems)
         }</ul>
 }
 

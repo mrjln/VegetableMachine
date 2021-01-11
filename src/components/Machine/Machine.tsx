@@ -10,8 +10,6 @@ import {
 import VMtypes from "../../utils/types/types";
 import {capitalize} from "../../utils/capitalize";
 import {slugifyString} from "../../utils/slugify-string";
-import { camelize } from "../../utils/camelize";
-
 
 interface MachineState {
     spinning: boolean,
