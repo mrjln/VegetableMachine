@@ -5,6 +5,7 @@ import {capitalize} from "../../utils/capitalize";
 import NutritionTable from '../NutritionTable/NutritionTable'
 import VMtypes from "../../utils/types/types"
 import { slugifyString } from "../../utils/slugify-string";
+import CoverPhoto from "../CoverPhoto/CoverPhoto";
 
 interface MachineItemDetailProps {
     machineItem: VMtypes.MachineItemType
@@ -48,7 +49,7 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             </div>
             {machineItem ?
                 <div className="machine-item-detail__image">
-                    <img alt={machineItem.name_en} src={require(`../../assets/images/${slugifyString(machineItem.name_en)}.jpg`)}/>
+                    <CoverPhoto img={machineItem.coverPhoto} />
                 </div> : ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
