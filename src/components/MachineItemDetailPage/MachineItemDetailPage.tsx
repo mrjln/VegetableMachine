@@ -3,9 +3,8 @@ import Icon from "../Icon/Icon";
 import "./MachineItemDetailPage.scss";
 import {capitalize} from "../../utils/capitalize";
 import NutritionTable from '../NutritionTable/NutritionTable'
-import VMtypes from "../../utils/types/types"
-import { slugifyString } from "../../utils/slugify-string";
 import CoverPhoto from "../CoverPhoto/CoverPhoto";
+import VMtypes from "../../utils/types/types"
 
 interface MachineItemDetailProps {
     machineItem: VMtypes.MachineItemType
@@ -35,7 +34,6 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
     };
 
     render() {
-
         const machineItem = this.props.machineItem;
         return <div className="machine-item-detail">
             <div>
@@ -53,12 +51,12 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
                 </div> : ""}
             <div className="machine-item-detail__specs">
                 <ul className="machine-item-detail__specs-list">
-                    {machineItem.vegetable_features.map((item: VMtypes.VegetableFeatureType) => {
-                        return <li key={item.name}>
-                            <Icon icon ={item.icon}/>
+                    {machineItem.vegetable_features.map((feature: VMtypes.VegetableFeatureType) => {
+                        return <li key={feature.name}>
+                            <Icon icon={feature.icon}/>
                             <div>
-                                <h3> {item.name} </h3>
-                                <p>{item.description} </p>
+                                <h3> {feature.name} </h3>
+                                <p>{feature.description} </p>
                                 <span> source: <a href="/"> lees meer over Awesome feature 1 </a>
                                 </span>
                             </div>

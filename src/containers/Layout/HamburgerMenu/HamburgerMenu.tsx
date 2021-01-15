@@ -3,7 +3,8 @@ import "./HamburgerMenu.scss";
 import {
     Link,
 } from "react-router-dom";
-import Icon from "../../../components/Icon/Icon";
+import hamburgerImage from "../../../icons/common/hamburger-icon.svg";
+import crossImage from "../../../icons/common/cross.svg";
 
 
 function HamburgerMenu() {
@@ -19,11 +20,11 @@ function HamburgerMenu() {
     };
 
     return <React.Fragment>
-        <div className="hamburger-icon" onClick={() => toggleMenu()}><Icon icon='hamburgerIcon'/></div>
+        <div className="hamburger-icon" onClick={() => toggleMenu()}><img alt="hamburger icon" src={hamburgerImage}/></div>
 
         <div className='hamburger-menu__overlay' id='overlay' onClick={() => toggleMenu()}></div>
         <div className='hamburger-menu' id='hamburger-menu'>
-            <div className="hamburger-menu__close-icon" onClick={() => toggleMenu()}><Icon icon='crossIcon'/></div>
+            <div className="hamburger-menu__close-icon" onClick={() => toggleMenu()}><img alt="cross icon" src={crossImage}/></div>
             <ul className='hamburger-menu-list'>
                 <Link to='/'>
                     <li className='hamburger-menu-list__item'><h3>Home</h3></li>

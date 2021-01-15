@@ -7,9 +7,6 @@ import "./Icon.scss";
 const endpoint = "http://localhost:1337";
 
 function Icon({ icon }) {
-  // const icons = {...VegetableIcons, ...CommonIcons, ...FeatureIcons};
-  // const selectedIcon = icons[itemName];
-  console.log(icon);
   return (
     <img
       className="icon"
