@@ -3,6 +3,8 @@ import Machine from "../Machine/Machine";
 import { shuffleArray } from "../../utils/shuffle-array";
 
 function MachineContainer({ machineItems }) {
+  // The Machine Container is in charge of shuffeling the items randomly and always provinding the proper amountOfSlots
+
   const getRandomListOfItems = (itemList) => {
     return shuffleArray([...itemList]);
   };

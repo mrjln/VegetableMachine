@@ -12,7 +12,8 @@ type catalogProps = {
     catalogItems: VMtypes.MachineItemType[]
 }
 
-function Catalog(props:catalogProps) {
+function Catalog(props:catalogProps, route: any) {
+    console.log("route", route.match)
     const getItemList = (list: VMtypes.MachineItemType[]) => {
         return list.map((item: VMtypes.MachineItemType) => {
             return <Link to={'/' + slugifyString(item.name_en)}>

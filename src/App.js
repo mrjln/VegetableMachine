@@ -8,9 +8,10 @@ import HeroContentBlock from "./components/HeroContentBlock/HeroContentBlock";
 import Catalog from "./components/Catalog/Catalog";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
+import ItemFeatureDetailPage from "./components/ItemFeatureDetailPage/ItemFeatureDetailPage";
 
 function App() {
-  const { loading, error, data } = useQuery(gql`
+  const vegetableQuery = useQuery(gql`
     query Vegetables {
       vegetables {
         id
@@ -26,6 +27,7 @@ function App() {
           alternativeText
         }
         vegetable_features {
+          id
           name
           description
           icon {
@@ -37,11 +39,11 @@ function App() {
     }
   `);
 
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
-  console.log(data);
+  if (vegetableQuery.loading) return "Loading...";
+  // if (vegetableQuery.error) return `Error! ${error.message}`;
+  console.log(vegetableQuery.data);
 
-  const productLinks = data.vegetables.map((item) => {
+  const productLinks = vegetableQuery.data.vegetables.map((item) => {
     return {
       name: item.name_en,
       path: "/" + slugifyString(item.name_en),
@@ -49,11 +51,15 @@ function App() {
     };
   });
 
+  // const featureLinks =
+
   const routerLinks = [
     {
       name: "Home",
       path: "/",
-      components: <MachineContainer machineItems={data.vegetables} />,
+      components: (
+        <MachineContainer machineItems={vegetableQuery.data.vegetables} />
+      ),
     },
     {
       name: "About",
@@ -70,7 +76,12 @@ function App() {
     {
       name: "Catalog",
       path: "/catalog",
-      components: <Catalog catalogItems={data.vegetables} />,
+      components: <Catalog catalogItems={vegetableQuery.data.vegetables} />,
+    },
+    {
+      name: "VegetableFeature",
+      path: "/feature/:id",
+      components: <ItemFeatureDetailPage />,
     },
     ...productLinks,
   ];
