@@ -1,9 +1,11 @@
 ## Vegetable Machine
 
 This project application is a vegetable machine. It's like a fruit machine in the casino, but for vegetables.
-The goal of the application is to make it easier for it's user to make a vegetable-centered meal.
-It provides the user with detailed nutritional information and recipes.
-It contributes to steps towards a plant-based life, healthier humans and happy earth.
+
+The goal of the application is to make it easier for the user to make a vegetable-centered meal.
+It provides the user with detailed nutritional information and recipes on the selected vegetable.
+
+It contributes to steps towards a plant-based life, healthier humans and happy earth. 🌳 🍃
 
 ![picture](https://github.com/mrjln/VegetableMachine/blob/master/src/assets/images/screenshot-veg-machine.png)
 
