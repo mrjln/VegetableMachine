@@ -1,6 +1,6 @@
 import React from "react";
 import './NutritionTable.scss';
-import MachineItem from "../../utils/types/types"
+import VMtypes from "../../utils/types/types"
 
 interface NutritionValue {
     name: string;
@@ -291,7 +291,7 @@ const NutritionValuesDummy: NutritionValue[] = [
 
 
 interface NutritionTableProps {
-    machineItem: MachineItem
+    machineItem: VMtypes.MachineItemType
 }
 
 
@@ -311,7 +311,7 @@ function NutritionTable(props: NutritionTableProps) {
         <thead>
         <tr>
             <td width="159">Per 100 g / ml</td>
-            <td width="96">{item.name.eng}</td>
+            <td width="96">{item.name_en}</td>
             <td width="53">ADH*</td>
         </tr>
         </thead>

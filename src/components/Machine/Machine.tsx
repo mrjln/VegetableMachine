@@ -7,9 +7,9 @@ import Icon from "../Icon/Icon";
 import {
     Link,
 } from "react-router-dom";
-import MachineItem from "../../utils/types/types"
+import VMtypes from "../../utils/types/types";
 import {capitalize} from "../../utils/capitalize";
-
+import {slugifyString} from "../../utils/slugify-string";
 
 interface MachineState {
     spinning: boolean,
@@ -18,11 +18,11 @@ interface MachineState {
     slotsPerReel: number,
     amountOfReels: number,
     currentSeeds: number[],
-    winner: MachineItem,
+    winner: VMtypes.MachineItemType,
 }
 
 interface MachineProps {
-    shuffledItems: Array<MachineItem[]>
+    shuffledItems: Array<VMtypes.MachineItemType[]>
 }
 
 class Machine extends Component<MachineProps, MachineState> {
@@ -82,7 +82,7 @@ class Machine extends Component<MachineProps, MachineState> {
         });
     };
 
-    createMachineRing = (machineItemsList: MachineItem[], seed: number, index: number) => {
+    createMachineRing = (machineItemsList: VMtypes.MachineItemType[], seed: number, index: number) => {
         return (<MachineRing
             key={index}
             spinning={this.state.spinning}
@@ -102,7 +102,7 @@ class Machine extends Component<MachineProps, MachineState> {
         const winner = this.state.winner;
         const soloWinner = (
             <div className="list-item machine-winner__icon">
-                <Icon itemName={winner.camelCase}/>
+                <Icon icon={winner.icon}/>
             </div>
         );
 
@@ -120,14 +120,14 @@ class Machine extends Component<MachineProps, MachineState> {
                     </MachineWindow>
 
                     {this.state.showModal ? <Modal cta={"Spin again"} clickCTA={this.toggleModal}>
-                        <h1 className="machine-winner__heading"> {capitalize(winner.name.eng)} </h1>
+                        <h1 className="machine-winner__heading"> {capitalize(winner.name_en)} </h1>
                         <div className="machine-winner"> {soloWinner}</div>
                         <div className="machine-winner__specs-list">
                             <ul>
-                                {winner.specs.slice(0,2).map(spec => <li><Icon itemName={spec.icon}/> <span>{spec.title}</span></li> )}
+                                {winner.vegetable_features.slice(0,2).map((spec: VMtypes.VegetableFeatureType) => <li><Icon icon={spec.icon}/> <span>{spec.name}</span></li> )}
                             </ul>
                         </div>
-                        <Link className="machine-winner__link" to={'/' + winner.slug}>
+                        <Link className="machine-winner__link" to={'/' + slugifyString(winner.name_en)}>
                             <button className="button button--primary machine-winner__button">
                                 <span> More specs & recipes </span>
                                 <svg  id="arrow-right-icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">

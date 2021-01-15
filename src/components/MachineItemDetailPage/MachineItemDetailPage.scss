@@ -1,6 +1,5 @@
 @import "../../styles/constants";
 
-
 .machine-item-detail {
   width: 100%;
   position: relative;
@@ -33,7 +32,7 @@
       display: flex;
       align-items: center;
       padding-bottom: 20px;
-      svg {
+      img {
         padding: 0 20px;
       }
       span {
@@ -53,7 +52,6 @@
       bottom: 0;
       width: 100vw;
       z-index: 1;
-
     }
     &--on-the-spot {
       background-color: transparent;
@@ -67,7 +65,7 @@
   color: $color-text;
   text-align: left;
   margin: 20px;
-  padding:0 20px;
+  padding: 0 20px;
   :hover {
     color: $color-text-active;
   }
