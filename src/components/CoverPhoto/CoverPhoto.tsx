@@ -7,7 +7,6 @@ import React from "react";
 const endpoint = "http://localhost:1337";
 
 function CoverPhoto({ img }: any ) {
-  console.log(img);
   return (
     <img
       alt={img.alternativeText}
