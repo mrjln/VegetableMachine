@@ -43,7 +43,7 @@
 .slot {
   position: absolute;
   width: 90px;
-  // Caution for height property: reel radius is calculated based on this slot height.
+  // Caution: reel radius is calculated based on this slot height.
   height: 80px;
   box-sizing: border-box;
   opacity: 0.9;
@@ -57,6 +57,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 10px,
 }
 
 .vegetable-name {

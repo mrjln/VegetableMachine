@@ -8,6 +8,7 @@ import HeroContentBlock from "./components/HeroContentBlock/HeroContentBlock";
 import Catalog from "./components/Catalog/Catalog";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { gql, useQuery } from "@apollo/client";
+import Vegetables from "./assets/vegetables";
 
 function App() {
   const { loading, error, data } = useQuery(gql`
@@ -37,11 +38,11 @@ function App() {
     }
   `);
 
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
-  console.log(data);
+  // if (loading) return "Loading...";
+  // if (error) return `Error! ${error.message}`;
+  // console.log(data);
 
-  const productLinks = data.vegetables.map((item) => {
+  const productLinks = Vegetables.map((item) => {
     return {
       name: item.name_en,
       path: "/" + slugifyString(item.name_en),
@@ -53,7 +54,7 @@ function App() {
     {
       name: "Home",
       path: "/",
-      components: <MachineContainer machineItems={data.vegetables} />,
+      components: <MachineContainer machineItems={Vegetables} />,
     },
     {
       name: "About",
@@ -70,7 +71,7 @@ function App() {
     {
       name: "Catalog",
       path: "/catalog",
-      components: <Catalog catalogItems={data.vegetables} />,
+      components: <Catalog catalogItems={Vegetables} />,
     },
     ...productLinks,
   ];

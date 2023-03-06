@@ -11,13 +11,14 @@
     "@types/react-router-dom": "^5.1.5",
     "graphql": "^15.4.0",
     "node-sass": "^4.13.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-native": "^0.63.4",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.3",
+    "sass-loader": "^13.2.0",
     "svg-path-properties": "^1.0.4",
-    "typescript": "^3.9.7"
+    "typescript": "^4.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
