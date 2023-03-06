@@ -4,14 +4,14 @@ import React from "react";
 // import CommonIcons from "../../icons/common/index";
 // import FeatureIcons from "../../icons/features/index";
 
-const endpoint = "http://localhost:1337";
+// const endpoint = "http://localhost:1337";
 
-function CoverPhoto({ img }: any ) {
+function CoverPhoto({ img }: any) {
   console.log(img);
   return (
     <img
       alt={img.alternativeText}
-      src={endpoint + img.url}
+      src={require(`../../assets/images/${img}`)}
     />
   );
 }

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import VMtypes from "../../utils/types/types";
 import { capitalize } from "../../utils/capitalize";
 import { slugifyString } from "../../utils/slugify-string";
+import Confetti from "react-confetti";
 
 interface MachineState {
   spinning: boolean;
@@ -72,7 +73,7 @@ class Machine extends Component<MachineProps, MachineState> {
 
   getMachineRingSeeds = (currentSeeds: number[]): number[] => {
     const newSeed = this.getSeed();
-    return currentSeeds.map((seed, i) => {
+    return currentSeeds.map((_, i) => {
       const multiplier = this.state.slotsPerReel / this.state.amountOfReels;
       const nextSeed = newSeed + i * multiplier;
       if (nextSeed > this.state.slotsPerReel - 1) {
@@ -113,7 +114,6 @@ class Machine extends Component<MachineProps, MachineState> {
         <Icon icon={winner.icon} />
       </div>
     );
-
     return (
       <React.Fragment>
         <div className="machine">
@@ -164,6 +164,7 @@ class Machine extends Component<MachineProps, MachineState> {
                   </svg>
                 </button>
               </Link>
+              <Confetti width={500} height={500} recycle={false} />
             </Modal>
           ) : (
             ""

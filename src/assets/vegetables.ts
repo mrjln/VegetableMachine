@@ -1,18 +1,5 @@
 import VMTypes  from "../utils/types/types"
 
-interface Specification {
-    name: string,
-    description: string
-    icon: any
-}
-
-interface Vegetable {
-    id: number,
-    name: {eng: string, nl: string},
-    description: string,
-    specs: Specification[]
-}
-
 const Vegetables: VMTypes.MachineItemType[] = [
     {
         id: 1,
@@ -48,13 +35,13 @@ const Vegetables: VMTypes.MachineItemType[] = [
     {
         id: 2,
         camelCase: 'aubergine',
-        name_en: 'artichoke',
-        name_nl: 'artichoke', 
+        name_en: 'aubergine',
+        name_nl: 'aubergine', 
         icon: {
             url: 'aubergine',
             alternativeText: 'aubergine'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'aubergine.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -86,7 +73,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'asparagus',
             alternativeText: 'asparagus'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'asparagus.jpg',
         description: 'Asparagus, officially known as Asparagus officinalis. This awesome nutrient richt veggie comes in different colours: green, white and even purple. It’s low in calories an very rich in vitamins, minerals and anti-oxidants. ',
         specs: [{
             name: 'Hangover reducer',
@@ -142,7 +129,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'mushroom',
             alternativeText: 'mushroom'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'mushroom.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -173,7 +160,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'lettuce',
             alternativeText: 'lettuce'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'lettuce.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -204,7 +191,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'paprika',
             alternativeText: 'paprika'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'paprika.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -235,7 +222,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'leek',
             alternativeText: 'leek'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'leek.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -266,7 +253,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'brusselsSprouts',
             alternativeText: 'brusselsSprouts'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'brusselsSprouts.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -298,7 +285,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'pumpkin',
             alternativeText: 'pumpkin'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'pumpkin.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -329,7 +316,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'onion',
             alternativeText: 'onion'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'onion.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
@@ -360,7 +347,7 @@ const Vegetables: VMTypes.MachineItemType[] = [
             url: 'sweetPotato',
             alternativeText: 'sweetPotato'
           }, 
-        coverPhoto: 'artichoke.jpg',
+        coverPhoto: 'sweetPotato.jpg',
         description: 'This is an example text. This is a plant. The leaf, stem, and root are used to make "extracts." "Extracts" contain a higher concentration of certain chemicals that are found naturally in the plant. These extracts are used as medicine..\n' +
         '\n' +
         'Artichoke is used to stimulate the flow of bile from the liver. This is thought to help reduce symptoms of heartburn and alcohol "hangover." Artichoke is also used for high cholesterol, irritable bowel syndrome (IBS), kidney problems, anemia, fluid retention (edema), arthritis, bladder infections, and liver problems, including hepatitis C.\n' +
