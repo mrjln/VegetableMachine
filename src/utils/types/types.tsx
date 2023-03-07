@@ -2,7 +2,7 @@ namespace VMtypes {
   export interface VegetableFeatureType {
     name: string;
     description: string;
-    icon?: any;
+    icon?: string;
   }
 
   export interface IconType {

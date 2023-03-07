@@ -4,7 +4,7 @@ import VMtypes from "../../utils/types/types";
 import { capitalize } from "../../utils/capitalize";
 import { slugifyString } from "../../utils/slugify-string";
 import { Link } from "react-router-dom";
-import Icon from "../Icon/Icon";
+import FeatureIcon from "../../icons/features";
 
 type catalogProps = {
   catalogItems: VMtypes.MachineItemType[];
@@ -16,9 +16,7 @@ function Catalog(props: catalogProps) {
       return (
         <Link to={"/" + slugifyString(item.name_en)}>
           <li className="catalog-list__item">
-            <span className="icon">
-              <Icon icon={item.icon} />
-            </span>
+            <span className="icon">{FeatureIcon[item.icon]}</span>
             <h3>{capitalize(item.name_en)}</h3>
           </li>
         </Link>

@@ -24,14 +24,13 @@
     color: $color-primary;
     padding: 0;
     li {
-      width: 100%;
       list-style: none;
       background-color: #fff6d6;
       margin: 5px 0;
       border-radius: 15px;
       display: flex;
       align-items: center;
-      padding-bottom: 20px;
+      padding: 20px;
       img {
         padding: 0 20px;
       }

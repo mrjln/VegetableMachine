@@ -59,24 +59,21 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
         )}
         <div className="machine-item-detail__specs">
           <ul className="machine-item-detail__specs-list">
-            {machineItem.vegetable_features?.map(
-              (feature: VMtypes.VegetableFeatureType) => {
-                return (
-                  <li key={feature.name}>
-                    <Icon icon={feature.icon} />
-                    <div>
-                      <h3> {feature.name} </h3>
-                      <p>{feature.description} </p>
-                      <span>
-                        {" "}
-                        source:{" "}
-                        <a href="/"> lees meer over Awesome feature 1 </a>
-                      </span>
-                    </div>
-                  </li>
-                );
-              }
-            )}
+            {machineItem.specs?.map((feature: VMtypes.VegetableFeatureType) => {
+              return (
+                <li key={feature.name}>
+                  <Icon icon={feature.icon} />
+                  <div>
+                    <h3> {feature.name} </h3>
+                    <p>{feature.description} </p>
+                    <span>
+                      {" "}
+                      source: <a href="/"> lees meer over Awesome feature 1 </a>
+                    </span>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <NutritionTable machineItem={machineItem} />
