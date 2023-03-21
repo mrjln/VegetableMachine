@@ -7,36 +7,36 @@ import MachineItemDetailPage from "./components/MachineItemDetailPage/MachineIte
 import HeroContentBlock from "./components/HeroContentBlock/HeroContentBlock";
 import Catalog from "./components/Catalog/Catalog";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { gql, useQuery } from "@apollo/client";
+// import { gql, useQuery } from "@apollo/client";
 import Vegetables from "./assets/vegetables";
 
 function App() {
-  const { loading, error, data } = useQuery(gql`
-    query Vegetables {
-      vegetables {
-        id
-        name_en
-        name_nl
-        description
-        icon {
-          url
-          alternativeText
-        }
-        coverPhoto {
-          url
-          alternativeText
-        }
-        vegetable_features {
-          name
-          description
-          icon {
-            url
-            alternativeText
-          }
-        }
-      }
-    }
-  `);
+  // const { loading, error, data } = useQuery(gql`
+  //   query Vegetables {
+  //     vegetables {
+  //       id
+  //       name_en
+  //       name_nl
+  //       description
+  //       icon {
+  //         url
+  //         alternativeText
+  //       }
+  //       coverPhoto {
+  //         url
+  //         alternativeText
+  //       }
+  //       vegetable_features {
+  //         name
+  //         description
+  //         icon {
+  //           url
+  //           alternativeText
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
 
   // if (loading) return "Loading...";
   // if (error) return `Error! ${error.message}`;

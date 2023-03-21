@@ -12,19 +12,33 @@ import { ReactComponent as Paprika } from "./paprika.svg";
 import { ReactComponent as Pumpkin } from "./pumpkin.svg";
 import { ReactComponent as SweetPotato } from "./sweet-potato.svg";
 
-const VegetableIconsMap = {
-  artichoke: <Artichoke />,
-  asparagus: <Asparagus />,
-  aubergine: <Aubergine />,
-  broccoli: <Broccoli />,
-  brusselsSprouts: <BrusselsSprouts />,
-  leek: <Leek />,
-  lettuce: <Lettuce />,
-  mushroom: <Mushroom />,
-  paprika: <Paprika />,
-  pumpkin: <Pumpkin />,
-  onion: <Onion />,
-  sweetPotato: <SweetPotato />,
+const VegetableIconsMap = (iconName) => {
+  switch (iconName) {
+    case "artichoke":
+      return <Artichoke />;
+    case "asparagus":
+      return <Asparagus />;
+    case "broccoli":
+      return <Broccoli />;
+    case "brusselsSprouts":
+      return <BrusselsSprouts />;
+    case "leek":
+      return <Leek />;
+    case "lettuce":
+      return <Lettuce />;
+    case "mushroom":
+      return <Mushroom />;
+    case "paprika":
+      return <Paprika />;
+    case "pumpkin":
+      return <Pumpkin />;
+    case "onion":
+      return <Onion />;
+    case "sweetPotato":
+      return <SweetPotato />;
+    default:
+      return <SweetPotato />;
+  }
 };
 
 export default VegetableIconsMap;

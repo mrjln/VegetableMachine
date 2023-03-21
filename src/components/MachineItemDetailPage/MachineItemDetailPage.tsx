@@ -5,6 +5,7 @@ import { capitalize } from "../../utils/capitalize";
 import NutritionTable from "../NutritionTable/NutritionTable";
 import CoverPhoto from "../CoverPhoto/CoverPhoto";
 import VMtypes from "../../utils/types/types";
+import FeatureIconsMap from "../../icons/features";
 
 interface MachineItemDetailProps {
   machineItem: VMtypes.MachineItemType;
@@ -62,7 +63,9 @@ class MachineItemDetailPage extends Component<MachineItemDetailProps> {
             {machineItem.specs?.map((feature: VMtypes.VegetableFeatureType) => {
               return (
                 <li key={feature.name}>
-                  <Icon icon={feature.icon} />
+                  <div style={{ width: "80px", padding: "10px" }}>
+                    {FeatureIconsMap(feature.icon ?? "")}
+                  </div>
                   <div>
                     <h3> {feature.name} </h3>
                     <p>{feature.description} </p>

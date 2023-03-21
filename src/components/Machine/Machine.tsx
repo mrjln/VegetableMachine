@@ -9,7 +9,6 @@ import VMtypes from "../../utils/types/types";
 import { capitalize } from "../../utils/capitalize";
 import { slugifyString } from "../../utils/slugify-string";
 import Confetti from "react-confetti";
-import FeatureIcons from "../../icons/features/index";
 import FeatureIconsMap from "../../icons/features/index";
 
 interface MachineState {
@@ -43,7 +42,6 @@ class Machine extends Component<MachineProps, MachineState> {
   }
 
   spin = (): void => {
-    console.log("spin!");
     this.setState({ spinning: true });
     const newMachineState = this.initNewMachineSpin(this.state.currentSeeds);
     this.setState({ ...newMachineState });
@@ -139,9 +137,12 @@ class Machine extends Component<MachineProps, MachineState> {
                   {winner.specs
                     ?.slice(0, 2)
                     .map((spec: VMtypes.VegetableFeatureType) => (
-                      <li className="machine-winner__specs-list-item">
+                      <li
+                        className="machine-winner__specs-list-item"
+                        key={spec.name}
+                      >
                         <span style={{ width: "42px" }}>
-                          {spec.icon ? FeatureIconsMap[spec.icon] : ""}{" "}
+                          {FeatureIconsMap(spec.icon)}
                         </span>
                         <span>{spec.name}</span>
                       </li>
