@@ -11,36 +11,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Vegetables from "./assets/vegetables";
 
 function App() {
-  // const { loading, error, data } = useQuery(gql`
-  //   query Vegetables {
-  //     vegetables {
-  //       id
-  //       name_en
-  //       name_nl
-  //       description
-  //       icon {
-  //         url
-  //         alternativeText
-  //       }
-  //       coverPhoto {
-  //         url
-  //         alternativeText
-  //       }
-  //       vegetable_features {
-  //         name
-  //         description
-  //         icon {
-  //           url
-  //           alternativeText
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-
-  // if (loading) return "Loading...";
-  // if (error) return `Error! ${error.message}`;
-  // console.log(data);
+  // Simple GET request using fetch
+  fetch("http://localhost:1337/api/vegetables", {
+    headers: {
+      Authorization: "Bearer",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 
   const productLinks = Vegetables.map((item) => {
     return {
