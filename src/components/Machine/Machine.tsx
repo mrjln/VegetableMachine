@@ -124,7 +124,6 @@ class Machine extends Component<MachineProps, MachineState> {
               </div>
             </div>
           </MachineWindow>
-
           {this.state.showModal ? (
             <Modal cta={"Spin again"} clickCTA={this.toggleModal}>
               <h1 className="machine-winner__heading">
